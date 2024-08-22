@@ -10,20 +10,20 @@
 </head>
 <body>
     <!-- Header Section -->
-    <header>
+    <header data-header>
         <div class="header-content">
             <img src="logo.png" alt="booken home">
             <input type="text" placeholder="Search our store">
-            <button aria-label="cart">
+            <button aria-label="cart" data-nav-toggler>
                 <ion-icon name="bag-handle-outline"></ion-icon>
             </button>
-            <button aria-label="open menu">
+            <button aria-label="open menu" data-nav-toggler>
                 <ion-icon name="menu-outline"></ion-icon>
             </button>
             <button aria-label="user">
                 <ion-icon name="person-outline"></ion-icon>
             </button>
-            <button aria-label="close menu">
+            <button aria-label="close menu" data-nav-toggler>
                 <ion-icon name="close-outline"></ion-icon>
             </button>
             <input type="text" placeholder="Search our store">
@@ -128,11 +128,11 @@
     <section id="popular">
         <h2>Popular Collections</h2>
         <div class="filter-buttons">
-            <button data-filter="featured">Featured Products</button>
-            <button data-filter="new">New Products</button>
-            <button data-filter="sell">Upsell Products</button>
+            <button data-filter-btn="featured">Featured Products</button>
+            <button data-filter-btn="new">New Products</button>
+            <button data-filter-btn="sell">Upsell Products</button>
         </div>
-        <div class="popular-item">
+        <div class="popular-item" data-filter="featured">
             <img src="self-care.jpg" alt="Self Care">
             <h3>Self Care</h3>
             <p>$34.00</p>
