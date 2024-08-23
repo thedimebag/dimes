@@ -80,3 +80,38 @@ const filter = function () {
 }
 
 addEventOnElem(filterBtn, "click", filter);
+
+
+
+/**
+ * cARD tEST fUNCTIONALITY
+ */
+
+document.addEventListener('DOMContentLoaded', function () {
+    const carousel = document.querySelector('.carousel');
+    
+    // Clone the first and last card for seamless scrolling
+    const firstCard = carousel.firstElementChild.cloneNode(true);
+    const lastCard = carousel.lastElementChild.cloneNode(true);
+    
+    carousel.appendChild(firstCard);
+    carousel.insertBefore(lastCard, carousel.firstChild);
+    
+    // Adjust the width of the carousel to fit all cards including the clones
+    const cardWidth = carousel.querySelector('.card').offsetWidth;
+    carousel.style.width = `${cardWidth * (carousel.children.length)}px`;
+    
+    // Listen to scroll event to ensure seamless loop
+    carousel.addEventListener('scroll', function () {
+        const scrollLeft = carousel.scrollLeft;
+        const cardWidth = carousel.querySelector('.card').offsetWidth;
+        const numberOfCards = carousel.children.length;
+        const scrollPosition = (scrollLeft + cardWidth) % (cardWidth * numberOfCards);
+
+        if (scrollPosition < cardWidth) {
+            carousel.scrollLeft = scrollLeft + cardWidth;
+        } else if (scrollPosition > cardWidth * (numberOfCards - 1)) {
+            carousel.scrollLeft = scrollLeft - cardWidth;
+        }
+    });
+});
