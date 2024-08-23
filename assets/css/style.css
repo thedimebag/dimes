@@ -1257,3 +1257,70 @@ body {
   }
 
 }
+
+
+
+/**TESTING THE CARDS SECTION**/
+.carousel-container {
+    position: relative;
+    width: 100%;
+    height: 200px; /* or any height you prefer */
+    overflow: hidden;
+    background-color: black;
+}
+
+.carousel {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+}
+
+.card {
+    min-width: 300px; /* Adjust this width based on your design */
+    height: 100%;
+    margin: 0 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-image {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 10px;
+}
+
+.card-info {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.card-title {
+    font-weight: bold;
+    color: white;
+}
+
+.card-description {
+    font-size: 14px;
+    color: white;
+}
+
+.card-price {
+    font-size: 16px;
+    color: white;
+}
+
+
