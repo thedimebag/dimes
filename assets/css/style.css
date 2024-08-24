@@ -1185,7 +1185,6 @@ body {
   }
 
 
-
   /**
    * REUSED STYLE
    */
@@ -1322,4 +1321,15 @@ body {
     font-size: 16px;
     color: white;
 }
+
+/*Hiding the crat BTN on smaller screens*/
+
+
+/* Hide the cart button on screens smaller than 768px (tablet and mobile) */
+@media (max-width: 768px) {
+  .cart-btn {
+    display: none;
+  }
+}
+
 
