@@ -1,5 +1,4 @@
 
-
 /*-----------------------------------*\
   #CUSTOM PROPERTY
 \*-----------------------------------*/
@@ -1262,13 +1261,12 @@ body {
 /**TESTING THE CARDS SECTION**/
 /* Container for the carousel */
 
-/* Container for the carousel */
 .carousel-container {
   position: relative;
   width: 100%;
   height: 200px; /* Adjust height as needed */
   overflow: hidden; /* Hide scrollbars */
-  background-color: black;
+  background-color: transparent;
 }
 
 /* Carousel itself */
@@ -1289,7 +1287,7 @@ body {
   margin: 0 10px; /* Spacing between cards */
   display: flex;
   flex-direction: column; /* Ensure card content stacks vertically */
-  align-items: center;
+  align-items: center; /* Center card content horizontally */
   justify-content: center;
   position: relative;
   border-radius: 10px;
@@ -1297,23 +1295,27 @@ body {
   background-size: cover; /* Ensure background covers card area */
 }
 
-/* Card image */
+
+/* Card Image styling */
 .card-image {
   width: 60px;
   height: auto;
   position: absolute;
   top: 10px;
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Adjust for center alignment */
 }
+
 
 /* Card info styling */
 .card-info {
   display: flex;
   flex-direction: column; /* Stack title, description, and price vertically */
-  align-items: center; /* Center-align items horizontally */
+  align-items: flex-start; /* Align items to the left */
   position: absolute;
   bottom: 10px;
-  width: 100%;
-  padding: 0 20px;
+  width: calc(100% - 20px); /* Full width minus padding */
+  padding-left: 15px; /* Add left padding for spacing */
 }
 
 /* Card title */
