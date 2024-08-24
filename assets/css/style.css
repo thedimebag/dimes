@@ -789,67 +789,12 @@ body {
 
 
 
-
-
 /*-----------------------------------*\
   #MEDIA QUERIES
 \*-----------------------------------*/
 
-/**
- * responsive for large than 575px screen
- */
-/* 
-@media (min-width: 575px) {
 
-  /**
-   * REUSED STYLE
-   */
-
-  .container {
-    max-width: 540px;
-    width: 100%;
-    margin-inline: auto;
-  }
-
-  .grid-list { grid-template-columns: 1fr 1fr; }
-
-  .scrollbar-item { min-width: calc(50% - 5px); }
-
- */
-
-  /**
-   * HERO
-   */
-/* 
-  .hero .play-btn {
-    display: block;
-    color: var(--maximum-blue-green);
-    border: 1px solid var(--maximum-blue-green);
-    font-size: 22px;
-    padding: 20px;
-    border-radius: var(--radius-circle);
-    animation: pulse 2.5s ease infinite;
-  }
-
-  @keyframes pulse {
-    0%,
-    30% { box-shadow: 0 0 0 0 var(--maximum-blue-green); }
-    100% { box-shadow: 0 0 0 20px transparent; }
-  }
-
-  .hero .btn-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-  }
-
-  .hero { padding-block-start: 150px; }
-
-}
- */
-
-
-
+/*HERO*/
 
 /**
  * responsive for large than 768px screen
@@ -965,8 +910,6 @@ body {
   .footer-bottom .w-100 { margin-inline: 0; }
 
 }
-
-
 
 
 
@@ -1374,6 +1317,21 @@ section {
 }
 
 
+.carousel-container {
+    overflow: hidden; /* Hide scrollbars */
+}
+
+.carousel {
+    display: flex; /* Flexbox to align cards horizontally */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    overflow-y: hidden; /* Disable vertical scrolling */
+    white-space: nowrap; /* Prevent wrapping */
+    scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+.card {
+    flex: 0 0 auto; /* Prevent cards from shrinking or growing */
+}
 
 
 
