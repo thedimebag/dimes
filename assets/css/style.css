@@ -1292,7 +1292,7 @@ body {
 
 .card-image {
     width: 60px;
-    height: 60px;
+    height: auto;
     position: absolute;
     top: 10px;
 }
@@ -1322,9 +1322,31 @@ body {
     color: white;
 }
 
+/* Ensure the carousel container is properly sized and hides scrollbars */
+.carousel-container {
+  overflow: hidden; /* Hide scrollbars */
+  position: relative; /* Ensure proper positioning */
+}
+
+/* Set up the carousel for horizontal scrolling */
+.carousel {
+  display: flex; /* Use flexbox for horizontal layout */
+  overflow-x: hidden; /* Hide horizontal scrollbars */
+  scroll-behavior: smooth; /* Optional: smooth scrolling */
+}
+
+/* Hide scrollbars specifically */
+.carousel::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for WebKit browsers */
+}
+
+.carousel {
+  -ms-overflow-style: none;  /* Hide scrollbar for Internet Explorer and Edge */
+  scrollbar-width: none;  /* Hide scrollbar for Firefox */
+}
+
+
 /*Hiding the crat BTN on smaller screens*/
-
-
 /* Hide the cart button on screens smaller than 768px (tablet and mobile) */
 @media (max-width: 768px) {
   .cart-btn {
