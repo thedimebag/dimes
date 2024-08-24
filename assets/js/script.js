@@ -17,7 +17,6 @@ const addEventOnElem = function (elem, type, callback) {
 }
 
 
-
 /**
  * navbar toogle
  */
@@ -83,39 +82,29 @@ addEventOnElem(filterBtn, "click", filter);
 
 
 
-/**
- * cARD tEST fUNCTIONALITY
- */
+// CARD tEST fUNCTIONALITY
 
 document.addEventListener('DOMContentLoaded', function () {
     const carousel = document.querySelector('.carousel');
     const cardWidth = carousel.querySelector('.card').offsetWidth;
-    
-    // Clone the first and last card for seamless scrolling
-    const firstCard = carousel.firstElementChild.cloneNode(true);
-    const lastCard = carousel.lastElementChild.cloneNode(true);
-    
-    carousel.appendChild(firstCard);
-    carousel.insertBefore(lastCard, carousel.firstChild);
+    const scrollSpeed = 1; // Adjust this value to control scroll speed
 
-    // Adjust the width of the carousel to fit all cards including the clones
+    // Adjust the width of the carousel to fit all cards
     const totalCards = carousel.children.length;
     carousel.style.width = `${cardWidth * totalCards}px`;
 
-    // Initial scroll position set to middle (showing original cards)
-    carousel.scrollLeft = cardWidth;
-
     // Smooth scrolling effect
     function scrollCarousel() {
-        carousel.scrollLeft += 1; // Adjust this value to control scroll speed
+        carousel.scrollLeft += scrollSpeed; // Move scroll position
+        // Loop scroll position if it exceeds the width of the carousel
         if (carousel.scrollLeft >= cardWidth * (totalCards - 1)) {
-            carousel.scrollLeft = cardWidth; // Reset to the original cards
-        } else if (carousel.scrollLeft <= 0) {
-            carousel.scrollLeft = cardWidth * (totalCards - 2); // Reset to the last original card
+            carousel.scrollLeft = 0; // Reset scroll position to the beginning
         }
         requestAnimationFrame(scrollCarousel); // Continue scrolling
     }
 
     scrollCarousel(); // Start the scrolling effect
 });
+
+
 
