@@ -1272,7 +1272,7 @@ body {
 /* Carousel itself */
 .carousel {
   display: flex; /* Use flexbox for horizontal layout */
-  width: 80%;
+  width: 100%;
   height: 100%;
   overflow-x: auto; /* Allow horizontal scrolling */
   overflow-y: hidden; /* Hide vertical scrolling */
@@ -1284,7 +1284,7 @@ body {
 .card {
   min-width: 300px; /* Adjust width based on your design */
   height: 100%;
-  margin: 5 10px; /* Spacing between cards */
+  margin: 0 10px; /* Spacing between cards */
   display: flex;
   flex-direction: column; /* Ensure card content stacks vertically */
   align-items: center; /* Center card content horizontally */
