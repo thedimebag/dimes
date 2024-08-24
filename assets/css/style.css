@@ -1260,90 +1260,92 @@ body {
 
 
 /**TESTING THE CARDS SECTION**/
+/* Container for the carousel */
 .carousel-container {
-    position: relative;
-    width: 100%;
-    height: 200px; /* or any height you prefer */
-    overflow: hidden;
-    background-color: black;
-}
-
-.carousel {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scroll-behavior: smooth;
-}
-
-.card {
-    min-width: 300px; /* Adjust this width based on your design */
-    height: 100%;
-    margin: 0 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.card-image {
-    width: 60px;
-    height: auto;
-    position: absolute;
-    top: 10px;
-}
-
-.card-info {
-    position: absolute;
-    bottom: 10px;
-    width: 100%;
-    padding: 0 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-}
-
-.card-title {
-    font-weight: bold;
-    color: white;
-}
-
-.card-description {
-    font-size: 14px;
-    color: white;
-}
-
-.card-price {
-    font-size: 16px;
-    color: white;
-}
-
-/* Ensure the carousel container is properly sized and hides scrollbars */
-.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 200px; /* Adjust height as needed */
   overflow: hidden; /* Hide scrollbars */
-  position: relative; /* Ensure proper positioning */
+  background-color: black;
 }
 
-/* Set up the carousel for horizontal scrolling */
+/* Carousel itself */
 .carousel {
   display: flex; /* Use flexbox for horizontal layout */
-  overflow-x: hidden; /* Hide horizontal scrollbars */
+  width: 100%;
+  height: 100%;
+  overflow-x: auto; /* Allow horizontal scrolling */
+  overflow-y: hidden; /* Hide vertical scrolling */
   scroll-behavior: smooth; /* Optional: smooth scrolling */
+  -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
 }
 
-/* Hide scrollbars specifically */
+/* Card styling */
+.card {
+  min-width: 300px; /* Adjust width based on your design */
+  height: 100%;
+  margin: 0 10px; /* Spacing between cards */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Card image */
+.card-image {
+  width: 60px;
+  height: auto;
+  position: absolute;
+  top: 10px;
+}
+
+/* Card info */
+.card-info {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+/* Card title */
+.card-title {
+  font-weight: bold;
+  color: white;
+}
+
+/* Card description */
+.card-description {
+  font-size: 14px;
+  color: white;
+}
+
+/* Card price */
+.card-price {
+  font-size: 16px;
+  color: white;
+}
+
+/* Hide scrollbars for WebKit browsers */
 .carousel::-webkit-scrollbar {
   display: none; /* Hide scrollbar for WebKit browsers */
 }
 
+/* Hide scrollbars for Internet Explorer and Edge */
 .carousel {
-  -ms-overflow-style: none;  /* Hide scrollbar for Internet Explorer and Edge */
-  scrollbar-width: none;  /* Hide scrollbar for Firefox */
+  -ms-overflow-style: none; /* Hide scrollbar for Internet Explorer and Edge */
 }
+
+/* Hide scrollbars for Firefox */
+.carousel {
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
+
 
 
 /*Hiding the crat BTN on smaller screens*/
@@ -1363,7 +1365,7 @@ body {
   display: flex; /* Use Flexbox for alignment */
   flex-direction: column; /* Stack items vertically */
   align-items: flex-end; /* Align items to the right */
-  margin-right: 50px; /* Add right margin */
+  margin-right: 25px; /* Add right margin */
 }
 
 
