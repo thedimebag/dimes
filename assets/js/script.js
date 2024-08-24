@@ -82,32 +82,67 @@ addEventOnElem(filterBtn, "click", filter);
 
 
 
-// CARD tEST fUNCTIONALITY
+
+// CARD tEST fUNCTIONALITY and SCROLL
+
 document.addEventListener('DOMContentLoaded', function () {
     const carousel = document.querySelector('.carousel');
     const cardWidth = carousel.querySelector('.card').offsetWidth;
-    const scrollSpeed = 1; // Adjust this value to control scroll speed
+    const scrollSpeed = 1; // Scroll speed in pixels per frame
 
-    // Adjust the width of the carousel to fit all cards
+    // Duplicate the carousel content for seamless loop
+    const firstCard = carousel.firstElementChild.cloneNode(true);
+    const lastCard = carousel.lastElementChild.cloneNode(true);
+
+    carousel.appendChild(firstCard);
+    carousel.insertBefore(lastCard, carousel.firstChild);
+
+    // Adjust the width of the carousel to fit all cards including the duplicates
     const totalCards = carousel.children.length;
     carousel.style.width = `${cardWidth * totalCards}px`;
 
-    // Ensure the carousel container allows horizontal scrolling
-    carousel.style.display = 'flex';
-    carousel.style.overflowX = 'auto';
-    carousel.style.overflowY = 'hidden';
+    let scrollPosition = 0;
+    let isScrolling = false;
 
     // Smooth scrolling effect
     function scrollCarousel() {
-        carousel.scrollLeft += scrollSpeed; // Move scroll position
-        // Loop scroll position if it exceeds the width of the carousel
-        if (carousel.scrollLeft >= cardWidth * (totalCards - 1)) {
-            carousel.scrollLeft = 0; // Reset scroll position to the beginning
+        if (isScrolling) {
+            scrollPosition += scrollSpeed;
+            carousel.scrollLeft = scrollPosition;
+
+            // Reset scroll position if it exceeds the width of the carousel
+            if (scrollPosition >= cardWidth * (totalCards - 1)) {
+                scrollPosition = 0;
+                carousel.scrollLeft = scrollPosition;
+            }
+
+            requestAnimationFrame(scrollCarousel); // Continue scrolling
         }
-        requestAnimationFrame(scrollCarousel); // Continue scrolling
     }
 
-    scrollCarousel(); // Start the scrolling effect
+    // Start scrolling on user interaction
+    carousel.addEventListener('mousedown', () => {
+        isScrolling = true;
+        scrollCarousel();
+    });
+
+    carousel.addEventListener('mouseup', () => {
+        isScrolling = false;
+    });
+
+    carousel.addEventListener('mouseleave', () => {
+        isScrolling = false;
+    });
+
+    // Handle touch events for mobile devices
+    carousel.addEventListener('touchstart', () => {
+        isScrolling = true;
+        scrollCarousel();
+    });
+
+    carousel.addEventListener('touchend', () => {
+        isScrolling = false;
+    });
 });
 
 
