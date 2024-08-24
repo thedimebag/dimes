@@ -488,11 +488,33 @@ body {
   #HERO
 \*-----------------------------------*/
 
-.hero .play-btn { display: none; }
-
+/* Flex container for the hero section */
 .hero {
-  padding-block-start: 90px;
-  background-position: left;
+  display: flex; /* Align items horizontally */
+  align-items: center; /* Center items vertically */
+  justify-content: space-between; /* Space out items */
+  padding: 20px; /* Adjust as needed */
+  background-size: cover; /* Ensure background covers the section */
+  background-position: center; /* Center the background image */
+}
+
+/* Flex container for content and banner */
+.hero-content {
+  flex: 1; /* Take up available space */
+  max-width: 500px; /* Limit width for better layout */
+  margin-right: 20px; /* Space between content and banner */
+}
+
+.hero-banner {
+  flex: 1; /* Take up available space */
+  display: flex;
+  justify-content: center; /* Center the banner image horizontally */
+}
+
+/* Responsive image */
+.hero-banner img {
+  max-width: 100%; /* Scale down if needed */
+  height: auto; /* Maintain aspect ratio */
 }
 
 .hero .container {
@@ -510,13 +532,13 @@ body {
 
 .hero-text { margin-block: 40px; }
 
-.hero-banner {
-  max-width: 300px;
-  margin-inline: auto;
+/*might remove*/
+/* Container for flex layout */
+.container {
+  display: flex; /* Use flexbox layout */
+  flex-wrap: wrap; /* Allow wrapping if needed */
+  align-items: center; /* Center items vertically */
 }
-
-
-
 
 
 /*-----------------------------------*\
