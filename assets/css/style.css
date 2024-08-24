@@ -1394,3 +1394,11 @@ body {
 
 
 
+/*Hiding the Close Button On Small Screeeens*/
+/* Hide the close menu button on small screens */
+@media (max-width: 768px) {
+  .nav-close-btn {
+    display: none; /* Hide the button on smaller screens */
+  }
+}
+
