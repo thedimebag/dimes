@@ -798,7 +798,7 @@ body {
 /**
  * responsive for large than 575px screen
  */
-
+/* 
 @media (min-width: 575px) {
 
   /**
@@ -815,12 +815,12 @@ body {
 
   .scrollbar-item { min-width: calc(50% - 5px); }
 
-
+ */
 
   /**
    * HERO
    */
-
+/* 
   .hero .play-btn {
     display: block;
     color: var(--maximum-blue-green);
@@ -846,7 +846,7 @@ body {
   .hero { padding-block-start: 150px; }
 
 }
-
+ */
 
 
 
