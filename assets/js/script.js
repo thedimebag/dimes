@@ -83,7 +83,6 @@ addEventOnElem(filterBtn, "click", filter);
 
 
 // CARD tEST fUNCTIONALITY
-
 document.addEventListener('DOMContentLoaded', function () {
     const carousel = document.querySelector('.carousel');
     const cardWidth = carousel.querySelector('.card').offsetWidth;
@@ -92,6 +91,11 @@ document.addEventListener('DOMContentLoaded', function () {
     // Adjust the width of the carousel to fit all cards
     const totalCards = carousel.children.length;
     carousel.style.width = `${cardWidth * totalCards}px`;
+
+    // Ensure the carousel container allows horizontal scrolling
+    carousel.style.display = 'flex';
+    carousel.style.overflowX = 'auto';
+    carousel.style.overflowY = 'hidden';
 
     // Smooth scrolling effect
     function scrollCarousel() {
@@ -105,6 +109,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     scrollCarousel(); // Start the scrolling effect
 });
+
 
 
 
