@@ -1336,6 +1336,7 @@ body {
 .card-price {
   font-size: 16px;
   color: white;
+  margin-bottom:20px;
 }
 
 /* Hide scrollbars for WebKit browsers */
