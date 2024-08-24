@@ -789,12 +789,67 @@ body {
 
 
 
+
+
 /*-----------------------------------*\
   #MEDIA QUERIES
 \*-----------------------------------*/
 
+/**
+ * responsive for large than 575px screen
+ */
+/* 
+@media (min-width: 575px) {
 
-/*HERO*/
+  /**
+   * REUSED STYLE
+   */
+
+  .container {
+    max-width: 540px;
+    width: 100%;
+    margin-inline: auto;
+  }
+
+  .grid-list { grid-template-columns: 1fr 1fr; }
+
+  .scrollbar-item { min-width: calc(50% - 5px); }
+
+ */
+
+  /**
+   * HERO
+   */
+/* 
+  .hero .play-btn {
+    display: block;
+    color: var(--maximum-blue-green);
+    border: 1px solid var(--maximum-blue-green);
+    font-size: 22px;
+    padding: 20px;
+    border-radius: var(--radius-circle);
+    animation: pulse 2.5s ease infinite;
+  }
+
+  @keyframes pulse {
+    0%,
+    30% { box-shadow: 0 0 0 0 var(--maximum-blue-green); }
+    100% { box-shadow: 0 0 0 20px transparent; }
+  }
+
+  .hero .btn-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .hero { padding-block-start: 150px; }
+
+}
+ */
+
+
+
 
 /**
  * responsive for large than 768px screen
@@ -910,6 +965,8 @@ body {
   .footer-bottom .w-100 { margin-inline: 0; }
 
 }
+
+
 
 
 
@@ -1209,7 +1266,7 @@ body {
     width: 100%;
     height: 200px; /* or any height you prefer */
     overflow: hidden;
-    background-color: transparent;
+    background-color: black;
 }
 
 .carousel {
@@ -1236,7 +1293,7 @@ body {
 
 .card-image {
     width: 60px;
-    height: auto;
+    height: 60px;
     position: absolute;
     top: 10px;
 }
@@ -1256,7 +1313,6 @@ body {
     color: white;
 }
 
-
 .card-description {
     font-size: 14px;
     color: white;
@@ -1266,72 +1322,4 @@ body {
     font-size: 16px;
     color: white;
 }
-
-
-
-/*Hiding the cart on smaller screens*/
-
-/* Initially hide the button */
-.header-action-btn.cart-btn {
-    font-size: 30px;
-    display: none;
-}
-
-/* Show the button on larger screens */
-@media (min-width: 1024px) { /* Adjust the breakpoint as needed */
-    .header-action-btn.cart-btn {
-        display: inline-flex; /* Or 'block' depending on your layout */
-    }
-}
-
-
-
-/*Hiding the scroll indicator below the cards */
-/* Hide the scrollbar for the carousel */
-.carousel {
-    overflow-x: auto; /* Enable horizontal scrolling */
-    overflow-y: hidden; /* Disable vertical scrolling */
-    scrollbar-width: none; /* For Firefox */
-}
-
-/* Hide scrollbar for WebKit browsers (Chrome, Safari) */
-.carousel::-webkit-scrollbar {
-    display: none;
-}
-
-/* Remove any potential divider or margin below the carousel */
-.carousel-container {
-    margin: 0; /* Remove margin if there's any */
-    padding: 0; /* Remove padding if there's any */
-}
-
-/* Ensure no border or divider is present */
-.carousel {
-    border: none; /* Remove any border */
-    box-shadow: none; /* Remove any shadow that might look like a divider */
-}
-
-/* Optional: Adjust the bottom margin of the section */
-section {
-    margin-bottom: 0; /* Remove any bottom margin if necessary */
-}
-
-
-.carousel-container {
-    overflow: hidden; /* Hide scrollbars */
-}
-
-.carousel {
-    display: flex; /* Flexbox to align cards horizontally */
-    overflow-x: auto; /* Enable horizontal scrolling */
-    overflow-y: hidden; /* Disable vertical scrolling */
-    white-space: nowrap; /* Prevent wrapping */
-    scroll-behavior: smooth; /* Smooth scrolling */
-}
-
-.card {
-    flex: 0 0 auto; /* Prevent cards from shrinking or growing */
-}
-
-
 
