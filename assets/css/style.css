@@ -1266,7 +1266,7 @@ body {
     width: 100%;
     height: 200px; /* or any height you prefer */
     overflow: hidden;
-    background-color: black;
+    background-color: transparent;
 }
 
 .carousel {
