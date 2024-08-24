@@ -488,7 +488,6 @@ body {
   #HERO
 \*-----------------------------------*/
 
-.hero .play-btn { display: none; }
 
 .hero {
   padding-block-start: 90px;
@@ -514,9 +513,6 @@ body {
   max-width: 300px;
   margin-inline: auto;
 }
-
-
-
 
 
 /*-----------------------------------*\
@@ -816,7 +812,7 @@ body {
 
  */
 
-  /**
+/**
    * HERO
    */
 /* 
@@ -1393,3 +1389,44 @@ body {
     display: none; /* Hide the button on smaller screens */
   }
 }
+
+
+
+
+
+/*New Hero Banner Code Midgt Delete*/
+/* Ensure the container uses flexbox to align items */
+.container {
+  display: flex;
+  align-items: center; /* Center items vertically */
+  justify-content: space-between; /* Space out hero-content and hero-banner */
+  padding: 0 15px; /* Add padding to the left and right */
+}
+
+/* Ensure hero-content and hero-banner are aligned properly */
+.hero-content {
+  max-width: 50%; /* Limit width of hero-content */
+}
+
+.hero-banner {
+  max-width: 45%; /* Limit width of hero-banner */
+  margin-left: auto; /* Push the banner to the right */
+}
+
+.hero-banner img {
+  width: 100%; /* Make sure the image scales with its container */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Adjustments for responsiveness */
+@media (max-width: 768px) {
+  .hero-content, .hero-banner {
+    max-width: 100%; /* Allow full width on smaller screens */
+    text-align: center; /* Center align text in hero-content */
+  }
+  
+  .hero-banner {
+    margin: 20px 0; /* Add margin for spacing on small screens */
+  }
+}
+
