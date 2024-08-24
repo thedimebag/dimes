@@ -89,6 +89,7 @@ addEventOnElem(filterBtn, "click", filter);
 
 document.addEventListener('DOMContentLoaded', function () {
     const carousel = document.querySelector('.carousel');
+    const cardWidth = carousel.querySelector('.card').offsetWidth;
     
     // Clone the first and last card for seamless scrolling
     const firstCard = carousel.firstElementChild.cloneNode(true);
@@ -96,22 +97,25 @@ document.addEventListener('DOMContentLoaded', function () {
     
     carousel.appendChild(firstCard);
     carousel.insertBefore(lastCard, carousel.firstChild);
-    
-    // Adjust the width of the carousel to fit all cards including the clones
-    const cardWidth = carousel.querySelector('.card').offsetWidth;
-    carousel.style.width = `${cardWidth * (carousel.children.length)}px`;
-    
-    // Listen to scroll event to ensure seamless loop
-    carousel.addEventListener('scroll', function () {
-        const scrollLeft = carousel.scrollLeft;
-        const cardWidth = carousel.querySelector('.card').offsetWidth;
-        const numberOfCards = carousel.children.length;
-        const scrollPosition = (scrollLeft + cardWidth) % (cardWidth * numberOfCards);
 
-        if (scrollPosition < cardWidth) {
-            carousel.scrollLeft = scrollLeft + cardWidth;
-        } else if (scrollPosition > cardWidth * (numberOfCards - 1)) {
-            carousel.scrollLeft = scrollLeft - cardWidth;
+    // Adjust the width of the carousel to fit all cards including the clones
+    const totalCards = carousel.children.length;
+    carousel.style.width = `${cardWidth * totalCards}px`;
+
+    // Initial scroll position set to middle (showing original cards)
+    carousel.scrollLeft = cardWidth;
+
+    // Smooth scrolling effect
+    function scrollCarousel() {
+        carousel.scrollLeft += 1; // Adjust this value to control scroll speed
+        if (carousel.scrollLeft >= cardWidth * (totalCards - 1)) {
+            carousel.scrollLeft = cardWidth; // Reset to the original cards
+        } else if (carousel.scrollLeft <= 0) {
+            carousel.scrollLeft = cardWidth * (totalCards - 2); // Reset to the last original card
         }
-    });
+        requestAnimationFrame(scrollCarousel); // Continue scrolling
+    }
+
+    scrollCarousel(); // Start the scrolling effect
 });
+
