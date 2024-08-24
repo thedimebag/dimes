@@ -1333,3 +1333,15 @@ body {
 }
 
 
+/* CSS to aligning the footer list RIGHT*/
+.footer-list {
+  list-style: none; /* Remove bullet points */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+  display: flex; /* Use Flexbox for alignment */
+  flex-direction: column; /* Stack items vertically */
+  align-items: flex-end; /* Align items to the right */
+  margin-right: 50px; /* Add right margin */
+}
+
+
