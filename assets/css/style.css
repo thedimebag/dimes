@@ -1282,18 +1282,24 @@ body {
 
 /* Card styling */
 .card {
-  min-width: 300px; /* Adjust width based on your design */
+  min-width: 300px; /* Adjust this width based on your design */
   height: 100%;
-  margin: 0 10px; /* Spacing between cards */
+  margin: 0 10px;
   display: flex;
-  flex-direction: column; /* Ensure card content stacks vertically */
-  align-items: center; /* Center card content horizontally */
-  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start; /* Align content to the left */
+  justify-content: flex-end; /* Position content at the bottom */
   position: relative;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  background-size: cover; /* Ensure background covers card area */
+  background-size: cover; /* Ensure background image covers the card */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Prevent background image from repeating */
+  color: white; /* Adjust text color to ensure visibility */
+  padding: 20px; /* Add padding to avoid text touching the edges */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
+
 
 
 /* Card Image styling */
@@ -1313,9 +1319,11 @@ body {
   flex-direction: column; /* Stack title, description, and price vertically */
   align-items: flex-start; /* Align items to the left */
   position: absolute;
-  bottom: 10px;
+  bottom: 16px;
   width: calc(100% - 20px); /* Full width minus padding */
   padding-left: 15px; /* Add left padding for spacing */
+  left: 15px; /* Ensure content is not too close to the left edge */
+  right: 15px; /* Ensure content is not too close to the right edge */
 }
 
 /* Card title */
