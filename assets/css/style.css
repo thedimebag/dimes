@@ -1313,6 +1313,7 @@ body {
     color: white;
 }
 
+
 .card-description {
     font-size: 14px;
     color: white;
@@ -1322,5 +1323,58 @@ body {
     font-size: 16px;
     color: white;
 }
+
+
+
+/*Hiding the cart on smaller screens*/
+
+/* Initially hide the button */
+.header-action-btn.cart-btn {
+    font-size: 30px;
+    display: none;
+}
+
+/* Show the button on larger screens */
+@media (min-width: 1024px) { /* Adjust the breakpoint as needed */
+    .header-action-btn.cart-btn {
+        display: inline-flex; /* Or 'block' depending on your layout */
+    }
+}
+
+
+
+/*Hiding the scroll indicator below the cards */
+/* Hide the scrollbar for the carousel */
+.carousel {
+    overflow-x: auto; /* Enable horizontal scrolling */
+    overflow-y: hidden; /* Disable vertical scrolling */
+    scrollbar-width: none; /* For Firefox */
+}
+
+/* Hide scrollbar for WebKit browsers (Chrome, Safari) */
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+/* Remove any potential divider or margin below the carousel */
+.carousel-container {
+    margin: 0; /* Remove margin if there's any */
+    padding: 0; /* Remove padding if there's any */
+}
+
+/* Ensure no border or divider is present */
+.carousel {
+    border: none; /* Remove any border */
+    box-shadow: none; /* Remove any shadow that might look like a divider */
+}
+
+/* Optional: Adjust the bottom margin of the section */
+section {
+    margin-bottom: 0; /* Remove any bottom margin if necessary */
+}
+
+
+
+
 
 
