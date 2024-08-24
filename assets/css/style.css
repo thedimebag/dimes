@@ -371,7 +371,7 @@ body {
 
 .header-action-btn,
 .nav-open-btn {
-  font-size: 48px;
+  font-size: 34px;
   transition: var(--transition-1);
 }
 
