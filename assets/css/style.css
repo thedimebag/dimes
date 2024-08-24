@@ -1376,27 +1376,6 @@ body {
 }
 
 
-/*Hiding The Scroll bars on all the  screen*/
-/* Ensure that scrollbars are hidden but scrolling is still enabled */
-html {
-  overflow: hidden; /* This hides the scrollbar but will disable scrolling; remove this if you want scrolling enabled */
-}
-
-/* Body styling */
-body {
-  overflow: auto; /* Ensure that scrolling is enabled on the body */
-}
-
-/* For WebKit browsers (e.g., Chrome, Safari) */
-::-webkit-scrollbar {
-  display: none; /* Hide scrollbar for WebKit browsers */
-}
-
-/* For Firefox */
-html {
-  scrollbar-width: none; /* Hide scrollbar for Firefox */
-}
-
 
 /*Hiding the Close Button On Small Screeeens*/
 /* Hide the close menu button on small screens */
