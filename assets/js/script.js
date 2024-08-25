@@ -1,11 +1,8 @@
 'use strict';
 
-
-
 /**
  * add event on elements
  */
-
 const addEventOnElem = function (elem, type, callback) {
   if (elem.length > 1) {
     for (let i = 0; i < elem.length; i++) {
@@ -16,11 +13,9 @@ const addEventOnElem = function (elem, type, callback) {
   }
 }
 
-
 /**
- * navbar toogle
+ * navbar toggle
  */
-
 const navbar = document.querySelector("[data-navbar]");
 const navTogglers = document.querySelectorAll("[data-nav-toggler]");
 const overlay = document.querySelector("[data-overlay]");
@@ -32,12 +27,9 @@ const toggleNavbar = function () {
 
 addEventOnElem(navTogglers, "click", toggleNavbar);
 
-
-
 /**
  * active header & back top btn when window scroll down to 100px
  */
-
 const header = document.querySelector("[data-header]");
 const backTopBtn = document.querySelector("[data-back-top-btn]");
 
@@ -53,12 +45,9 @@ const activeElemOnScroll = function () {
 
 addEventOnElem(window, "scroll", activeElemOnScroll);
 
-
-
 /**
  * filter functionality
  */
-
 const filterBtn = document.querySelectorAll("[data-filter-btn]");
 const filterItems = document.querySelectorAll("[data-filter]");
 
@@ -80,11 +69,9 @@ const filter = function () {
 
 addEventOnElem(filterBtn, "click", filter);
 
-
-
-
-// CARD tEST fUNCTIONALITY and SCROLL
-
+/**
+ * carousel test functionality and scroll
+ */
 document.addEventListener('DOMContentLoaded', function () {
     const carousel = document.querySelector('.carousel');
     const cardWidth = carousel.querySelector('.card').offsetWidth;
@@ -145,20 +132,35 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-
-
-// ADDING THE ADD TTO CART BUTTON JAVASCRIPT ON CARDS
+/**
+ * Adding the add to cart button functionality
+ */
 document.querySelectorAll('.card').forEach(card => {
   const button = card.querySelector('.add-to-cart-btn');
   
   button.addEventListener('click', () => {
-    // Change the button text to "ADDED"
-    button.textContent = 'ADDED';
-    
-    // After 1 second, revert the button text back to "Add to Cart"
-    setTimeout(() => {
-      button.textContent = 'Add to Cart';
-    }, 1000);
+    const cardImage = card.style.backgroundImage.slice(5, -2); // Extract URL from style
+    const cardTitle = card.querySelector('.card-title').textContent;
+    const cardDescription = card.querySelector('.card-description').textContent;
+    const cardPrice = card.querySelector('.card-price').textContent;
+
+    // Get existing cart items from localStorage
+    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+    // Check if item is already in the cart
+    if (!cartItems.some(item => item.title === cardTitle)) {
+      // Add new item to cart
+      cartItems.push({ image: cardImage, title: cardTitle, description: cardDescription, price: cardPrice });
+      localStorage.setItem('cartItems', JSON.stringify(cartItems));
+      
+      // Change the button text to "ADDED"
+      button.textContent = 'ADDED';
+      
+      // After 1 second, revert the button text back to "Add to Cart"
+      setTimeout(() => {
+        button.textContent = 'Add to Cart';
+      }, 1000);
+    }
   });
   
   card.addEventListener('mouseover', () => {
@@ -175,9 +177,11 @@ document.addEventListener('click', (e) => {
     document.querySelectorAll('.add-to-cart-btn').forEach(button => {
       button.style.display = 'none';
     });
+
+
+
+
+
+    
   }
 });
-
-
-
-
