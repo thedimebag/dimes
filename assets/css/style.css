@@ -638,7 +638,7 @@ body {
 
 
 /*-----------------------------------*\
-  #BLOG JUST EDITED
+  #BLOG
 \*-----------------------------------*/
 
 .blog {
@@ -716,7 +716,7 @@ body {
   padding-block: 12px;
 }
 
-/* Ensure the container and scrollbar items are flex containers */
+/* Flexbox for centering and spacing the cards */
 .container {
   display: flex;
   flex-direction: column;
@@ -725,28 +725,42 @@ body {
 
 .has-scrollbar {
   display: flex;
-  justify-content: center;
-  gap: 20px; /* Add space between cards */
-  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  flex-wrap: wrap; /* Allow wrapping to handle smaller screens */
+  gap: 20px; /* Space between cards */
 }
 
+/* Ensuring only blog card links are centered */
+.blog-card a {
+  text-align: center; /* Center text inside blog card links */
+}
+
+/* Ensure the cards stay in two columns */
 .scrollbar-item {
-  flex: 1;
-  max-width: 600px; /* Limit the maximum width of each card */
+  flex: 1 1 calc(50% - 20px); /* Two columns with space between */
+  max-width: calc(50% - 20px); /* Ensures two columns with space for gap */
 }
 
-/* Adjustments for responsiveness */
+/* Adjustments for responsiveness while maintaining two columns */
+@media (max-width: 1024px) {
+  .scrollbar-item {
+    flex: 1 1 calc(50% - 20px); /* Adjust for medium screens */
+    max-width: calc(50% - 20px);
+  }
+}
+
 @media (max-width: 768px) {
-  .blog-card {
+  .scrollbar-item {
+    flex: 1 1 calc(50% - 20px); /* Maintain two columns on smaller screens */
+    max-width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .scrollbar-item {
+    flex: 1 1 100%; /* Full-width on very small screens */
     max-width: 100%;
   }
-  
-  .has-scrollbar {
-    flex-direction: column; /* Stack cards vertically on small screens */
-    gap: 20px; /* Space between stacked cards */
-  }
 }
-
 
 
 /*-----------------------------------*\
