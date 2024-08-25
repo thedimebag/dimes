@@ -148,14 +148,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 // ADDING THE ADD TTO CART BUTTON JAVASCRIPT ON CARDS
-
 document.querySelectorAll('.card').forEach(card => {
+  const button = card.querySelector('.add-to-cart-btn');
+  
+  button.addEventListener('click', () => {
+    // Change the button text to "ADDED"
+    button.textContent = 'ADDED';
+    
+    // After 1 second, revert the button text back to "Add to Cart"
+    setTimeout(() => {
+      button.textContent = 'Add to Cart';
+    }, 1000);
+  });
+  
   card.addEventListener('mouseover', () => {
-    card.querySelector('.add-to-cart-btn').style.display = 'block';
+    button.style.display = 'block';
   });
   
   card.addEventListener('mouseout', () => {
-    card.querySelector('.add-to-cart-btn').style.display = 'none';
+    button.style.display = 'none';
   });
 });
 
@@ -166,6 +177,7 @@ document.addEventListener('click', (e) => {
     });
   }
 });
+
 
 
 
