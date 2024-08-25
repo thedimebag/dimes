@@ -3,6 +3,7 @@
 document.addEventListener('DOMContentLoaded', function () {
   const cartList = document.getElementById('cart-list');
   const cartTotal = document.getElementById('cart-total');
+  const generalCardImage = './assets/images/general-card.png'; // Path to your general card image
 
   // Get cart items from localStorage
   const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
@@ -10,7 +11,6 @@ document.addEventListener('DOMContentLoaded', function () {
   // Function to update the cart total
   function updateCartTotal() {
     const total = cartItems.reduce((sum, item) => {
-      // Extract the price value from the string (e.g., "Price $720")
       const price = parseFloat(item.price.replace(/[^0-9.-]+/g, ""));
       return sum + price;
     }, 0);
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
       cartItem.className = 'cart-item';
       
       cartItem.innerHTML = `
-        <img src="${item.image}" alt="${item.title}">
+        <img src="${generalCardImage}" alt="General Card">
         <div class="cart-item-info">
           <div class="card-title">${item.title}</div>
           <div class="card-description">${item.description}</div>
@@ -45,5 +45,12 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function checkout() {
+
+
+
+
+
+
+  
   alert('Checkout functionality not implemented yet.');
 }
