@@ -147,4 +147,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+// ADDING THE ADD TTO CART BUTTON JAVASCRIPT ON CARDS
+
+document.querySelectorAll('.card').forEach(card => {
+  card.addEventListener('mouseover', () => {
+    card.querySelector('.add-to-cart-btn').style.display = 'block';
+  });
+  
+  card.addEventListener('mouseout', () => {
+    card.querySelector('.add-to-cart-btn').style.display = 'none';
+  });
+});
+
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('.card')) {
+    document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+      button.style.display = 'none';
+    });
+  }
+});
+
+
 
