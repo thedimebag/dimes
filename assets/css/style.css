@@ -641,28 +641,17 @@ body {
   #BLOG
 \*-----------------------------------*/
 
-.blog {
-  padding-block-start: 0;
-}
+.blog { padding-block-start: 0; }
 
-.blog .section-text {
-  margin-block: 15px 50px;
-}
+.blog .section-text { margin-block: 15px 50px; }
 
 .blog-card {
   text-align: center;
   border: 1px solid var(--white-1);
   padding: 10px;
-  display: flex; /* Make sure the card is a flex container */
-  flex-direction: column; /* Arrange children in a column */
-  height: 100%; /* Ensure card takes full height of the container */
-  box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
-.blog-card .card-content {
-  padding: 0 15px 10px;
-  flex: 1; /* Allow card content to expand and fill the remaining space */
-}
+.blog-card .card-content { padding: 0 15px 10px; }
 
 .blog-card .h3 {
   font-size: var(--fs-4);
@@ -670,13 +659,9 @@ body {
   margin-block: 25px 20px;
 }
 
-.blog-card .card-title {
-  transition: var(--transition-1);
-}
+.blog-card .card-title { transition: var(--transition-1); }
 
-.blog-card .card-title:is(:hover, :focus) {
-  color: var(--maximum-blue-green);
-}
+.blog-card .card-title:is(:hover, :focus) { color: var(--maximum-blue-green); }
 
 .blog-card .card-meta-list {
   display: flex;
@@ -696,9 +681,7 @@ body {
   transition: var(--transition-1);
 }
 
-.blog-card a.meta-link:is(:hover, :focus) {
-  color: var(--maximum-blue-green);
-}
+.blog-card a.meta-link:is(:hover, :focus) { color: var(--maximum-blue-green); }
 
 .blog-card .meta-item:not(:last-child)::after {
   content: "/";
@@ -716,51 +699,8 @@ body {
   padding-block: 12px;
 }
 
-/* Flexbox for centering and spacing the cards */
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 
-.has-scrollbar {
-  display: flex;
-  flex-wrap: wrap; /* Allow wrapping to handle smaller screens */
-  gap: 20px; /* Space between cards */
-}
 
-/* Ensuring only blog card links are centered */
-.blog-card a {
-  text-align: center; /* Center text inside blog card links */
-}
-
-/* Ensure the cards stay in two columns */
-.scrollbar-item {
-  flex: 1 1 calc(50% - 20px); /* Two columns with space between */
-  max-width: calc(50% - 20px); /* Ensures two columns with space for gap */
-}
-
-/* Adjustments for responsiveness while maintaining two columns */
-@media (max-width: 1024px) {
-  .scrollbar-item {
-    flex: 1 1 calc(50% - 20px); /* Adjust for medium screens */
-    max-width: calc(50% - 20px);
-  }
-}
-
-@media (max-width: 768px) {
-  .scrollbar-item {
-    flex: 1 1 calc(50% - 20px); /* Maintain two columns on smaller screens */
-    max-width: calc(50% - 20px);
-  }
-}
-
-@media (max-width: 480px) {
-  .scrollbar-item {
-    flex: 1 1 100%; /* Full-width on very small screens */
-    max-width: 100%;
-  }
-}
 
 
 /*-----------------------------------*\
