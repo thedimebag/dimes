@@ -638,20 +638,31 @@ body {
 
 
 /*-----------------------------------*\
-  #BLOG
+  #BLOG JUST EDITED
 \*-----------------------------------*/
 
-.blog { padding-block-start: 0; }
+.blog {
+  padding-block-start: 0;
+}
 
-.blog .section-text { margin-block: 15px 50px; }
+.blog .section-text {
+  margin-block: 15px 50px;
+}
 
 .blog-card {
   text-align: center;
   border: 1px solid var(--white-1);
   padding: 10px;
+  display: flex; /* Make sure the card is a flex container */
+  flex-direction: column; /* Arrange children in a column */
+  height: 100%; /* Ensure card takes full height of the container */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
-.blog-card .card-content { padding: 0 15px 10px; }
+.blog-card .card-content {
+  padding: 0 15px 10px;
+  flex: 1; /* Allow card content to expand and fill the remaining space */
+}
 
 .blog-card .h3 {
   font-size: var(--fs-4);
@@ -659,9 +670,13 @@ body {
   margin-block: 25px 20px;
 }
 
-.blog-card .card-title { transition: var(--transition-1); }
+.blog-card .card-title {
+  transition: var(--transition-1);
+}
 
-.blog-card .card-title:is(:hover, :focus) { color: var(--maximum-blue-green); }
+.blog-card .card-title:is(:hover, :focus) {
+  color: var(--maximum-blue-green);
+}
 
 .blog-card .card-meta-list {
   display: flex;
@@ -681,7 +696,9 @@ body {
   transition: var(--transition-1);
 }
 
-.blog-card a.meta-link:is(:hover, :focus) { color: var(--maximum-blue-green); }
+.blog-card a.meta-link:is(:hover, :focus) {
+  color: var(--maximum-blue-green);
+}
 
 .blog-card .meta-item:not(:last-child)::after {
   content: "/";
@@ -699,7 +716,36 @@ body {
   padding-block: 12px;
 }
 
+/* Ensure the container and scrollbar items are flex containers */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.has-scrollbar {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Add space between cards */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.scrollbar-item {
+  flex: 1;
+  max-width: 600px; /* Limit the maximum width of each card */
+}
+
+/* Adjustments for responsiveness */
+@media (max-width: 768px) {
+  .blog-card {
+    max-width: 100%;
+  }
+  
+  .has-scrollbar {
+    flex-direction: column; /* Stack cards vertically on small screens */
+    gap: 20px; /* Space between stacked cards */
+  }
+}
 
 
 
