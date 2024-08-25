@@ -1392,3 +1392,24 @@ body {
 
 
 
+/*ADDING THE ADD TO CART BUTTON ON EACH CARD*/
+.add-to-cart-btn {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #00619e;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: none; /* Hide the button by default */
+}
+
+.card:hover .add-to-cart-btn,
+.card:focus-within .add-to-cart-btn {
+  display: block; /* Show the button on hover or focus */
+}
+
+
