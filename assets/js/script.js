@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * add event on elements
+ * Add event on elements
  */
 const addEventOnElem = function (elem, type, callback) {
   if (elem.length > 1) {
@@ -14,7 +14,7 @@ const addEventOnElem = function (elem, type, callback) {
 }
 
 /**
- * navbar toggle
+ * Navbar toggle
  */
 const navbar = document.querySelector("[data-navbar]");
 const navTogglers = document.querySelectorAll("[data-nav-toggler]");
@@ -28,7 +28,7 @@ const toggleNavbar = function () {
 addEventOnElem(navTogglers, "click", toggleNavbar);
 
 /**
- * active header & back top btn when window scroll down to 100px
+ * Active header & back top btn when window scroll down to 100px
  */
 const header = document.querySelector("[data-header]");
 const backTopBtn = document.querySelector("[data-back-top-btn]");
@@ -46,7 +46,7 @@ const activeElemOnScroll = function () {
 addEventOnElem(window, "scroll", activeElemOnScroll);
 
 /**
- * filter functionality
+ * Filter functionality
  */
 const filterBtn = document.querySelectorAll("[data-filter-btn]");
 const filterItems = document.querySelectorAll("[data-filter]");
@@ -58,88 +58,85 @@ const filter = function () {
   this.classList.add("active");
   lastClickedBtn = this;
 
-  for (let i = 0; i < filterItems.length; i++) {
-    if (filterItems[i].dataset.filter === this.dataset.filterBtn) {
-      filterItems[i].style.display = "block";
+  filterItems.forEach(item => {
+    if (item.dataset.filter === this.dataset.filterBtn) {
+      item.style.display = "block";
     } else {
-      filterItems[i].style.display = "none";
+      item.style.display = "none";
     }
-  }
+  });
 }
 
 addEventOnElem(filterBtn, "click", filter);
 
 /**
- * carousel test functionality and scroll
+ * Carousel functionality
  */
 document.addEventListener('DOMContentLoaded', function () {
-    const carousel = document.querySelector('.carousel');
-    const cardWidth = carousel.querySelector('.card').offsetWidth;
-    const scrollSpeed = 1; // Scroll speed in pixels per frame
+  const carousel = document.querySelector('.carousel');
+  if (!carousel) return;
 
-    // Duplicate the carousel content for seamless loop
-    const firstCard = carousel.firstElementChild.cloneNode(true);
-    const lastCard = carousel.lastElementChild.cloneNode(true);
+  const cardWidth = carousel.querySelector('.card').offsetWidth;
+  const scrollSpeed = 1; // Scroll speed in pixels per frame
 
-    carousel.appendChild(firstCard);
-    carousel.insertBefore(lastCard, carousel.firstChild);
+  // Duplicate the carousel content for seamless loop
+  const firstCard = carousel.firstElementChild.cloneNode(true);
+  const lastCard = carousel.lastElementChild.cloneNode(true);
 
-    // Adjust the width of the carousel to fit all cards including the duplicates
-    const totalCards = carousel.children.length;
-    carousel.style.width = `${cardWidth * totalCards}px`;
+  carousel.appendChild(firstCard);
+  carousel.insertBefore(lastCard, carousel.firstChild);
 
-    let scrollPosition = 0;
-    let isScrolling = false;
+  // Adjust the width of the carousel to fit all cards including the duplicates
+  const totalCards = carousel.children.length;
+  carousel.style.width = `${cardWidth * totalCards}px`;
 
-    // Smooth scrolling effect
-    function scrollCarousel() {
-        if (isScrolling) {
-            scrollPosition += scrollSpeed;
-            carousel.scrollLeft = scrollPosition;
+  let scrollPosition = 0;
+  let isScrolling = false;
 
-            // Reset scroll position if it exceeds the width of the carousel
-            if (scrollPosition >= cardWidth * (totalCards - 1)) {
-                scrollPosition = 0;
-                carousel.scrollLeft = scrollPosition;
-            }
+  function scrollCarousel() {
+    if (isScrolling) {
+      scrollPosition += scrollSpeed;
+      carousel.scrollLeft = scrollPosition;
 
-            requestAnimationFrame(scrollCarousel); // Continue scrolling
-        }
+      if (scrollPosition >= cardWidth * (totalCards - 1)) {
+        scrollPosition = 0;
+        carousel.scrollLeft = scrollPosition;
+      }
+
+      requestAnimationFrame(scrollCarousel);
     }
+  }
 
-    // Start scrolling on user interaction
-    carousel.addEventListener('mousedown', () => {
-        isScrolling = true;
-        scrollCarousel();
-    });
+  carousel.addEventListener('mousedown', () => {
+    isScrolling = true;
+    scrollCarousel();
+  });
 
-    carousel.addEventListener('mouseup', () => {
-        isScrolling = false;
-    });
+  carousel.addEventListener('mouseup', () => {
+    isScrolling = false;
+  });
 
-    carousel.addEventListener('mouseleave', () => {
-        isScrolling = false;
-    });
+  carousel.addEventListener('mouseleave', () => {
+    isScrolling = false;
+  });
 
-    // Handle touch events for mobile devices
-    carousel.addEventListener('touchstart', () => {
-        isScrolling = true;
-        scrollCarousel();
-    });
+  carousel.addEventListener('touchstart', () => {
+    isScrolling = true;
+    scrollCarousel();
+  });
 
-    carousel.addEventListener('touchend', () => {
-        isScrolling = false;
-    });
+  carousel.addEventListener('touchend', () => {
+    isScrolling = false;
+  });
 });
 
 /**
- * Adding the add to cart button functionality
+ * Add to cart button functionality
  */
 document.querySelectorAll('.card').forEach(card => {
   const button = card.querySelector('.add-to-cart-btn');
   
   button.addEventListener('click', () => {
-    const cardImage = card.style.backgroundImage.slice(5, -2); // Extract URL from style
     const cardTitle = card.querySelector('.card-title').textContent;
     const cardDescription = card.querySelector('.card-description').textContent;
     const cardPrice = card.querySelector('.card-price').textContent;
@@ -150,7 +147,7 @@ document.querySelectorAll('.card').forEach(card => {
     // Check if item is already in the cart
     if (!cartItems.some(item => item.title === cardTitle)) {
       // Add new item to cart
-      cartItems.push({ image: cardImage, title: cardTitle, description: cardDescription, price: cardPrice });
+      cartItems.push({ title: cardTitle, description: cardDescription, price: cardPrice });
       localStorage.setItem('cartItems', JSON.stringify(cartItems));
       
       // Change the button text to "ADDED"
@@ -177,11 +174,11 @@ document.addEventListener('click', (e) => {
     document.querySelectorAll('.add-to-cart-btn').forEach(button => {
       button.style.display = 'none';
     });
-
-
-
-
-
-    
   }
 });
+
+
+
+
+
+
