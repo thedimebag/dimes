@@ -157,6 +157,9 @@ document.querySelectorAll('.card').forEach(card => {
       setTimeout(() => {
         button.textContent = 'Add to Cart';
       }, 1000);
+      
+      // Update the cart item count
+      updateCartCount();
     }
   });
   
@@ -176,6 +179,18 @@ document.addEventListener('click', (e) => {
     });
   }
 });
+
+/**
+ * Update the cart count
+ */
+function updateCartCount() {
+  const cartCountElem = document.querySelector('.header-action-btn.cart-btn .span');
+  const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+  cartCountElem.textContent = cartItems.length;
+}
+
+// Update cart count on page load
+document.addEventListener('DOMContentLoaded', updateCartCount);
 
 
 
