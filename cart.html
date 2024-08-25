@@ -22,8 +22,6 @@
   <link rel="preload" as="image" href="./assets/images/hero-banner.png">
   <link rel="preload" as="image" href="./assets/images/hero-bg.jpg">
   
-  
-  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 </head>
@@ -64,7 +62,7 @@
 
         <nav class="navbar">
 
-          <button class="nav-close-btn" data-nav-toggler aria-label="clsoe menu" title="Close Menu">
+          <button class="nav-close-btn" data-nav-toggler aria-label="close menu" title="Close Menu">
             <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
           </button>
 
@@ -108,14 +106,8 @@
     <div class="overlay" data-overlay data-nav-toggler></div>
   </header>
 
-
-
   <main>
     <article>
-
-    <!-- 
-        - #OFFER ABOVE CARDS
-      -->
       <p><br> <br> <br></p>
       <section class="section offer has-bg-image" aria-label="special offer"
         style="background-image: url('./assets/images/section-bg.jpg')">
@@ -129,26 +121,18 @@
         </div>
       </section>
 
-  <div class="cart-container">
-    <h1>Your Cart</h1>
-    <div id="cart-list"></div>
-    <div class="total-container">
-      <div>Total:</div>
-      <div id="cart-total">$0.00</div>
-    </div>
-    <br><br>
-    <button class="checkout-btn" onclick="checkout()">Checkout</button>
-  </div>
-
-  <script src="./assets/js/script.js" defer></script>
-  <script src="./assets/js/cart.js" defer></script> 
-
-
-
-
-  <!-- 
-    - #FOOTER
-  -->
+      <div class="cart-container">
+        <h1>Your Cart</h1>
+        <div id="cart-list"></div>
+        <div class="total-container">
+          <div>Total:</div>
+          <div id="cart-total">$0.00</div>
+        </div>
+        <br><br>
+        <button class="checkout-btn" onclick="checkout()">Checkout</button>
+      </div>
+    </article>
+  </main>
 
   <footer class="footer has-bg-image" style="background-image: url('./assets/images/section-bg.jpg')">
 
@@ -179,7 +163,6 @@
             </li>
           </ul>
 
-          
         </div>
 
         <ul class="footer-list">
@@ -210,7 +193,6 @@
 
         </ul>
 
-        
       </div>
     </div>
 
@@ -221,26 +203,27 @@
           Copyright 2022 | Made By A Hustler.
         </p>
 
-        <img src="./assets/images/payment-mehtod.png" width="311" height="30" loading="lazy" alt="Payment method"
+        <img src="./assets/images/payment-method.png" width="311" height="30" loading="lazy" alt="Payment method"
           class="w-100">
 
       </div>
     </div>
 
   </footer>
-      
 
-  <!-- 
-    - custom js link
-  -->
+  <!-- Custom JS -->
   <script src="./assets/js/script.js" defer></script>
+  <script src="./assets/js/cart.js" defer></script>
 
-  <!-- 
-    - ionicon link
-  -->
+  <!-- Ionicons -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 </body>
 
 </html>
+
+
+
+
+
