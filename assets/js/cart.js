@@ -3,10 +3,11 @@
 document.addEventListener('DOMContentLoaded', function () {
   const cartList = document.getElementById('cart-list');
   const cartTotal = document.getElementById('cart-total');
+  const emptyCartMessage = document.getElementById('empty-cart-message'); // Element for the empty cart message
   const generalCardImage = './assets/images/general-card.png'; // Path to your general card image
 
-  // Check if cartList and cartTotal elements exist
-  if (!cartList || !cartTotal) {
+  // Check if cartList, cartTotal, and emptyCartMessage elements exist
+  if (!cartList || !cartTotal || !emptyCartMessage) {
     console.error('Cart elements not found.');
     return;
   }
@@ -30,21 +31,26 @@ document.addEventListener('DOMContentLoaded', function () {
   function renderCartItems() {
     cartList.innerHTML = '';
 
-    cartItems.forEach(item => {
-      const cartItem = document.createElement('div');
-      cartItem.className = 'cart-item';
-      
-      cartItem.innerHTML = `
-        <img src="${generalCardImage}" alt="General Card">
-        <div class="cart-item-info">
-          <div class="card-title">${item.title}</div>
-          <div class="card-description">${item.description}</div>
-          <div class="card-price">${item.price}</div>
-        </div>
-      `;
-      
-      cartList.appendChild(cartItem);
-    });
+    if (cartItems.length === 0) {
+      emptyCartMessage.style.display = 'block'; // Show the empty cart message
+    } else {
+      emptyCartMessage.style.display = 'none'; // Hide the empty cart message
+      cartItems.forEach(item => {
+        const cartItem = document.createElement('div');
+        cartItem.className = 'cart-item';
+        
+        cartItem.innerHTML = `
+          <img src="${generalCardImage}" alt="General Card">
+          <div class="cart-item-info">
+            <div class="card-title">${item.title}</div>
+            <div class="card-description">${item.description}</div>
+            <div class="card-price">${item.price}</div>
+          </div>
+        `;
+        
+        cartList.appendChild(cartItem);
+      });
+    }
 
     updateCartTotal();
   }
@@ -58,7 +64,6 @@ document.addEventListener('DOMContentLoaded', function () {
 function checkout() {
   alert('Checkout functionality not implemented yet.');
 }
-
 
 
 
