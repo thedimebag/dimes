@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function () {
  */
 document.querySelectorAll('.card').forEach(card => {
   const button = card.querySelector('.add-to-cart-btn');
-  
+
   button.addEventListener('click', () => {
     const cardTitle = card.querySelector('.card-title').textContent;
     const cardDescription = card.querySelector('.card-description').textContent;
@@ -149,11 +149,11 @@ document.querySelectorAll('.card').forEach(card => {
       // Add new item to cart
       cartItems.push({ title: cardTitle, description: cardDescription, price: cardPrice });
       localStorage.setItem('cartItems', JSON.stringify(cartItems));
-      
+
       // Change the button text to "ADDED"
       button.textContent = 'ADDED';
       
-      // After 1 second, revert the button text back to "Add to Cart"
+      // Revert the button text back to "Add to Cart" after 1 second
       setTimeout(() => {
         button.textContent = 'Add to Cart';
       }, 1000);
@@ -162,11 +162,11 @@ document.querySelectorAll('.card').forEach(card => {
       updateCartCount();
     }
   });
-  
+
   card.addEventListener('mouseover', () => {
     button.style.display = 'block';
   });
-  
+
   card.addEventListener('mouseout', () => {
     button.style.display = 'none';
   });
