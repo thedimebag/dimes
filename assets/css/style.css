@@ -770,18 +770,17 @@ body {
   font-size: 25px;
   padding: 10px;
   border-radius: var(--radius-circle);
-  transition: var(--transition-1);
+  transition: opacity 0.3s ease, transform 0.3s ease;
   opacity: 0;
   visibility: hidden;
   z-index: 3;
 }
 
 .back-top-btn.active {
-  transform: translateY(10px);
   opacity: 1;
   visibility: visible;
+  transform: translateY(-10px); /* Optionally, adjust based on your design */
 }
-
 
 
 
