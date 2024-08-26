@@ -1460,3 +1460,53 @@ body {
 }
 
 
+/*HEADE CODE TEMP*/
+
+/* Header styles */
+.header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #fff;
+  padding: 0;
+  margin: 0;
+}
+
+.header-top, .header-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+}
+
+.header-top {
+  height: 60px; /* Adjust as needed */
+}
+
+.header-bottom {
+  height: 50px; /* Adjust as needed */
+}
+
+.container {
+  padding-inline: 0;
+}
+
+/* Hero section styling */
+.hero {
+  margin-top: 60px; /* Matches the height of the header */
+  padding-top: 20px; /* Optional padding */
+}
+
+/* Reset margins and paddings for header elements */
+.header * {
+  margin: 0;
+  padding: 0;
+}
+
+.header .logo, .header .input-wrapper, .header .header-action {
+  margin: 0;
+  padding: 0;
+}
+
