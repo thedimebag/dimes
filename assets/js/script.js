@@ -70,16 +70,25 @@ document.addEventListener('DOMContentLoaded', function () {
   const carousel = document.querySelector('.carousel');
   if (!carousel) return;
 
-  // Basic scroll functionality without duplicating cards
-  const cardWidth = carousel.querySelector('.card').offsetWidth;
-  carousel.style.scrollSnapType = 'x mandatory'; // Enable snap scrolling
-  carousel.style.overflowX = 'auto'; // Allow horizontal scrolling
+  // Remove any existing clone nodes from previous runs
+  while (carousel.firstChild && carousel.firstChild.classList.contains('clone')) {
+    carousel.removeChild(carousel.firstChild);
+  }
 
+  const scrollSpeed = 1; // Scroll speed in pixels per frame
+  let scrollPosition = 0;
   let isScrolling = false;
 
   function scrollCarousel() {
     if (isScrolling) {
-      carousel.scrollLeft += 1; // Adjust scrolling speed here
+      scrollPosition += scrollSpeed;
+      carousel.scrollLeft = scrollPosition;
+
+      // If the scroll position is greater than the scroll width, reset it
+      if (scrollPosition >= carousel.scrollWidth - carousel.clientWidth) {
+        scrollPosition = 0;
+      }
+
       requestAnimationFrame(scrollCarousel);
     }
   }
@@ -186,14 +195,10 @@ document.addEventListener('DOMContentLoaded', updateCartCount);
 
 // Add event listener to the cart button to navigate to cart.html
 document.addEventListener('DOMContentLoaded', function () {
-  const cartBtn = document.querySelector("[data-back-top-btn]");
+  const cartBtn = document.querySelector('.header-action-btn.cart-btn'); // Correct selector
   if (cartBtn) {
     cartBtn.addEventListener('click', function () {
       window.location.href = 'cart.html';
     });
   }
 });
-
-
-
-
