@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function () {
  */
 document.querySelectorAll('.card').forEach(card => {
   const button = card.querySelector('.add-to-cart-btn');
-  
+
   if (!button) {
     console.error('Add to Cart button not found.');
     return;
@@ -158,24 +158,24 @@ document.querySelectorAll('.card').forEach(card => {
       // Add new item to cart
       cartItems.push({ title: cardTitle, description: cardDescription, price: cardPrice });
       localStorage.setItem('cartItems', JSON.stringify(cartItems));
-      
+
       // Change the button text to "ADDED"
       button.textContent = 'ADDED';
-      
+
       // After 1 second, revert the button text back to "Add to Cart"
       setTimeout(() => {
         button.textContent = 'Add to Cart';
       }, 1000);
-      
+
       // Update the cart item count
       updateCartCount();
     }
   });
-  
+
   card.addEventListener('mouseover', () => {
     button.style.display = 'block';
   });
-  
+
   card.addEventListener('mouseout', () => {
     button.style.display = 'none';
   });
@@ -204,6 +204,16 @@ function updateCartCount() {
 
 // Update cart count on page load
 document.addEventListener('DOMContentLoaded', updateCartCount);
+
+// Add event listener to the cart button to navigate to cart.html
+document.addEventListener('DOMContentLoaded', function () {
+  const cartBtn = document.querySelector('.header-action-btn.cart-btn');
+  if (cartBtn) {
+    cartBtn.addEventListener('click', function () {
+      window.location.href = 'cart.html';
+    });
+  }
+});
 
 
 
