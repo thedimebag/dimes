@@ -70,33 +70,16 @@ document.addEventListener('DOMContentLoaded', function () {
   const carousel = document.querySelector('.carousel');
   if (!carousel) return;
 
+  // Basic scroll functionality without duplicating cards
   const cardWidth = carousel.querySelector('.card').offsetWidth;
-  const scrollSpeed = 1; // Scroll speed in pixels per frame
+  carousel.style.scrollSnapType = 'x mandatory'; // Enable snap scrolling
+  carousel.style.overflowX = 'auto'; // Allow horizontal scrolling
 
-  // Duplicate the carousel content for seamless loop
-  const firstCard = carousel.firstElementChild.cloneNode(true);
-  const lastCard = carousel.lastElementChild.cloneNode(true);
-
-  carousel.appendChild(firstCard);
-  carousel.insertBefore(lastCard, carousel.firstChild);
-
-  // Adjust the width of the carousel to fit all cards including the duplicates
-  const totalCards = carousel.children.length;
-  carousel.style.width = `${cardWidth * totalCards}px`;
-
-  let scrollPosition = 0;
   let isScrolling = false;
 
   function scrollCarousel() {
     if (isScrolling) {
-      scrollPosition += scrollSpeed;
-      carousel.scrollLeft = scrollPosition;
-
-      if (scrollPosition >= cardWidth * (totalCards - 1)) {
-        scrollPosition = 0;
-        carousel.scrollLeft = scrollPosition;
-      }
-
+      carousel.scrollLeft += 1; // Adjust scrolling speed here
       requestAnimationFrame(scrollCarousel);
     }
   }
@@ -210,5 +193,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
+
+
 
 
