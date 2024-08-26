@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function () {
  */
 document.querySelectorAll('.card').forEach(card => {
   const button = card.querySelector('.add-to-cart-btn');
-
+  
   if (!button) {
     console.error('Add to Cart button not found.');
     return;
@@ -154,22 +154,26 @@ document.querySelectorAll('.card').forEach(card => {
     const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
 
     // Check if item is already in the cart
-    if (!cartItems.some(item => item.title === cardTitle)) {
+    const itemIndex = cartItems.findIndex(item => item.title === cardTitle);
+    if (itemIndex === -1) {
       // Add new item to cart
       cartItems.push({ title: cardTitle, description: cardDescription, price: cardPrice });
       localStorage.setItem('cartItems', JSON.stringify(cartItems));
 
       // Change the button text to "ADDED"
       button.textContent = 'ADDED';
-
+      
       // After 1 second, revert the button text back to "Add to Cart"
       setTimeout(() => {
         button.textContent = 'Add to Cart';
       }, 1000);
-
-      // Update the cart item count
-      updateCartCount();
+    } else {
+      // Change the button text to "Already Added"
+      button.textContent = 'Already Added';
     }
+    
+    // Update the cart item count
+    updateCartCount();
   });
 
   card.addEventListener('mouseover', () => {
@@ -214,6 +218,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
+
 
 
 
