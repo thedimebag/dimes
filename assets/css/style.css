@@ -770,17 +770,18 @@ body {
   font-size: 25px;
   padding: 10px;
   border-radius: var(--radius-circle);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: var(--transition-1);
   opacity: 0;
   visibility: hidden;
   z-index: 3;
 }
 
 .back-top-btn.active {
+  transform: translateY(10px);
   opacity: 1;
   visibility: visible;
-  transform: translateY(-10px); /* Optionally, adjust based on your design */
 }
+
 
 
 
@@ -1459,54 +1460,4 @@ body {
   font-size: 1.2em;
 }
 
-
-/*HEADE CODE TEMP*/
-
-/* Header styles */
-.header {
-  position: sticky;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  background-color: #fff;
-  padding: 0;
-  margin: 0;
-}
-
-.header-top, .header-bottom {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0;
-  margin: 0;
-}
-
-.header-top {
-  height: 60px; /* Adjust as needed */
-}
-
-.header-bottom {
-  height: 50px; /* Adjust as needed */
-}
-
-.container {
-  padding-inline: 0;
-}
-
-/* Hero section styling */
-.hero {
-  margin-top: 60px; /* Matches the height of the header */
-  padding-top: 20px; /* Optional padding */
-}
-
-/* Reset margins and paddings for header elements */
-.header * {
-  margin: 0;
-  padding: 0;
-}
-
-.header .logo, .header .input-wrapper, .header .header-action {
-  margin: 0;
-  padding: 0;
-}
 
