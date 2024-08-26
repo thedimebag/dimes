@@ -5,11 +5,7 @@
  */
 const addEventOnElem = function (elem, type, callback) {
   if (elem instanceof NodeList || elem instanceof HTMLCollection) {
-    elem.forEach(e => {
-      if (e instanceof HTMLElement) {
-        e.addEventListener(type, callback);
-      }
-    });
+    elem.forEach(e => e.addEventListener(type, callback));
   } else if (elem instanceof HTMLElement) {
     elem.addEventListener(type, callback);
   }
@@ -35,7 +31,7 @@ addEventOnElem(navTogglers, "click", toggleNavbar);
 const header = document.querySelector("[data-header]");
 const backTopBtn = document.querySelector("[data-back-top-btn]");
 
-const activeElemOnScroll = function () {
+const toggleBackTopBtn = function () {
   if (window.scrollY > 100) {
     header.classList.add("active");
     backTopBtn.classList.add("active");
@@ -45,7 +41,7 @@ const activeElemOnScroll = function () {
   }
 }
 
-addEventOnElem(window, "scroll", activeElemOnScroll);
+addEventOnElem(window, "scroll", toggleBackTopBtn);
 
 /**
  * Filter functionality
@@ -61,11 +57,7 @@ const filter = function () {
   lastClickedBtn = this;
 
   filterItems.forEach(item => {
-    if (item.dataset.filter === this.dataset.filterBtn) {
-      item.style.display = "block";
-    } else {
-      item.style.display = "none";
-    }
+    item.style.display = item.dataset.filter === this.dataset.filterBtn ? "block" : "none";
   });
 }
 
@@ -211,14 +203,12 @@ document.addEventListener('DOMContentLoaded', updateCartCount);
 
 // Add event listener to the cart button to navigate to cart.html
 document.addEventListener('DOMContentLoaded', function () {
-  const cartBtn = document.querySelector('.header-action-btn.cart-btn');
+  const cartBtn = document.querySelector("[data-back-top-btn]");
   if (cartBtn) {
     cartBtn.addEventListener('click', function () {
       window.location.href = 'cart.html';
     });
   }
 });
-
-
 
 
