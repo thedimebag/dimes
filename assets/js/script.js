@@ -138,10 +138,17 @@ document.addEventListener('DOMContentLoaded', function () {
 document.querySelectorAll('.card').forEach(card => {
   const button = card.querySelector('.add-to-cart-btn');
   
+  if (!button) {
+    console.error('Add to Cart button not found.');
+    return;
+  }
+
   button.addEventListener('click', () => {
-    const cardTitle = card.querySelector('.card-title').textContent;
-    const cardDescription = card.querySelector('.card-description').textContent;
-    const cardPrice = card.querySelector('.card-price').textContent;
+    const cardTitle = card.querySelector('.card-title')?.textContent || 'No Title';
+    const cardDescription = card.querySelector('.card-description')?.textContent || 'No Description';
+    const cardPrice = card.querySelector('.card-price')?.textContent || '0';
+
+    console.log('Adding item to cart:', cardTitle, cardDescription, cardPrice); // Debug log
 
     // Get existing cart items from localStorage
     const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
@@ -188,12 +195,15 @@ document.addEventListener('click', (e) => {
 function updateCartCount() {
   const cartCountElem = document.querySelector('.header-action-btn.cart-btn .span');
   const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-  cartCountElem.textContent = cartItems.length;
+  if (cartCountElem) {
+    cartCountElem.textContent = cartItems.length;
+  } else {
+    console.error('Cart count element not found.');
+  }
 }
 
 // Update cart count on page load
 document.addEventListener('DOMContentLoaded', updateCartCount);
-
 
 
 
