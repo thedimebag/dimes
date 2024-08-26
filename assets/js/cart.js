@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Get cart items from localStorage
   const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+  console.log('Cart Items:', cartItems); // Debug cart items
 
   // Function to update the cart total
   function updateCartTotal() {
@@ -14,7 +15,6 @@ document.addEventListener('DOMContentLoaded', function () {
       const price = parseFloat(item.price.replace(/[^0-9.-]+/g, ""));
       return sum + price;
     }, 0);
-
     cartTotal.textContent = `$${total.toFixed(2)}`;
   }
 
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
     cartItems.forEach(item => {
       const cartItem = document.createElement('div');
       cartItem.className = 'cart-item';
-      
+
       cartItem.innerHTML = `
         <img src="${generalCardImage}" alt="General Card">
         <div class="cart-item-info">
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
           <div class="card-price">${item.price}</div>
         </div>
       `;
-      
+
       cartList.appendChild(cartItem);
     });
 
@@ -45,12 +45,10 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function checkout() {
-
-
-
-
-
-
-  
+  console.log('Checkout button clicked'); // Debug checkout button
   alert('Checkout functionality not implemented yet.');
 }
+
+
+
+
