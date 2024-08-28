@@ -28,6 +28,15 @@ document.addEventListener('DOMContentLoaded', function () {
     cartTotal.textContent = `$${total.toFixed(2)}`;
   }
 
+  // Function to get the appropriate image size based on screen width
+  function getImageSize() {
+    if (window.innerWidth <= 600) {
+      return '50px'; // Width for small screens
+    } else {
+      return '100px'; // Default width for larger screens
+    }
+  }
+
   // Render cart items
   function renderCartItems() {
     cartList.innerHTML = '';
@@ -39,9 +48,12 @@ document.addEventListener('DOMContentLoaded', function () {
       cartItems.forEach((item, index) => {
         const cartItem = document.createElement('div');
         cartItem.className = 'cart-item';
-        
+
+        // Set image size based on screen width
+        const imageSize = getImageSize();
+
         cartItem.innerHTML = `
-          <img src="${generalCardImage}" alt="General Card" style="border-radius: 10px; width: 100%; max-width: 150px; height: auto;">
+          <img src="${generalCardImage}" alt="General Card" style="border-radius: 10px; width: ${imageSize}; height: auto;">
           <div class="cart-item-info" style="color: red;">
             <div class="card-title">${item.title}</div>
             <div class="card-description">${item.description}</div>
@@ -49,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
           </div>
           <button class="remove-item" data-index="${index}">x</button>
         `;
-        
+
         cartList.appendChild(cartItem);
       });
     }
@@ -91,3 +103,7 @@ document.addEventListener('DOMContentLoaded', function () {
 function checkout() {
   alert('Checkout functionality not implemented yet.');
 }
+
+
+
+
