@@ -336,12 +336,12 @@ body {
 .header-contact-link { display: none; }
 
 .header {
-  position: absolute;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
   background-color: var(--xiketic);
-  z-index: 4;
+  z-index: 1000;
 }
 
 .header.active {
@@ -403,7 +403,7 @@ body {
   height: 100vh;
   background-color: var(--xiketic);
   border: 1px solid var(--white-1);
-  padding: 30px 5px;
+  padding: 10px 5px;
   z-index: 1;
   transition: 0.25s var(--cubic-in);
   visibility: hidden;
