@@ -5,9 +5,10 @@ document.addEventListener('DOMContentLoaded', function () {
   const cartTotal = document.getElementById('cart-total');
   const emptyCartMessage = document.getElementById('empty-cart-message'); // Element for the empty cart message
   const generalCardImage = './assets/images/general-card.png'; // Path to your general card image
+  const popupMessage = document.getElementById('popup-message');
 
-  // Check if cartList, cartTotal, and emptyCartMessage elements exist
-  if (!cartList || !cartTotal || !emptyCartMessage) {
+  // Check if cartList, cartTotal, emptyCartMessage, and popupMessage elements exist
+  if (!cartList || !cartTotal || !emptyCartMessage || !popupMessage) {
     console.error('Cart elements not found.');
     return;
   }
@@ -56,12 +57,23 @@ document.addEventListener('DOMContentLoaded', function () {
     updateCartTotal();
   }
 
+  // Function to show the popup message
+  function showPopup() {
+    popupMessage.style.display = 'block';
+    setTimeout(() => {
+      popupMessage.style.display = 'none';
+    }, 1000); // Hide popup after 1 second
+  }
+
   // Function to remove item from cart
   function removeCartItem(index) {
     const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
     cartItems.splice(index, 1);
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
-    renderCartItems(); // Re-render the cart items
+    showPopup(); // Show the popup message
+    setTimeout(() => {
+      renderCartItems(); // Re-render the cart items after 1 second
+    }, 1000); // Wait 1 second before re-rendering
   }
 
   // Handle remove button click
