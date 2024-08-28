@@ -57,12 +57,13 @@ document.addEventListener('DOMContentLoaded', function () {
     updateCartTotal();
   }
 
-  // Function to show the popup message
-  function showPopup() {
+  // Function to show the popup message and reload the page
+  function showPopupAndReload() {
     popupMessage.style.display = 'block';
     setTimeout(() => {
       popupMessage.style.display = 'none';
-    }, 1000); // Hide popup after 1 second
+      location.reload(); // Reload the page after 1 second
+    }, 1000); // Show popup for 1 second
   }
 
   // Function to remove item from cart
@@ -70,10 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
     cartItems.splice(index, 1);
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
-    showPopup(); // Show the popup message
-    setTimeout(() => {
-      renderCartItems(); // Re-render the cart items after 1 second
-    }, 1000); // Wait 1 second before re-rendering
+    showPopupAndReload(); // Show the popup message and reload the page
   }
 
   // Handle remove button click
