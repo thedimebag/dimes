@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const cartList = document.getElementById('cart-list');
   const cartTotal = document.getElementById('cart-total');
   const emptyCartMessage = document.getElementById('empty-cart-message'); // Element for the empty cart message
-  const generalCardImage = './assets/images/general-card.png'; // Path to your general card image
+  const generalCardImage = './assets/images/general-card.png'; // Path to your general card imagE
   const popupMessage = document.getElementById('popup-message');
 
   // Check if cartList, cartTotal, emptyCartMessage, and popupMessage elements exist
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Function to get the appropriate image size based on screen width
   function getImageSize() {
     if (window.innerWidth <= 600) {
-      return '50px'; // Width for small screens
+      return '80px'; // Width for small screens
     } else {
       return '100px'; // Default width for larger screens
     }
