@@ -41,8 +41,8 @@ document.addEventListener('DOMContentLoaded', function () {
         cartItem.className = 'cart-item';
         
         cartItem.innerHTML = `
-          <img src="${generalCardImage}" alt="General Card">
-          <div class="cart-item-info">
+          <img src="${generalCardImage}" alt="General Card" style="border-radius: 10px; width: 100%; max-width: 150px; height: auto;">
+          <div class="cart-item-info" style="color: red;">
             <div class="card-title">${item.title}</div>
             <div class="card-description">${item.description}</div>
             <div class="card-price">${item.price}</div>
