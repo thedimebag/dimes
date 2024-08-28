@@ -53,6 +53,24 @@
     .cart-item-info {
       margin-left: 50px; /* Adjust based on the size of your remove button */
     }
+
+    /* Popup styles */
+    .popup-message {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      display: none;
+      z-index: 1000;
+    }
+    
+    .popup-message p {
+      margin: 0;
+    }
   </style>
 
 </head>
@@ -240,6 +258,11 @@
 
       </div>
     </div>
+
+   <!-- Popup for item removed confirmation -->
+      <div id="popup-message" class="popup-message">
+        <p>1 ITEM REMOVED SUCCESSFULLY! </p>
+      </div>
 
   </footer>
 
