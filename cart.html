@@ -23,7 +23,7 @@
   <link rel="preload" as="image" href="./assets/images/hero-bg.jpg">
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  
+
   <style>
     .cart-item {
       position: relative;
@@ -31,6 +31,15 @@
       border-bottom: 1px solid #ddd;
       display: flex;
       align-items: center;
+      border-radius: 10px; /* Add border radius */
+      background-color: #f9f9f9; /* Background color for contrast */
+    }
+
+    .cart-item img {
+      border-radius: 10px; /* Maintain the border radius for the image */
+      width: 100%;
+      max-width: 150px; /* Max width for image */
+      height: auto; /* Maintain aspect ratio */
     }
 
     .remove-item {
@@ -52,6 +61,7 @@
     
     .cart-item-info {
       margin-left: 50px; /* Adjust based on the size of your remove button */
+      color: red; /* Red color for text */
     }
 
     /* Popup styles */
@@ -70,6 +80,18 @@
     
     .popup-message p {
       margin: 0;
+    }
+
+    /* Responsive styling for smaller devices */
+    @media (max-width: 600px) {
+      .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .cart-item img {
+        max-width: 100%; /* Allow image to take full width on smaller devices */
+      }
     }
   </style>
 
@@ -254,10 +276,10 @@
       </div>
     </div>
 
-   <!-- Popup for item removed confirmation -->
-      <div id="popup-message" class="popup-message">
-        <p>1 ITEM REMOVED SUCCESSFULLY! </p>
-      </div>
+    <!-- Popup for item removed confirmation -->
+    <div id="popup-message" class="popup-message">
+      <p>1 ITEM REMOVED SUCCESSFULLY! </p>
+    </div>
 
   </footer>
 
