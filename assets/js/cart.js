@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
       emptyCartMessage.style.display = 'block'; // Show the empty cart message
     } else {
       emptyCartMessage.style.display = 'none'; // Hide the empty cart message
-      cartItems.forEach(item => {
+      cartItems.forEach((item, index) => {
         const cartItem = document.createElement('div');
         cartItem.className = 'cart-item';
         
@@ -46,6 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <div class="card-description">${item.description}</div>
             <div class="card-price">${item.price}</div>
           </div>
+          <button class="remove-item" data-index="${index}">x</button>
         `;
         
         cartList.appendChild(cartItem);
@@ -54,6 +55,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
     updateCartTotal();
   }
+
+  // Function to remove item from cart
+  function removeCartItem(index) {
+    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+    cartItems.splice(index, 1);
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    renderCartItems(); // Re-render the cart items
+  }
+
+  // Handle remove button click
+  cartList.addEventListener('click', function (e) {
+    if (e.target.classList.contains('remove-item')) {
+      const index = e.target.getAttribute('data-index');
+      removeCartItem(index);
+    }
+  });
 
   renderCartItems();
 });
@@ -64,6 +81,3 @@ document.addEventListener('DOMContentLoaded', function () {
 function checkout() {
   alert('Checkout functionality not implemented yet.');
 }
-
-
-
