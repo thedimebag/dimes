@@ -81,17 +81,13 @@
     .popup-message p {
       margin: 0;
     }
-
-   /* Responsive styling for smaller devices */
+/* Responsive styling for smaller devices */
     @media (max-width: 600px) {
       .cart-item {
         flex-direction: row; /* Maintain horizontal layout */
         align-items: center;
         padding: 5px; /* Ensure compactness */
-      }
-
-      .cart-item img {
-        max-width: 30px; /* Further reduced image size */
+        background-size: 50px auto; /* Adjust size of background image for mobile */
       }
 
       .cart-item-info {
@@ -103,7 +99,7 @@
       }
 
       .remove-item {
-        top: 10px; /* Adjust position for compact layout */
+        top: 5px; /* Adjust position for compact layout */
         right: 5px;
         width: 18px; /* Maintain smaller button size */
         height: 18px;
