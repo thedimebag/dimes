@@ -82,17 +82,35 @@
       margin: 0;
     }
 
-    /* Responsive styling for smaller devices */
+   /* Responsive styling for smaller devices */
     @media (max-width: 600px) {
       .cart-item {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row; /* Maintain horizontal layout */
+        align-items: center;
+        padding: 5px; /* Ensure compactness */
       }
 
       .cart-item img {
-        max-width: 60px; /* Allow image to take full width on smaller devices */
+        max-width: 50px; /* Further reduced image size */
+      }
+
+      .cart-item-info {
+        margin-left: 5px; /* Minimal margin to fit content */
+        font-size: 12px; /* Smaller font size for mobile */
+        overflow: hidden; /* Ensure text fits within container */
+        white-space: nowrap; /* Prevent text wrapping */
+        text-overflow: ellipsis; /* Add ellipsis if text overflows */
+      }
+
+      .remove-item {
+        top: 5px; /* Adjust position for compact layout */
+        right: 5px;
+        width: 18px; /* Maintain smaller button size */
+        height: 18px;
+        font-size: 12px; /* Smaller font size */
       }
     }
+    
   </style>
 
 </head>
