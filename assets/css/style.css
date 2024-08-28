@@ -729,7 +729,6 @@ body {
   font-size: var(--fs-5);
   font-family: var(--ff-jost);
   font-weight: var(--fw-700);
-  margin-block-end: 15px;
 }
 
 .footer-link {
