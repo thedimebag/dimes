@@ -1,10 +1,8 @@
-
 /*-----------------------------------*\
   #CUSTOM PROPERTY
 \*-----------------------------------*/
 
 :root {
-
   /**
    * colors
    */
@@ -64,12 +62,7 @@
   --cubic-in: cubic-bezier(0.51, 0.03, 0.64, 0.28);
   --cubic-out: cubic-bezier(0.33, 0.85, 0.4, 0.96);
   --cubic-anim: cubic-bezier(0.455, 0.030, 0.515, 0.955);
-
 }
-
-
-
-
 
 /*-----------------------------------*\
   #RESET
@@ -128,6 +121,7 @@ body {
   color: var(--white-1);
   font-size: 1.6rem;
   line-height: 1.5;
+  overflow-x: hidden; /* Prevent horizontal overflow on the body */
 }
 
 :focus-visible { outline-offset: 4px; }
@@ -140,15 +134,14 @@ body {
 
 ::-webkit-scrollbar-thumb:hover { background-color: hsl(0, 0%, 70%); }
 
-
-
-
-
 /*-----------------------------------*\
   #REUSED STYLE
 \*-----------------------------------*/
 
-.container { padding-inline: 15px; }
+.container {
+  padding-inline: 15px;
+  overflow-x: hidden; /* Prevent horizontal overflow */
+}
 
 .section { padding-block: var(--section-padding); }
 
@@ -207,10 +200,7 @@ body {
 
 .w-100 { width: 100%; }
 
-.grid-list {
-  display: grid;
-  gap: 20px;
-}
+.grid-list { display: grid; gap: 20px; }
 
 .section-title,
 .section-text { text-align: center; }
@@ -303,9 +293,10 @@ body {
   display: flex;
   gap: 10px;
   overflow-x: auto;
-  scroll-snap-type: inline mandatory;
+  scroll-snap-type: x mandatory; /* Make horizontal scrolling snap */
   padding-block-end: 20px;
   margin-block-end: -20px;
+  -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
 }
 
 .scrollbar-item {
@@ -313,20 +304,21 @@ body {
   scroll-snap-align: start;
 }
 
-.has-scrollbar::-webkit-scrollbar { height: 10px; }
+.has-scrollbar::-webkit-scrollbar {
+  height: 10px; /* Adjust height for horizontal scrollbar */
+}
 
 .has-scrollbar::-webkit-scrollbar-track {
   background-color: transparent;
-  border: 1px solid var(--white-1);
 }
 
-.has-scrollbar::-webkit-scrollbar-thumb { background-color: var(--white-1); }
+.has-scrollbar::-webkit-scrollbar-thumb {
+  background-color: var(--white-1);
+}
 
-.has-scrollbar::-webkit-scrollbar-button { width: 10%; }
-
-
-
-
+.has-scrollbar::-webkit-scrollbar-button {
+  width: 10%;
+}
 
 /*-----------------------------------*\
   #HEADER
@@ -479,8 +471,6 @@ body {
   opacity: 1;
   pointer-events: all;
 }
-
-
 
 
 
