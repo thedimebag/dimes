@@ -202,3 +202,46 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
+
+// NEW FLOATING CART
+
+// Function to update the cart count
+function updateFloatingCartCount() {
+  const cartCountElem = document.querySelector('.floating-cart-btn .cart-count');
+  const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+  if (cartCountElem) {
+    cartCountElem.textContent = cartItems.length;
+  } else {
+    console.error('Cart count element not found.');
+  }
+}
+
+// Update the cart count on page load
+document.addEventListener('DOMContentLoaded', function () {
+  updateFloatingCartCount();
+
+  const floatingCartBtn = document.querySelector('.floating-cart-btn');
+  if (floatingCartBtn) {
+    floatingCartBtn.addEventListener('click', function () {
+      window.location.href = 'cart.html'; // Navigate to cart page
+    });
+  } else {
+    console.error('Floating cart button not found.');
+  }
+});
+
+// Update cart count whenever an item is added
+document.querySelectorAll('.card').forEach(card => {
+  const button = card.querySelector('.add-to-cart-btn');
+  
+  if (button) {
+    button.addEventListener('click', () => {
+      // Existing code to handle adding to cart...
+      // After updating the cart, update the floating cart count
+      updateFloatingCartCount();
+    });
+  }
+});
+
+
+
