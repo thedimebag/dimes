@@ -1405,16 +1405,18 @@ body {
 
 /*CARD GRID CSS*/
 /* Style for the new cards grid section */
-.cards-grid {
+/* Style for the new cards grid section */
+.new-cards-grid {
   padding: 2rem 0;
 }
 
-.cards-wrapper {
+.new-cards-wrapper {
   display: grid;
   gap: 1.5rem;
 }
 
-.card {
+/* New card styles */
+.new-card {
   background-size: cover;
   background-position: center;
   border: 1px solid #ddd;
@@ -1426,11 +1428,11 @@ body {
   text-align: center;
 }
 
-.card-info {
+.new-card-info {
   margin-bottom: 1rem;
 }
 
-.add-to-cart-btn {
+.new-add-to-cart-btn {
   background: #ff5722;
   color: #fff;
   border: none;
@@ -1439,16 +1441,15 @@ body {
   cursor: pointer;
 }
 
+/* Adjust layout for different screen sizes */
 @media (min-width: 768px) {
-  .cards-wrapper {
+  .new-cards-wrapper {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (min-width: 1200px) {
-  .cards-wrapper {
+  .new-cards-wrapper {
     grid-template-columns: repeat(3, 1fr);
   }
 }
-
-
