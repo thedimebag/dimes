@@ -118,10 +118,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+
 /**
  * Add to cart button functionality
  */
-
 
 document.querySelectorAll('.card').forEach(card => {
   const button = card.querySelector('.add-to-cart-btn');
@@ -131,6 +131,12 @@ document.querySelectorAll('.card').forEach(card => {
     return;
   }
 
+  // Create and insert the throbber into the button
+  const throbber = document.createElement('div');
+  throbber.className = 'throbber';
+  throbber.style.display = 'none';
+  button.appendChild(throbber);
+
   button.addEventListener('click', () => {
     const cardTitle = card.querySelector('.card-title')?.textContent || 'No Title';
     const cardDescription = card.querySelector('.card-description')?.textContent || 'No Description';
@@ -138,9 +144,9 @@ document.querySelectorAll('.card').forEach(card => {
 
     console.log('Adding item to cart:', cardTitle, cardDescription, cardPrice); // Debug log
 
-    // Show "Adding Item" state
-    button.style.backgroundColor = 'red';
-    button.textContent = 'ADDING ITEM';
+    // Show throbber and hide the button text
+    throbber.style.display = 'inline-block';
+    button.textContent = ''; // Hide button text
 
     // Get existing cart items from localStorage
     const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
@@ -155,18 +161,17 @@ document.querySelectorAll('.card').forEach(card => {
       // Change the button text to "ADDED" after 2 seconds
       setTimeout(() => {
         button.textContent = 'ADDED';
-        button.style.backgroundColor = ''; // Reset to original background color or set to desired color
+        throbber.style.display = 'none'; // Hide throbber
         // After 1 second, revert the button text back to "Add to Cart"
         setTimeout(() => {
           button.textContent = 'Add to Cart';
-          button.style.backgroundColor = ''; // Reset to original background color or set to desired color
         }, 1000);
       }, 2000);
 
     } else {
       // Change the button text to "Already Added"
       button.textContent = 'Already Added';
-      button.style.backgroundColor = ''; // Reset to original background color or set to desired color
+      throbber.style.display = 'none'; // Hide throbber
     }
     
     // Update the cart item count
