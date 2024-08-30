@@ -118,20 +118,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-
-/**
- *ADD TO CART BUTTON
- */
-
 /**
  * Add to cart button functionality
  */
+
+
 document.querySelectorAll('.card').forEach(card => {
   const button = card.querySelector('.add-to-cart-btn');
-  const throbber = button.querySelector('.throbber');
   
-  if (!button || !throbber) {
-    console.error('Add to Cart button or throbber not found.');
+  if (!button) {
+    console.error('Add to Cart button not found.');
     return;
   }
 
@@ -142,36 +138,35 @@ document.querySelectorAll('.card').forEach(card => {
 
     console.log('Adding item to cart:', cardTitle, cardDescription, cardPrice); // Debug log
 
+    // Show "Adding Item" state
+    button.style.backgroundColor = 'red';
+    button.textContent = 'ADDING ITEM';
+
     // Get existing cart items from localStorage
     const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
 
     // Check if item is already in the cart
     const itemIndex = cartItems.findIndex(item => item.title === cardTitle);
     if (itemIndex === -1) {
-      // Display the throbber and change button text
-      button.style.backgroundColor = 'red';
-      button.textContent = 'ADDING ITEM';
-      throbber.style.display = 'block';
+      // Add new item to cart
+      cartItems.push({ title: cardTitle, description: cardDescription, price: cardPrice });
+      localStorage.setItem('cartItems', JSON.stringify(cartItems));
 
-      // Simulate a delay for adding item
+      // Change the button text to "ADDED" after 2 seconds
       setTimeout(() => {
-        // Add new item to cart
-        cartItems.push({ title: cardTitle, description: cardDescription, price: cardPrice });
-        localStorage.setItem('cartItems', JSON.stringify(cartItems));
-
-        // Change the button text to "ADDED"
         button.textContent = 'ADDED';
-        throbber.style.display = 'none'; // Hide the throbber
-
-        // After 1 second, revert the button text back to "Add to Cart" and reset color
+        button.style.backgroundColor = ''; // Reset to original background color or set to desired color
+        // After 1 second, revert the button text back to "Add to Cart"
         setTimeout(() => {
           button.textContent = 'Add to Cart';
-          button.style.backgroundColor = ''; // Reset to default
+          button.style.backgroundColor = ''; // Reset to original background color or set to desired color
         }, 1000);
-      }, 2000); // Show throbber for 2 seconds
+      }, 2000);
+
     } else {
       // Change the button text to "Already Added"
       button.textContent = 'Already Added';
+      button.style.backgroundColor = ''; // Reset to original background color or set to desired color
     }
     
     // Update the cart item count
@@ -262,6 +257,8 @@ document.querySelectorAll('.card').forEach(card => {
     });
   }
 });
+
+
 
 
 
