@@ -1406,6 +1406,7 @@ body {
 /*CARD GRID CSS*/
 /* Style for the new cards grid section */
 
+/* Style for the new cards grid section */
 .new-cards-grid {
   padding: 2rem 0;
 }
@@ -1419,6 +1420,7 @@ body {
 .new-card {
   background-size: cover;
   background-position: center;
+  border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
   position: relative;
@@ -1443,19 +1445,21 @@ body {
   flex-direction: column;
   justify-content: center;
   padding: 1rem;
+  font-size: 1rem; /* Default font size */
 }
 
 .new-add-to-cart-btn {
   background: #ff5722;
   color: #fff;
   border: none;
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1.25rem; /* Default button size */
   border-radius: 4px;
   cursor: pointer;
   position: absolute;
   bottom: 1rem;
   left: 50%;
   transform: translateX(-50%);
+  font-size: 1rem; /* Default font size */
 }
 
 /* Responsive layout adjustments */
@@ -1463,8 +1467,31 @@ body {
   .new-cards-wrapper {
     grid-template-columns: repeat(2, 1fr);
   }
+  
+  .new-card-info {
+    font-size: 0.875rem; /* Reduced font size on small screens */
+  }
+
+  .new-add-to-cart-btn {
+    padding: 0.5rem 1rem; /* Reduced button size on small screens */
+    font-size: 0.65rem; /* Reduced font size on small screens */
+  }
 }
 
+@media (min-width: 768px) and (max-width: 1199px) {
+  .new-cards-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .new-card-info {
+    font-size: 0.9rem; /* Slightly reduced font size on medium screens */
+  }
+
+  .new-add-to-cart-btn {
+    padding: 0.6rem 1.1rem; /* Slightly reduced button size on medium screens */
+    font-size: 0.9rem; /* Slightly reduced font size on medium screens */
+  }
+}
 
 @media (min-width: 1200px) {
   .new-cards-wrapper {
