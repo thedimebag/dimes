@@ -120,22 +120,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 /**
- * Add to cart button functionality
+ *ADD TO CART BUTTON
  */
 
+/**
+ * Add to cart button functionality
+ */
 document.querySelectorAll('.card').forEach(card => {
   const button = card.querySelector('.add-to-cart-btn');
+  const throbber = button.querySelector('.throbber');
   
-  if (!button) {
-    console.error('Add to Cart button not found.');
+  if (!button || !throbber) {
+    console.error('Add to Cart button or throbber not found.');
     return;
   }
-
-  // Create and insert the throbber into the button
-  const throbber = document.createElement('div');
-  throbber.className = 'throbber';
-  throbber.style.display = 'none';
-  button.appendChild(throbber);
 
   button.addEventListener('click', () => {
     const cardTitle = card.querySelector('.card-title')?.textContent || 'No Title';
@@ -144,34 +142,36 @@ document.querySelectorAll('.card').forEach(card => {
 
     console.log('Adding item to cart:', cardTitle, cardDescription, cardPrice); // Debug log
 
-    // Show throbber and hide the button text
-    throbber.style.display = 'inline-block';
-    button.textContent = ''; // Hide button text
-
     // Get existing cart items from localStorage
     const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
 
     // Check if item is already in the cart
     const itemIndex = cartItems.findIndex(item => item.title === cardTitle);
     if (itemIndex === -1) {
-      // Add new item to cart
-      cartItems.push({ title: cardTitle, description: cardDescription, price: cardPrice });
-      localStorage.setItem('cartItems', JSON.stringify(cartItems));
+      // Display the throbber and change button text
+      button.style.backgroundColor = 'red';
+      button.textContent = 'ADDING ITEM';
+      throbber.style.display = 'block';
 
-      // Change the button text to "ADDED" after 2 seconds
+      // Simulate a delay for adding item
       setTimeout(() => {
+        // Add new item to cart
+        cartItems.push({ title: cardTitle, description: cardDescription, price: cardPrice });
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+        // Change the button text to "ADDED"
         button.textContent = 'ADDED';
-        throbber.style.display = 'none'; // Hide throbber
-        // After 1 second, revert the button text back to "Add to Cart"
+        throbber.style.display = 'none'; // Hide the throbber
+
+        // After 1 second, revert the button text back to "Add to Cart" and reset color
         setTimeout(() => {
           button.textContent = 'Add to Cart';
+          button.style.backgroundColor = ''; // Reset to default
         }, 1000);
-      }, 2000);
-
+      }, 2000); // Show throbber for 2 seconds
     } else {
       // Change the button text to "Already Added"
       button.textContent = 'Already Added';
-      throbber.style.display = 'none'; // Hide throbber
     }
     
     // Update the cart item count
