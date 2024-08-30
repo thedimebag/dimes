@@ -1402,3 +1402,53 @@ body {
 
 
 
+
+/*CARD GRID CSS*/
+/* Style for the new cards grid section */
+.cards-grid {
+  padding: 2rem 0;
+}
+
+.cards-wrapper {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.card {
+  background-size: cover;
+  background-position: center;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  padding: 1rem;
+  color: #fff;
+  text-align: center;
+}
+
+.card-info {
+  margin-bottom: 1rem;
+}
+
+.add-to-cart-btn {
+  background: #ff5722;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .cards-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .cards-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
