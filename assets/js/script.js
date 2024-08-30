@@ -116,9 +116,13 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+
+
 /**
  * Add to cart button functionality
  */
+
+
 document.querySelectorAll('.card').forEach(card => {
   const button = card.querySelector('.add-to-cart-btn');
   
@@ -134,6 +138,10 @@ document.querySelectorAll('.card').forEach(card => {
 
     console.log('Adding item to cart:', cardTitle, cardDescription, cardPrice); // Debug log
 
+    // Show "Adding Item" state
+    button.style.backgroundColor = 'red';
+    button.textContent = 'ADDING ITEM';
+
     // Get existing cart items from localStorage
     const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
 
@@ -144,16 +152,21 @@ document.querySelectorAll('.card').forEach(card => {
       cartItems.push({ title: cardTitle, description: cardDescription, price: cardPrice });
       localStorage.setItem('cartItems', JSON.stringify(cartItems));
 
-      // Change the button text to "ADDED"
-      button.textContent = 'ADDED';
-      
-      // After 1 second, revert the button text back to "Add to Cart"
+      // Change the button text to "ADDED" after 2 seconds
       setTimeout(() => {
-        button.textContent = 'Add to Cart';
-      }, 1000);
+        button.textContent = 'ADDED';
+        button.style.backgroundColor = ''; // Reset to original background color or set to desired color
+        // After 1 second, revert the button text back to "Add to Cart"
+        setTimeout(() => {
+          button.textContent = 'Add to Cart';
+          button.style.backgroundColor = ''; // Reset to original background color or set to desired color
+        }, 1000);
+      }, 2000);
+
     } else {
       // Change the button text to "Already Added"
       button.textContent = 'Already Added';
+      button.style.backgroundColor = ''; // Reset to original background color or set to desired color
     }
     
     // Update the cart item count
@@ -176,6 +189,8 @@ document.addEventListener('click', (e) => {
     });
   }
 });
+
+
 
 /**
  * Update the cart count
