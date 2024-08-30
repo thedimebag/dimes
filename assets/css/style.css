@@ -1419,7 +1419,6 @@ body {
 .new-card {
   background-size: cover;
   background-position: center;
-  border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
   position: relative;
@@ -1429,7 +1428,6 @@ body {
   /* Ensure background image aspect ratio is maintained */
   background-repeat: no-repeat;
   background-size: contain; /* Adjust to fit image without cropping */
-  height: 0; /* Use padding-top for aspect ratio */
   padding-top: 56.25%; /* Example for 16:9 aspect ratio */
   position: relative; /* Needed for absolute positioning of content */
 }
@@ -1467,11 +1465,6 @@ body {
   }
 }
 
-@media (min-width: 768px) and (max-width: 1199px) {
-  .new-cards-wrapper {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
 
 @media (min-width: 1200px) {
   .new-cards-wrapper {
