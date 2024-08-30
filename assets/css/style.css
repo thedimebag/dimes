@@ -1405,7 +1405,7 @@ body {
 
 /*CARD GRID CSS*/
 /* Style for the new cards grid section */
-/* Style for the new cards grid section */
+
 .new-cards-grid {
   padding: 2rem 0;
 }
@@ -1426,10 +1426,25 @@ body {
   padding: 1rem;
   color: #fff;
   text-align: center;
+  /* Ensure background image aspect ratio is maintained */
+  background-repeat: no-repeat;
+  background-size: contain; /* Adjust to fit image without cropping */
+  height: 0; /* Use padding-top for aspect ratio */
+  padding-top: 56.25%; /* Example for 16:9 aspect ratio */
+  position: relative; /* Needed for absolute positioning of content */
 }
 
 .new-card-info {
   margin-bottom: 1rem;
+  position: absolute; /* Position content absolutely within the card */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
 }
 
 .new-add-to-cart-btn {
@@ -1439,10 +1454,20 @@ body {
   padding: 0.5rem 1rem;
   border-radius: 4px;
   cursor: pointer;
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-/* Adjust layout for different screen sizes */
-@media (min-width: 768px) {
+/* Responsive layout adjustments */
+@media (max-width: 767px) {
+  .new-cards-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
   .new-cards-wrapper {
     grid-template-columns: repeat(2, 1fr);
   }
