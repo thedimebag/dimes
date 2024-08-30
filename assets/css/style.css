@@ -1436,7 +1436,7 @@ body {
 .new-card-info {
   margin-bottom: 1rem;
   position: absolute; /* Position content absolutely within the card */
-  top: 0;
+  top: 20px;
   left: 0;
   right: 0;
   bottom: 0;
