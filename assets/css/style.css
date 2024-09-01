@@ -1583,6 +1583,28 @@ body {
 }
 
 
+/*THIS IS THE NEW CSS FOR THE FOOTERS*/
+
+
+.footer-top .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal-width columns */
+  align-items: start; /* Align items to the start of each column */
+}
+
+.footer-brand {
+  grid-column: 1; /* First column */
+}
+
+.footer-list {
+  grid-column: 2; /* Second column */
+  text-align: right; /* Align text to the right */
+}
+
+/* Additional styling if needed */
+.footer-list .footer-list-title {
+  margin-bottom: 1rem; /* Add some spacing below the title */
+}
 
 
 
