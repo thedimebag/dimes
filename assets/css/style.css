@@ -1448,7 +1448,7 @@ body {
 }
 
 .new-add-to-cart-btn {
-  background: #ff5722;
+  background: #66c4cc;
   color: #fff;
   border: none;
   padding: 0.75rem 1.25rem; /* Default button size */
@@ -1507,22 +1507,21 @@ body {
 .log-card {
     display: flex;
     border: 1px solid #ddd;
-    border-radius: 8px;
+    border-radius: 15px;
     overflow: hidden;
     background-color: #fff;
-    width: 600px;
-    height: 300px; /* Fixed height for the card */
+    width: 60%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
 }
 
 .log-card-img {
-    width: 200px; /* Fixed width for the image */
     height: 100%; /* Image height to match the card's height */
     object-fit: cover; /* Ensures the image covers the area without distortion */
 }
 
 .log-card-content {
-    padding: 20px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1547,12 +1546,18 @@ body {
     margin: 10px 0;
 }
 
+.log-card-price {
+    font-size: 18px;
+    color: #66c4cc;
+    margin: 10px 0;
+}
+
 .log-card-button {
     align-self: flex-start;
     padding: 10px 20px;
     font-size: 16px;
     color: #fff;
-    background-color: #007bff;
+    background-color: #66c4cc;
     border: none;
     border-radius: 4px;
     cursor: pointer;
