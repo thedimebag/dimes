@@ -1503,6 +1503,7 @@ body {
 /*LOG CARD GRID CSS*/
 /* Style for the new LOG cards grid section */
 
+
 .log-card {
     display: flex;
     border: 1px solid #ddd;
@@ -1510,13 +1511,14 @@ body {
     overflow: hidden;
     background-color: #fff;
     width: 600px;
+    height: 300px; /* Fixed height for the card */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .log-card-img {
-    width: 200px;
-    height: 100%;
-    object-fit: cover;
+    width: 200px; /* Fixed width for the image */
+    height: 100%; /* Image height to match the card's height */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
 }
 
 .log-card-content {
@@ -1524,6 +1526,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: calc(100% - 200px); /* Adjust width to fit the remaining space */
 }
 
 .log-card-title {
@@ -1559,3 +1562,8 @@ body {
 .log-card-button:hover {
     background-color: #0056b3;
 }
+
+
+
+
+
