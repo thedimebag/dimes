@@ -1503,6 +1503,13 @@ body {
 /*LOG CARD GRID CSS*/
 /* Style for the new LOG cards grid section */
 
+/* Updated CSS for the LOG cards grid section */
+.new-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px; /* Adds space between cards */
+    padding: 20px;
+}
 
 .log-card {
     display: flex;
@@ -1510,14 +1517,14 @@ body {
     border-radius: 15px;
     overflow: hidden;
     background-color: #fff;
-    width: 60%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 20px;
+    margin: 0; /* Remove margin as gap handles spacing */
 }
 
 .log-card-img {
-    height: 100%; /* Image height to match the card's height */
-    object-fit: cover; /* Ensures the image covers the area without distortion */
+    width: 60px; /* Set a fixed width for the image */
+    height: 60px; /* Set a fixed height for the image */
+    object-fit: cover;
 }
 
 .log-card-content {
@@ -1525,29 +1532,29 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: calc(100% - 15px); /* Adjust width to fit the remaining space */
+    width: calc(100% - 110px); /* Adjust width to fit the remaining space */
 }
 
 .log-card-title {
-    font-size: 24px;
+    font-size: 18px; /* Reduce font size to fit better in the column layout */
     margin: 0;
     color: #333;
 }
 
 .log-card-name {
-    font-size: 18px;
+    font-size: 16px; /* Reduce font size */
     color: #666;
     margin: 5px 0;
 }
 
 .log-card-description {
-    font-size: 14px;
+    font-size: 12px; /* Reduce font size */
     color: #888;
     margin: 10px 0;
 }
 
 .log-card-price {
-    font-size: 18px;
+    font-size: 16px; /* Reduce font size */
     color: #66c4cc;
     margin: 10px 0;
 }
@@ -1555,7 +1562,7 @@ body {
 .log-card-button {
     align-self: flex-start;
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: 14px; /* Reduce font size */
     color: #fff;
     background-color: #66c4cc;
     border: none;
@@ -1567,6 +1574,19 @@ body {
 .log-card-button:hover {
     background-color: #0056b3;
 }
+
+/* Media query for responsiveness (optional) */
+@media (max-width: 768px) {
+    .new-cards-grid {
+        grid-template-columns: 1fr; /* Stack cards in one column on smaller screens */
+    }
+}
+
+
+
+
+
+
 
 
 
