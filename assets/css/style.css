@@ -1525,7 +1525,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: calc(100% - 200px); /* Adjust width to fit the remaining space */
+    width: calc(100% - 15px); /* Adjust width to fit the remaining space */
 }
 
 .log-card-title {
