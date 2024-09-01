@@ -1406,7 +1406,6 @@ body {
 /*CARD GRID CSS*/
 /* Style for the new cards grid section */
 
-/* Style for the new cards grid section */
 .new-cards-grid {
   padding: 2rem 0;
 }
@@ -1493,7 +1492,7 @@ body {
 }
 
 @media (min-width: 1200px) {
-  .new-cards-wrapper {
+  .new-\cards-wrapper {
     grid-template-columns: repeat(3, 1fr);
   }
 }
@@ -1501,68 +1500,69 @@ body {
 
 
 /*LOG CARD GRID CSS*/
-/* Style for the new LOG cards grid section */
 
-/* Updated CSS for the LOG cards grid section */
-.new-cards-grid {
+/* Updated CSS for displaying log cards in two columns */
+
+.log-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px; /* Adds space between cards */
-    padding: 20px;
+    gap: 15px; /* Space between cards */
+    padding: 20px; /* Padding around the grid */
 }
 
 .log-card {
     display: flex;
+    flex-direction: column; /* Ensure image and content stack vertically */
     border: 1px solid #ddd;
-    border-radius: 15px;
+    border-radius: 10px; /* Reduced border radius */
     overflow: hidden;
     background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 0; /* Remove margin as gap handles spacing */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Reduced shadow for a shorter card */
+    margin: 0; /* No margin needed, handled by grid gap */
+    height: auto; /* Allow the card height to adjust based on content */
 }
 
 .log-card-img {
-    width: 60px; /* Set a fixed width for the image */
-    height: 60px; /* Set a fixed height for the image */
+    width: 100%; /* Full width to fit the card */
+    height: 120px; /* Reduced height */
     object-fit: cover;
 }
 
 .log-card-content {
-    padding: 10px;
+    padding: 8px; /* Reduced padding */
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: calc(100% - 110px); /* Adjust width to fit the remaining space */
 }
 
 .log-card-title {
-    font-size: 18px; /* Reduce font size to fit better in the column layout */
-    margin: 0;
+    font-size: 20px; /* Reduced font size */
+    margin: 5px 0; /* Reduced margin */
     color: #333;
 }
 
 .log-card-name {
-    font-size: 16px; /* Reduce font size */
+    font-size: 16px; /* Reduced font size */
     color: #666;
-    margin: 5px 0;
+    margin: 2px 0; /* Reduced margin */
 }
 
 .log-card-description {
-    font-size: 12px; /* Reduce font size */
+    font-size: 12px; /* Reduced font size */
     color: #888;
-    margin: 10px 0;
+    margin: 5px 0; /* Reduced margin */
 }
 
 .log-card-price {
-    font-size: 16px; /* Reduce font size */
+    font-size: 16px; /* Reduced font size */
     color: #66c4cc;
-    margin: 10px 0;
+    margin: 5px 0; /* Reduced margin */
 }
 
 .log-card-button {
     align-self: flex-start;
-    padding: 10px 20px;
-    font-size: 14px; /* Reduce font size */
+    padding: 8px 16px; /* Reduced padding */
+    font-size: 14px; /* Reduced font size */
     color: #fff;
     background-color: #66c4cc;
     border: none;
@@ -1577,15 +1577,10 @@ body {
 
 /* Media query for responsiveness (optional) */
 @media (max-width: 768px) {
-    .new-cards-grid {
+    .container {
         grid-template-columns: 1fr; /* Stack cards in one column on smaller screens */
     }
 }
-
-
-
-
-
 
 
 
