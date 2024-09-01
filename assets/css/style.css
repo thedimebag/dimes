@@ -1317,6 +1317,7 @@ body {
   display: flex; /* Use Flexbox for alignment */
   flex-direction: column; /* Stack items vertically */
   align-items: flex-end; /* Align items to the right */
+  margin-right: 25px; /* Add right margin */
 }
 
 
@@ -1516,7 +1517,6 @@ body {
 
 .log-card-img {
     height: 100%; /* Image height to match the card's height */
-    max-width: 50px;
     object-fit: cover; /* Ensures the image covers the area without distortion */
 }
 
@@ -1567,7 +1567,6 @@ body {
 .log-card-button:hover {
     background-color: #0056b3;
 }
-
 
 
 
