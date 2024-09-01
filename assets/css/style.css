@@ -1503,83 +1503,84 @@ body {
 
 /* Updated CSS for displaying log cards in two columns */
 
+/* Card Grid CSS */
 .log-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* Default to two columns */
     gap: 15px; /* Space between cards */
     padding: 20px; /* Padding around the grid */
 }
 
+/* Adjust card layout based on screen size */
+@media (min-width: 768px) {
+    .log-container {
+        grid-template-columns: repeat(4, 1fr); /* Four columns on larger screens */
+    }
+}
+
+/* Log Card Styling */
 .log-card {
     display: flex;
-    flex-direction: column; /* Ensure image and content stack vertically */
-    border: 1px solid #ddd;
-    border-radius: 10px; /* Reduced border radius */
+    flex-direction: column; /* Stack image and content vertically */
+    border: 2px solid #ddd;
+    border-radius: 10px; /* Rounded corners */
     overflow: hidden;
     background-color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Reduced shadow for a shorter card */
-    margin: 0; /* No margin needed, handled by grid gap */
-    height: auto; /* Allow the card height to adjust based on content */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    height: auto; /* Auto height based on content */
 }
 
 .log-card-img {
-    width: 100%; /* Full width to fit the card */
-    height: 120px; /* Reduced height */
-    object-fit: cover;
+    width: 100%; /* Full width */
+    height: 120px; /* Fixed height for image */
+    object-fit: cover; /* Ensure the image covers the area */
 }
 
 .log-card-content {
-    padding: 8px; /* Reduced padding */
+    padding: 8px; /* Padding around content */
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 .log-card-title {
-    font-size: 20px; /* Reduced font size */
-    margin: 5px 0; /* Reduced margin */
-    color: #333;
+    font-size: 15px; /* Font size for title */
+    margin: 5px 0; /* Margin around title */
+    color: #333; /* Text color */
 }
 
 .log-card-name {
-    font-size: 16px; /* Reduced font size */
-    color: #666;
-    margin: 2px 0; /* Reduced margin */
+    font-size: 16px; /* Font size for name */
+    color: #0000; /* Text color */
+    margin: 2px 0; /* Margin around name */
 }
 
 .log-card-description {
-    font-size: 12px; /* Reduced font size */
-    color: #888;
-    margin: 5px 0; /* Reduced margin */
+    font-size: 12px; /* Font size for description */
+    color: #888; /* Text color */
+    margin: 5px 0; /* Margin around description */
 }
 
 .log-card-price {
-    font-size: 16px; /* Reduced font size */
-    color: #66c4cc;
-    margin: 5px 0; /* Reduced margin */
+    font-size: 14px; /* Font size for price */
+    color: #66c4cc; /* Text color */
+    margin: 5px 0; /* Margin around price */
 }
 
 .log-card-button {
-    align-self: flex-start;
-    padding: 8px 16px; /* Reduced padding */
-    font-size: 14px; /* Reduced font size */
-    color: #fff;
-    background-color: #66c4cc;
+    align-self: flex-start; /* Align button to the start */
+    padding: 8px 16px; /* Padding around button */
+    font-size: 14px; /* Font size for button */
+    color: #fff; /* Text color */
+    background-color: #66c4cc; /* Background color */
     border: none;
-    border-radius: 4px;
+    border-radius: 4px; /* Rounded corners */
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease; /* Smooth color transition */
 }
 
 .log-card-button:hover {
-    background-color: #0056b3;
-}
-
-/* Media query for responsiveness (optional) */
-@media (max-width: 768px) {
-    .container {
-        grid-template-columns: 1fr; /* Stack cards in one column on smaller screens */
-    }
+    background-color: #0056b3; 
 }
 
 
