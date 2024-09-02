@@ -1580,7 +1580,7 @@ body {
 }
 
 .log-card-button {
-    align-self: flex-start; /* Align button to the start */
+    margin: 0 10px; /* 10px margin on left and right */
     padding: 8px 16px; /* Padding around button */
     font-size: 14px; /* Font size for button */
     color: #fff; /* Text color */
@@ -1589,11 +1589,19 @@ body {
     border-radius: 4px; /* Rounded corners */
     cursor: pointer;
     transition: background-color 0.3s ease; /* Smooth color transition */
+    display: block; /* Ensure the button is a block-level element */
+    margin-left: auto; /* Center the button horizontally */
+    margin-right: auto; /* Center the button horizontally */
 }
 
 .log-card-button:hover {
     background-color: #0056b3; 
 }
+
+
+
+
+
 
 
 /*THIS IS THE NEW CSS FOR THE FOOTERS*/
