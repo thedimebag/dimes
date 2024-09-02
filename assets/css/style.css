@@ -1543,6 +1543,9 @@ body {
     background-color: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     height: auto; /* Auto height based on content */
+    align-items: center; /* Center-align items horizontally */
+    justify-content: center; /* Center-align items vertically */
+    text-align: center; /* Center-align text */
 }
 
 .log-card-img {
