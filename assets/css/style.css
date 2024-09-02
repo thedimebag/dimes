@@ -19,7 +19,18 @@
   --white-2: hsl(0, 0%, 98%);
   --white_10: hsla(0, 0%, 100%, 0.1);
   --jet: hsl(225, 4%, 21%);
+  
+    
+  --card1-gradient-color1: #f12711;
+  --card1-gradient-color2: #f5af19;
+  --card2-gradient-color1: #7F00FF;
+  --card2-gradient-color2: #E100FF;
+  --card3-gradient-color1: #3f2b96;
+  --card3-gradient-color2: #a8c0ff;
+  --card4-gradient-color1: #11998e;
+  --card4-gradient-color2: #38ef7d;
 
+  
   /**
    * typography
    */
@@ -63,6 +74,9 @@
   --cubic-out: cubic-bezier(0.33, 0.85, 0.4, 0.96);
   --cubic-anim: cubic-bezier(0.455, 0.030, 0.515, 0.955);
 }
+
+
+
 
 /*-----------------------------------*\
   #RESET
@@ -1607,23 +1621,8 @@ body {
 /* LATEST CARDS THAT I WILL USE FOR CATEGORIES*/
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
-*{
-  margin:0px;
-  padding:0px;
-  box-sizing: border-box;
-}
-:root{
-  --color-text: #616161;
-  --color-text-btn: #ffffff;
-  --card1-gradient-color1: #f12711;
-  --card1-gradient-color2: #f5af19;
-  --card2-gradient-color1: #7F00FF;
-  --card2-gradient-color2: #E100FF;
-  --card3-gradient-color1: #3f2b96;
-  --card3-gradient-color2: #a8c0ff;
-  --card4-gradient-color1: #11998e;
-  --card4-gradient-color2: #38ef7d;
-}
+
+
 body{
   font-family: 'Roboto', sans-serif;
   background: linear-gradient(to right, #8e9eab, #eef2f3); 
