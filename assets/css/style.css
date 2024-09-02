@@ -1622,17 +1622,6 @@ body {
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
 
-
-body{
-  font-family: 'Roboto', sans-serif;
-  background: linear-gradient(to right, #8e9eab, #eef2f3); 
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 30px;
-}
 .card-wrap{
   width: 220px;
   background: #fff;
