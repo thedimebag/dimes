@@ -102,6 +102,97 @@
         font-size: 12px; /* Smaller font size */
       }
     }
+
+
+
+    /* Checkout Overlay Background */
+  .checkout-overlay {
+      display: none; /* Hidden by default */
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+      align-items: center;
+      justify-content: center;
+      z-index: 1000; /* Ensure it appears above other content */
+  }
+  
+  /* Checkout Popup Box */
+  .checkout-popup {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      width: 300px;
+      text-align: center;
+      position: relative;
+  }
+  
+  /* Checkout Popup Header */
+  .checkout-popup-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+  }
+  
+  .checkout-popup-header h2 {
+      margin: 0;
+  }
+  
+  .close-btn {
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+  }
+  
+  /* Buttons inside Checkout Popup */
+  .checkout-popup-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+  }
+  
+  .checkout-popup-buttons button {
+      background: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 15px;
+      font-size: 14px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+  }
+  
+  .checkout-popup-buttons button img {
+      width: 16px;
+      height: 16px;
+  }
+  
+  .checkout-popup-buttons button:hover {
+      background: #0056b3;
+  }
+  
+  /* Checkout Button */
+  .checkout-btn {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      position: relative; /* Adjust positioning as needed */
+      z-index: 1001; /* Ensure it’s above the overlay */
+  }
+  
+  .checkout-btn:hover {
+      background-color: #218838;
+  }
     
   </style>
 
@@ -207,28 +298,30 @@
         </div>
         <br><br>
         <button class="checkout-btn" onclick="checkout()">Checkout</button>
+
+        
+        <!-- Popup CHECKOUT FUNCTION -->
+        <!-- Checkout Popup Overlay -->
+        <div class="checkout-overlay" id="checkout-popup-overlay">
+            <div class="checkout-popup">
+                <div class="checkout-popup-header">
+                    <h2>PAYMENT METHODS</h2>
+                    <button class="close-btn" onclick="closePopup()">×</button>
+                </div>
+                <p>Select a suitable payment method to proceed with.</p>
+                <div class="checkout-popup-buttons">
+                    <button><img src="assets/images/btc.png" alt="Icon 1"> Bitcoin [BTC]</button>
+                    <button><img src="assets/images/ltc.png" alt="Icon 2"> Liecoin [LTC]</button>
+                    <button><img src="assets/images/eth.png" alt="Icon 3"> Tether [USDT] 3</button>
+                    <button><img src="assets/images/usdt.png" alt="Icon 4"> Etherium [ETH]</button>
+                </div>
+            </div>
+        </div>
+
+        
       </div>
     </article>
   </main>
-
-
-   <!-- Popup CHECKOUT FUNCTION -->
-    <div class="overlay" id="popup-overlay">
-        <div class="popup">
-            <div class="popup-header">
-                <h2>SELECT A PAYMENT METHOD</h2>
-                <button class="close-btn" onclick="closePopup()">×</button>
-            </div>
-            <p> The below options are the only available payment options. Select one to proceed.</p>
-            <div class="popup-buttons">
-                <button><img src="assets/images/btc.png" alt="Icon 1"> Bitcoin [BTC]</button>
-                <button><img src="assets/images/ltc.png" alt="Icon 2"> Liecoin [LTC]</button>
-                <button><img src="assets/images/eth.png" alt="Icon 3"> Tether [USDT] 3</button>
-                <button><img src="assets/images/usdt.png" alt="Icon 4"> Etherium [ETH]</button>
-            </div>
-        </div>
-    </div>
-
 
   
 
