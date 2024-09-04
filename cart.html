@@ -19,9 +19,6 @@
     href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&family=Work+Sans:wght@400;500;700&display=swap"
     rel="stylesheet">
 
-  <link rel="preload" as="image" href="./assets/images/hero-banner.png">
-  <link rel="preload" as="image" href="./assets/images/hero-bg.jpg">
-  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
   <style>
@@ -165,11 +162,11 @@
             </li>
 
             <li>
-              <a href="#" class="navbar-link">Shop</a>
+              <a href="shop.html" class="navbar-link">Store</a>
             </li>
 
             <li>
-              <a href="#" class="navbar-link">Escrow</a>
+              <a href="escrow.html" class="navbar-link">Escrow</a>
             </li>
 
             <li>
@@ -177,7 +174,7 @@
             </li>
 
             <li>
-              <a href="cart.html" class="navbar-link">Cart</a>
+              <a href="cart.html" class="navbar-link">Your Bag</a>
             </li>
 
           </ul>
@@ -195,7 +192,7 @@
       <section class="section offer has-bg-image" aria-label="CART HEADING"
         style="background-image: url('./assets/images/section-bg.jpg');  margin: 20px; padding: 20px;">
         <div class="container">
-          <h2 class="h2 section-title">Your Cart</h2>
+          <h2 class="h2 section-title">Your Bag</h2>
         </div>
       </section>
 
@@ -214,6 +211,27 @@
     </article>
   </main>
 
+
+   <!-- Popup CHECKOUT FUNCTION -->
+    <div class="overlay" id="popup-overlay">
+        <div class="popup">
+            <div class="popup-header">
+                <h2>SELECT A PAYMENT METHOD</h2>
+                <button class="close-btn" onclick="closePopup()">×</button>
+            </div>
+            <p> The below options are the only available payment options. Select one to proceed.</p>
+            <div class="popup-buttons">
+                <button><img src="assets/images/btc.png" alt="Icon 1"> Bitcoin [BTC]</button>
+                <button><img src="assets/images/ltc.png" alt="Icon 2"> Liecoin [LTC]</button>
+                <button><img src="assets/images/eth.png" alt="Icon 3"> Tether [USDT] 3</button>
+                <button><img src="assets/images/usdt.png" alt="Icon 4"> Etherium [ETH]</button>
+            </div>
+        </div>
+    </div>
+
+
+  
+
   <footer class="footer has-bg-image" style="background-image: url('./assets/images/section-bg.jpg')">
 
     <div class="footer-top section">
@@ -229,46 +247,18 @@
             Your opportunity To Make Today Count! 
           </p>
           <ul class="social-list">
-            <li>
-              <a href="#" class="social-link">
-                <i class="fab fa-instagram"></i>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="social-link">
-                <i class="fab fa-telegram-plane"></i>
-              </a>
-            </li>
+            <li><a href="#" class="social-link"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="#" class="social-link"><i class="fab fa-telegram-plane"></i></a></li>
           </ul>
-
         </div>
 
         <ul class="footer-list">
-
-          <li>
-            <p class="footer-list-title">LINKS</p>
-          </li>
-
-          <li>
-            <a href="index.html" class="footer-link">Home</a>
-          </li>
-
-          <li>
-            <a href="#" class="footer-link">Shop</a>
-          </li>
-
-          <li>
-            <a href="#" class="footer-link">Escrow</a>
-          </li>
-
-          <li>
-            <a href="contact.html" class="footer-link">Contact</a>
-          </li>
-
-          <li>
-            <a href="cart.html" class="footer-link">Cart</a>
-          </li>
-
+          <li><p class="footer-list-title">LINKS</p></li>
+          <li><a href="index.html" class="footer-link">Home</a></li>
+          <li><a href="shop.html" class="footer-link">Store</a></li>
+          <li><a href="escrow.html" class="footer-link">Escrow</a></li>
+          <li><a href="contact.html" class="footer-link">Contact</a></li>
+          <li><a href="cart.html" class="footer-link">Your Bag</a></li>
         </ul>
 
       </div>
@@ -293,6 +283,7 @@
     </div>
 
   </footer>
+
 
   <!-- Custom JS -->
   <script src="./assets/js/script.js" defer></script>
