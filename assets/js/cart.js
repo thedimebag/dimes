@@ -99,30 +99,33 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+
+
 /**
- * Checkout button functionality
+ * CHECKOUT POPUP functionality
  */
 
 function checkout() {
-    const overlay = document.getElementById('checkout-popup-overlay');
-    if (overlay) {
-        overlay.style.display = 'flex';
-    } else {
-        console.error('Element with ID "checkout-popup-overlay" not found.');
-    }
-}
-
-function closePopup() {
-    const overlay = document.getElementById('checkout-popup-overlay');
-    if (overlay) {
-        overlay.style.display = 'none';
-    } else {
-        console.error('Element with ID "checkout-popup-overlay" not found.');
-    }
+    document.getElementById('checkout-popup-overlay').style.display = 'flex';
 }
 
 function closePopup() {
     document.getElementById('checkout-popup-overlay').style.display = 'none';
 }
 
+// Function to close the overlay when clicking outside the popup
+function setupClickOutsideToClose() {
+    const overlay = document.getElementById('checkout-popup-overlay');
+
+    // Close the popup if the click is outside the popup content
+    overlay.addEventListener('click', function(event) {
+        // Check if the click is on the overlay itself, not the popup content
+        if (event.target === overlay) {
+            closePopup();
+        }
+    });
+}
+
+// Set up the click outside to close functionality once the page is loaded
+document.addEventListener('DOMContentLoaded', setupClickOutsideToClose);
 
