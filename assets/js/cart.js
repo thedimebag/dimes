@@ -104,13 +104,11 @@ document.addEventListener('DOMContentLoaded', function () {
  */
 
 function checkout() {
-    document.getElementById('popup-overlay').style.display = 'flex';
+    document.getElementById('checkout-popup-overlay').style.display = 'flex';
 }
 
 function closePopup() {
-    document.getElementById('popup-overlay').style.display = 'none';
+    document.getElementById('checkout-popup-overlay').style.display = 'none';
 }
-
-
 
 
