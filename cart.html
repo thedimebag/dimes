@@ -105,94 +105,100 @@
 
 
 
-    /* Checkout Overlay Background */
-  .checkout-overlay {
-      display: none; /* Hidden by default */
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-      align-items: center;
-      justify-content: center;
-      z-index: 1000; /* Ensure it appears above other content */
-  }
-  
-  /* Checkout Popup Box */
-  .checkout-popup {
-      background: white;
-      border-radius: 8px;
-      padding: 20px;
-      width: 300px;
-      text-align: center;
-      position: relative;
-  }
-  
-  /* Checkout Popup Header */
-  .checkout-popup-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 20px;
-  }
-  
-  .checkout-popup-header h2 {
-      margin: 0;
-  }
-  
-  .close-btn {
-      background: none;
-      border: none;
-      font-size: 24px;
-      cursor: pointer;
-  }
-  
-  /* Buttons inside Checkout Popup */
-  .checkout-popup-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-  }
-  
-  .checkout-popup-buttons button {
-      background: #007BFF;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      padding: 10px 15px;
-      font-size: 14px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-  }
-  
-  .checkout-popup-buttons button img {
-      width: 16px;
-      height: 16px;
-  }
-  
-  .checkout-popup-buttons button:hover {
-      background: #0056b3;
-  }
-  
-  /* Checkout Button */
-  .checkout-btn {
-      background-color: #28a745;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-      position: relative; /* Adjust positioning as needed */
-      z-index: 1001; /* Ensure it’s above the overlay */
-  }
-  
-  .checkout-btn:hover {
-      background-color: #218838;
-  }
+    
+/* CHECKOUT POPUP OVERLAY CSS */
+     /* Checkout Overlay Background */
+      .checkout-overlay {
+          display: none; /* Hidden by default */
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+          align-items: center;
+          justify-content: center;
+          z-index: 1000; /* Ensure it appears above other content */
+      }
+      
+      /* Checkout Popup Box */
+      .checkout-popup {
+          background: white;
+          border-radius: 8px;
+          padding: 20px;
+          width: 300px;
+          text-align: center;
+          position: relative;
+      }
+      
+      /* Checkout Popup Header */
+      .checkout-popup-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 20px;
+      }
+      
+      .checkout-popup-header h2 {
+          margin: 0;
+      }
+      
+      .close-btn {
+          background: none;
+          border: none;
+          font-size: 24px;
+          cursor: pointer;
+      }
+      
+      /* Buttons inside Checkout Popup */
+      .checkout-popup-buttons {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px; /* Space between buttons */
+      }
+      
+      .checkout-popup-buttons button {
+          background: #007BFF;
+          color: white;
+          border: none;
+          border-radius: 5px;
+          padding: 10px;
+          font-size: 14px;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 8px;
+          flex: 1; /* Allow buttons to grow and shrink equally */
+          min-width: 70px; /* Minimum width to ensure buttons aren't too small */
+      }
+      
+      .checkout-popup-buttons button img {
+          width: 16px;
+          height: 16px;
+      }
+      
+      .checkout-popup-buttons button:hover {
+          background: #0056b3;
+      }
+      
+      /* Checkout Button */
+      .checkout-btn {
+          background-color: #28a745;
+          color: white;
+          border: none;
+          border-radius: 5px;
+          padding: 10px 20px;
+          font-size: 16px;
+          cursor: pointer;
+          position: relative; /* Adjust positioning as needed */
+          z-index: 1001; /* Ensure it’s above the overlay */
+      }
+      
+      .checkout-btn:hover {
+          background-color: #218838;
+      }
+
     
   </style>
 
