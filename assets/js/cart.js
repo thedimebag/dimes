@@ -97,11 +97,18 @@ document.addEventListener('DOMContentLoaded', function () {
   renderCartItems();
 });
 
+
+
 /**
  * Checkout button functionality
  */
+
 function checkout() {
-  alert('Checkout functionality not implemented yet.');
+    document.getElementById('popup-overlay').style.display = 'flex';
+}
+
+function closePopup() {
+    document.getElementById('popup-overlay').style.display = 'none';
 }
 
 
