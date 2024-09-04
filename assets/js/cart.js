@@ -104,7 +104,21 @@ document.addEventListener('DOMContentLoaded', function () {
  */
 
 function checkout() {
-    document.getElementById('checkout-popup-overlay').style.display = 'flex';
+    const overlay = document.getElementById('checkout-popup-overlay');
+    if (overlay) {
+        overlay.style.display = 'flex';
+    } else {
+        console.error('Element with ID "checkout-popup-overlay" not found.');
+    }
+}
+
+function closePopup() {
+    const overlay = document.getElementById('checkout-popup-overlay');
+    if (overlay) {
+        overlay.style.display = 'none';
+    } else {
+        console.error('Element with ID "checkout-popup-overlay" not found.');
+    }
 }
 
 function closePopup() {
