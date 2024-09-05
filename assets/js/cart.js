@@ -97,35 +97,3 @@ document.addEventListener('DOMContentLoaded', function () {
   renderCartItems();
 });
 
-
-
-
-
-/**
- * CHECKOUT POPUP functionality
- */
-
-function checkout() {
-    document.getElementById('checkout-popup-overlay').style.display = 'flex';
-}
-
-function closePopup() {
-    document.getElementById('checkout-popup-overlay').style.display = 'none';
-}
-
-// Function to close the overlay when clicking outside the popup
-function setupClickOutsideToClose() {
-    const overlay = document.getElementById('checkout-popup-overlay');
-
-    // Close the popup if the click is outside the popup content
-    overlay.addEventListener('click', function(event) {
-        // Check if the click is on the overlay itself, not the popup content
-        if (event.target === overlay) {
-            closePopup();
-        }
-    });
-}
-
-// Set up the click outside to close functionality once the page is loaded
-document.addEventListener('DOMContentLoaded', setupClickOutsideToClose);
-
