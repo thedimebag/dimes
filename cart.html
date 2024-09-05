@@ -108,18 +108,22 @@
     .checkout-btn {
         background-color: #28a745;
         color: white;
+        text-decoration: none; /* Remove underline from anchor tag */
         border: none;
         border-radius: 5px;
         padding: 10px 20px;
         font-size: 16px;
         cursor: pointer;
+        display: inline-block; /* Ensure it behaves like a button */
         position: relative; /* Adjust positioning as needed */
+        z-index: 1001; /* Ensure it’s above the overlay */
+        text-align: center; /* Center text inside the button */
     }
     
     .checkout-btn:hover {
         background-color: #218838;
     }
-
+    
   </style>
 
 
@@ -226,11 +230,10 @@
         </div>
         <br><br>
 
-    <!-- Popup CHECKOUT FUNCTION -->
-        <!-- Checkout Popup Overlay -->
+    <!-- Popup CHECKOUT BUTTON  -->
         <!-- Checkout Button -->
-        <button class="checkout-btn" onclick="checkout()">Checkout</button>
-        
+        <a href="checkout/checkout.html" class="checkout-btn">Checkout</a>
+
       </div>
     </article>
   </main>
