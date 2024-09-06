@@ -15,7 +15,7 @@
     font-family: "Nasalization Rg";
 }
 body{
-    background-image: url("assets/images/login.png");
+    background-image: url("./assets/images/login.png");
     height: 100vh;
     background-position: center;
     background-size: cover;
