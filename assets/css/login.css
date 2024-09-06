@@ -21,6 +21,7 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
     object-fit: cover; 
+    font-family: 'Work Sans', sans-serif;
 }
 
 /* LOGIN */
