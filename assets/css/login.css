@@ -1,9 +1,3 @@
-/* FONT */
-@font-face {
-    font-family: "Nasalization Rg";
-    src: url("/asset/font/nasalization_rg.ttf") format("truetype");
-}
-
 /* VARIABLES */
 :root{
     --blur:hsla(235, 57%, 48%, 0.322); 
@@ -21,7 +15,7 @@
     font-family: "Nasalization Rg";
 }
 body{
-    background-image: url("../image/2206_w026_n002_2110b_p1_2110.jpg");
+    background-image: url("");
     height: 100vh;
     background-position: center;
     background-size: cover;
@@ -117,4 +111,10 @@ span{
         width: 300px;
         padding: 10px;
     }
+}
+
+
+/* Apply Work Sans font to the whole page */
+body {
+    font-family: 'Work Sans', sans-serif;
 }
