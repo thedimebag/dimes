@@ -116,13 +116,9 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-
-
 /**
  * Add to cart button functionality
  */
-
-
 document.querySelectorAll('.card').forEach(card => {
   const button = card.querySelector('.add-to-cart-btn');
   
@@ -171,6 +167,7 @@ document.querySelectorAll('.card').forEach(card => {
     
     // Update the cart item count
     updateCartCount();
+    updateFloatingCartCount(); // Ensure the floating cart count is updated as well
   });
 
   card.addEventListener('mouseover', () => {
@@ -189,8 +186,6 @@ document.addEventListener('click', (e) => {
     });
   }
 });
-
-
 
 /**
  * Update the cart count
