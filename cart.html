@@ -181,9 +181,8 @@
       </section>
 
       <div class="cart-container">
-        <p>Review Items Before Checkout.</p> <br>
-        <h1>Added Items</h1>
-          <p id="empty-cart-message" style="display: none;">Your Bag Is Empty. No item is added here yet!</p>
+        <h1><br>Added Items<br></h1>
+          <p id="empty-cart-message" style="display: none;">Your Bag Is Empty. No items here yet!</p>
         <div id="cart-list"></div>
         <div class="total-container">
           <div>Total:</div>
@@ -198,88 +197,49 @@
           <!-- Checkout Button -->
           <!-- Checkout GRID AND FORMS -->
 
+
+      
+        <!-- Checkout Button -->
+        <button class="checkout-btn">Checkout</button>
         
-      
-          <!-- Checkout Button -->
-          <button class="checkout-btn">Checkout</button>
-      
-          <!-- Popup Modal -->
-          <div class="modal-overlay" id="modal">
-              <div class="modal-content">
-                  <button class="close-modal">Close</button>
-                  <div class="grid-container">
-                      <div class="grid-item" data-target="form1">
-                          <img src="./assets/images/btc.png" alt="Item 1" />
-                          <p>Item 1 Description</p>
-                      </div>
-                      <div class="grid-item" data-target="form2">
-                          <img src="./assets/images/eth.png" alt="Item 2" />
-                          <p>Item 2 Description</p>
-                      </div>
-                      <div class="grid-item" data-target="form3">
-                          <img src="./assets/images/usdt.png" alt="Item 3" />
-                          <p>Item 3 Description</p>
-                      </div>
-                      <div class="grid-item" data-target="form4">
-                          <img src="./assets/images/lite.png" alt="Item 4" />
-                          <p>Item 4 Description</p>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      
-          <!-- Forms -->
-          <div class="form-overlay" id="form1">
-              <div class="form-container">
-                  <h2>Form 1</h2>
-                  <form action="submit_form1.html" method="post">
-                      <input type="text" name="name" placeholder="Name" required />
-                      <input type="email" name="email" placeholder="Email" required />
-                      <textarea name="message" placeholder="Message" required></textarea>
-                      <button type="submit">Submit</button>
-                  </form>
-                  <button class="close-form">Close</button>
-              </div>
-          </div>
-          
-          <div class="form-overlay" id="form2">
-              <div class="form-container">
-                  <h2>Form 2</h2>
-                  <form action="submit_form2.html" method="post">
-                      <input type="text" name="name" placeholder="Name" required />
-                      <input type="email" name="email" placeholder="Email" required />
-                      <textarea name="message" placeholder="Message" required></textarea>
-                      <button type="submit">Submit</button>
-                  </form>
-                  <button class="close-form">Close</button>
-              </div>
-          </div>
-      
-          <div class="form-overlay" id="form3">
-              <div class="form-container">
-                  <h2>Form 3</h2>
-                  <form action="submit_form3.html" method="post">
-                      <input type="text" name="name" placeholder="Name" required />
-                      <input type="email" name="email" placeholder="Email" required />
-                      <textarea name="message" placeholder="Message" required></textarea>
-                      <button type="submit">Submit</button>
-                  </form>
-                  <button class="close-form">Close</button>
-              </div>
-          </div>
-      
-          <div class="form-overlay" id="form4">
-              <div class="form-container">
-                  <h2>Form 4</h2>
-                  <form action="submit_form4.html" method="post">
-                      <input type="text" name="name" placeholder="Name" required />
-                      <input type="email" name="email" placeholder="Email" required />
-                      <textarea name="message" placeholder="Message" required></textarea>
-                      <button type="submit">Submit</button>
-                  </form>
-                  <button class="close-form">Close</button>
-              </div>
-          </div>
+        <!-- Popup Modal -->
+        <div class="modal-overlay" id="modal">
+            <div class="modal-content">
+                <button class="close-modal">Close</button>
+                <div class="grid-container">
+                    <div class="grid-item" data-target="form1">
+                        <img src="./assets/images/btc.png" alt="Item 1" />
+                        <p>Item 1 Description</p>
+                    </div>
+                    <div class="grid-item" data-target="form2">
+                        <img src="./assets/images/eth.png" alt="Item 2" />
+                        <p>Item 2 Description</p>
+                    </div>
+                    <div class="grid-item" data-target="form3">
+                        <img src="./assets/images/usdt.png" alt="Item 3" />
+                        <p>Item 3 Description</p>
+                    </div>
+                    <div class="grid-item" data-target="form4">
+                        <img src="./assets/images/lite.png" alt="Item 4" />
+                        <p>Item 4 Description</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Forms -->
+        <div class="form-overlay" id="form1">
+            <div class="form-container">
+                <h2>Form 1</h2>
+                <form action="submit_form1.html" method="post">
+                    <input type="text" name="name" placeholder="Name" required />
+                    <input type="email" name="email" placeholder="Email" required />
+                    <textarea name="message" placeholder="Message" required></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+                <button class="close-form">Close</button>
+            </div>
+        </div>
 
       </div>
     </article>
