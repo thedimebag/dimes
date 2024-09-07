@@ -12,13 +12,9 @@ document.addEventListener('DOMContentLoaded', function () {
     return;
   }
 
-  // Get cart items from localStorage
-  const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-
-  console.log('Cart Items:', cartItems); // Debug log
-
   // Function to update the cart total
   function updateCartTotal() {
+    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
     const total = cartItems.reduce((sum, item) => {
       const price = parseFloat(item.price.replace(/[^0-9.-]+/g, ""));
       return sum + price;
@@ -38,6 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Render cart items
   function renderCartItems() {
+    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
     cartList.innerHTML = '';
 
     if (cartItems.length === 0) {
@@ -84,6 +81,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
+  // Initial render of cart items
   renderCartItems();
 });
+
+
 
