@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const cartList = document.getElementById('cart-list');
   const cartTotal = document.getElementById('cart-total');
   const emptyCartMessage = document.getElementById('empty-cart-message'); // Element for the empty cart message
-  const generalCardImage = './assets/images/general-card.png'; // Path to your general card imagE
+  const generalCardImage = './assets/images/cart-card.jpg'; // Path to your general card imagE
   const popupMessage = document.getElementById('popup-message');
 
   // Check if cartList, cartTotal, emptyCartMessage, and popupMessage elements exist
