@@ -97,3 +97,34 @@ document.addEventListener('DOMContentLoaded', function () {
   renderCartItems();
 });
 
+
+//CHECKOUT POPUP JS
+// THIS IS FOR THE CHECKOUT GRID ITEMS
+document.addEventListener('DOMContentLoaded', () => {
+    const gridItems = document.querySelectorAll('.grid-item');
+    const formOverlays = document.querySelectorAll('.form-overlay');
+    const closeButtons = document.querySelectorAll('.close-form');
+    const checkoutBtn = document.querySelector('.checkout-btn');
+
+    gridItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const targetId = item.getAttribute('data-target');
+            document.getElementById(targetId).style.display = 'flex';
+        });
+    });
+
+    closeButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            button.closest('.form-overlay').style.display = 'none';
+        });
+    });
+
+    checkoutBtn.addEventListener('click', (event) => {
+        event.preventDefault();
+        formOverlays.forEach(overlay => {
+            overlay.style.display = 'flex';
+        });
+    });
+});
+
+
