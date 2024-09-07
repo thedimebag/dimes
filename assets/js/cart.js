@@ -100,31 +100,60 @@ document.addEventListener('DOMContentLoaded', function () {
 
 //CHECKOUT POPUP JS
 // THIS IS FOR THE CHECKOUT GRID ITEMS
+
+
 document.addEventListener('DOMContentLoaded', () => {
+    const checkoutBtn = document.querySelector('.checkout-btn');
+    const modal = document.getElementById('modal');
+    const closeModal = document.querySelector('.close-modal');
     const gridItems = document.querySelectorAll('.grid-item');
     const formOverlays = document.querySelectorAll('.form-overlay');
-    const closeButtons = document.querySelectorAll('.close-form');
-    const checkoutBtn = document.querySelector('.checkout-btn');
+    const closeFormButtons = document.querySelectorAll('.close-form');
 
+    // Open the modal when the checkout button is clicked
+    checkoutBtn.addEventListener('click', () => {
+        modal.style.display = 'flex';
+    });
+
+    // Close the modal when the close button is clicked
+    closeModal.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    // Close the modal when clicking outside of the content
+    modal.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+
+    // Handle grid item clicks
     gridItems.forEach(item => {
         item.addEventListener('click', () => {
             const targetId = item.getAttribute('data-target');
-            document.getElementById(targetId).style.display = 'flex';
+            const targetForm = document.getElementById(targetId);
+            targetForm.style.display = 'flex';
         });
     });
 
-    closeButtons.forEach(button => {
+    // Close form overlays
+    closeFormButtons.forEach(button => {
         button.addEventListener('click', () => {
-            button.closest('.form-overlay').style.display = 'none';
+            const formOverlay = button.closest('.form-overlay');
+            formOverlay.style.display = 'none';
         });
     });
 
-    checkoutBtn.addEventListener('click', (event) => {
-        event.preventDefault();
-        formOverlays.forEach(overlay => {
-            overlay.style.display = 'flex';
+    // Close form overlays when clicking outside of the content
+    formOverlays.forEach(overlay => {
+        overlay.addEventListener('click', (event) => {
+            if (event.target === overlay) {
+                overlay.style.display = 'none';
+            }
         });
     });
 });
+
+
 
 
