@@ -4,11 +4,10 @@ document.addEventListener('DOMContentLoaded', function () {
   const cartList = document.getElementById('cart-list');
   const cartTotal = document.getElementById('cart-total');
   const emptyCartMessage = document.getElementById('empty-cart-message'); // Element for the empty cart message
-  const generalCardImage = './assets/images/cart-card.jpg'; // Path to your general card imagE
-  const popupMessage = document.getElementById('popup-message');
+  const generalCardImage = './assets/images/cart-card.jpg'; // Path to your general card image
 
-  // Check if cartList, cartTotal, emptyCartMessage, and popupMessage elements exist
-  if (!cartList || !cartTotal || !emptyCartMessage || !popupMessage) {
+  // Check if cartList, cartTotal, and emptyCartMessage elements exist
+  if (!cartList || !cartTotal || !emptyCartMessage) {
     console.error('Cart elements not found.');
     return;
   }
@@ -69,21 +68,12 @@ document.addEventListener('DOMContentLoaded', function () {
     updateCartTotal();
   }
 
-  // Function to show the popup message and reload the page
-  function showPopupAndReload() {
-    popupMessage.style.display = 'block';
-    setTimeout(() => {
-      popupMessage.style.display = 'none';
-      location.reload(); // Reload the page after 1 second
-    }, 1000); // Show popup for 1 second
-  }
-
   // Function to remove item from cart
   function removeCartItem(index) {
     const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
     cartItems.splice(index, 1);
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
-    showPopupAndReload(); // Show the popup message and reload the page
+    renderCartItems(); // Render cart items without reloading the page
   }
 
   // Handle remove button click
@@ -96,64 +86,4 @@ document.addEventListener('DOMContentLoaded', function () {
 
   renderCartItems();
 });
-
-
-//CHECKOUT POPUP JS
-// THIS IS FOR THE CHECKOUT GRID ITEMS
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    const checkoutBtn = document.querySelector('.checkout-btn');
-    const modal = document.getElementById('modal');
-    const closeModal = document.querySelector('.close-modal');
-    const gridItems = document.querySelectorAll('.grid-item');
-    const formOverlays = document.querySelectorAll('.form-overlay');
-    const closeFormButtons = document.querySelectorAll('.close-form');
-
-    // Open the modal when the checkout button is clicked
-    checkoutBtn.addEventListener('click', () => {
-        modal.style.display = 'flex';
-    });
-
-    // Close the modal when the close button is clicked
-    closeModal.addEventListener('click', () => {
-        modal.style.display = 'none';
-    });
-
-    // Close the modal when clicking outside of the content
-    modal.addEventListener('click', (event) => {
-        if (event.target === modal) {
-            modal.style.display = 'none';
-        }
-    });
-
-    // Handle grid item clicks
-    gridItems.forEach(item => {
-        item.addEventListener('click', () => {
-            const targetId = item.getAttribute('data-target');
-            const targetForm = document.getElementById(targetId);
-            targetForm.style.display = 'flex';
-        });
-    });
-
-    // Close form overlays
-    closeFormButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const formOverlay = button.closest('.form-overlay');
-            formOverlay.style.display = 'none';
-        });
-    });
-
-    // Close form overlays when clicking outside of the content
-    formOverlays.forEach(overlay => {
-        overlay.addEventListener('click', (event) => {
-            if (event.target === overlay) {
-                overlay.style.display = 'none';
-            }
-        });
-    });
-});
-
-
-
 
