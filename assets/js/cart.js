@@ -90,6 +90,11 @@ document.addEventListener('DOMContentLoaded', function () {
 document.addEventListener('DOMContentLoaded', function () {
   const checkoutButton = document.querySelector('.checkout-btn');
   const modal = document.getElementById('modal');
+  const darkerOverlay = document.getElementById('darker-overlay'); // Get the darker overlay element
+  const paymentPopup = document.getElementById('payment-popup');
+  const backHomeButton = document.querySelector('.back-home-button');
+  const closeFormButton = document.querySelector('.close-form');
+  const btcAddressSpan = document.getElementById('btc-address');
 
   // Show the modal
   checkoutButton.addEventListener('click', function () {
@@ -120,45 +125,17 @@ document.addEventListener('DOMContentLoaded', function () {
       formOverlay.style.display = 'none'; // Hide the form
     });
   });
-});
 
-// THIS IS TO COPY THE SPECIFIC COIN ADDRESS
-document.getElementById('btc-address').addEventListener('click', function () {
-  // Get the address text
-  var address = document.getElementById('btc-address').textContent;
-
-  // Create a temporary textarea to copy the text
-  var textarea = document.createElement('textarea');
-  textarea.value = address;
-  document.body.appendChild(textarea);
-  textarea.select();
-  document.execCommand('copy');
-  document.body.removeChild(textarea);
-
-  // Show the popup
-  var popup = document.getElementById('popup');
-  popup.classList.add('show');
-
-  // Hide the popup after 1 second
-  setTimeout(function () {
-    popup.classList.remove('show');
-  }, 1000);
-});
-
-// THIS IS TO SUBMIT THE FORM AND REDIRECT TO HOME
-document.addEventListener('DOMContentLoaded', function () {
-  const form = document.getElementById('checkout-form');
-  const paymentPopup = document.getElementById('payment-popup');
-  const closeFormButton = document.querySelector('.close-form');
-  const btcAddressSpan = document.getElementById('btc-address');
-
-  // Copy BTC Address to Clipboard
+  // THIS IS TO COPY THE SPECIFIC COIN ADDRESS
   btcAddressSpan.addEventListener('click', function () {
     navigator.clipboard.writeText(btcAddressSpan.textContent)
       .then(() => {
+        // Show the popup
         paymentPopup.textContent = 'Address Copied!';
         paymentPopup.style.backgroundColor = '#28a745'; // Green background
         paymentPopup.style.display = 'block';
+
+        // Hide the popup after 1 second
         setTimeout(() => {
           paymentPopup.style.display = 'none';
         }, 1000);
@@ -169,6 +146,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // Handle form submission
+  const form = document.getElementById('checkout-form');
   form.addEventListener('submit', function (event) {
     event.preventDefault(); // Prevent the default form submission behavior
 
@@ -176,6 +154,10 @@ document.addEventListener('DOMContentLoaded', function () {
     paymentPopup.textContent = 'Payment Information Submitted! Your goods should arrive in your inbox soon.';
     paymentPopup.style.backgroundColor = '#007BFF'; // Light blue background
     paymentPopup.style.display = 'block';
+    darkerOverlay.style.display = 'block'; // Show the darker overlay
+
+    // Show the Back to Home Page button
+    backHomeButton.style.display = 'block';
     
     // Hide the form
     document.querySelector('.form-overlay').style.display = 'none';
@@ -203,7 +185,6 @@ document.addEventListener('DOMContentLoaded', function () {
     renderCartItems(); // Optionally, update the cart UI (if this script is also managing the cart UI)
   }
 });
-
 
 
 
