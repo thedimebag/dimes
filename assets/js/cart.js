@@ -3,8 +3,8 @@
 document.addEventListener('DOMContentLoaded', function () {
   const cartList = document.getElementById('cart-list');
   const cartTotal = document.getElementById('cart-total');
-  const emptyCartMessage = document.getElementById('empty-cart-message'); // Element for the empty cart message
-  const generalCardImage = './assets/images/cart-card.jpg'; // Path to your general card image
+  const emptyCartMessage = document.getElementById('empty-cart-message');
+  const generalCardImage = './assets/images/cart-card.jpg';
 
   // Check if cartList, cartTotal, and emptyCartMessage elements exist
   if (!cartList || !cartTotal || !emptyCartMessage) {
@@ -25,11 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Function to get the appropriate image size based on screen width
   function getImageSize() {
-    if (window.innerWidth <= 600) {
-      return '80px'; // Width for small screens
-    } else {
-      return '100px'; // Default width for larger screens
-    }
+    return window.innerWidth <= 600 ? '80px' : '100px';
   }
 
   // Render cart items
@@ -38,9 +34,9 @@ document.addEventListener('DOMContentLoaded', function () {
     cartList.innerHTML = '';
 
     if (cartItems.length === 0) {
-      emptyCartMessage.style.display = 'block'; // Show the empty cart message
+      emptyCartMessage.style.display = 'block';
     } else {
-      emptyCartMessage.style.display = 'none'; // Hide the empty cart message
+      emptyCartMessage.style.display = 'none';
       cartItems.forEach((item, index) => {
         const cartItem = document.createElement('div');
         cartItem.className = 'cart-item';
@@ -70,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
     cartItems.splice(index, 1);
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
-    renderCartItems(); // Render cart items without reloading the page
+    renderCartItems();
   }
 
   // Handle remove button click
@@ -83,127 +79,93 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Initial render of cart items
   renderCartItems();
-});
 
-// CHECKOUT BUTTON
-// Checkout Function:
-document.addEventListener('DOMContentLoaded', function () {
+  // Checkout Functionality
   const checkoutButton = document.querySelector('.checkout-btn');
   const modal = document.getElementById('modal');
 
-  // Show the modal
   checkoutButton.addEventListener('click', function () {
-    modal.style.display = 'flex'; // Show the modal
+    modal.style.display = 'flex';
   });
 
-  // Hide the modal when clicking outside of the modal content
   modal.addEventListener('click', function (event) {
     if (event.target === modal) {
-      modal.style.display = 'none'; // Hide the modal
+      modal.style.display = 'none';
     }
   });
 
-  // Handle grid item clicks to open specific forms
   document.querySelectorAll('.grid-item').forEach(function (item) {
     item.addEventListener('click', function () {
       const formId = item.getAttribute('data-target');
       const formOverlay = document.getElementById(formId);
-      formOverlay.style.display = 'flex'; // Show the form
-      modal.style.display = 'none'; // Hide the modal
+      formOverlay.style.display = 'flex';
+      modal.style.display = 'none';
     });
   });
 
-  // Handle close button for each form
   document.querySelectorAll('.close-form').forEach(function (button) {
     button.addEventListener('click', function () {
       const formOverlay = button.closest('.form-overlay');
-      formOverlay.style.display = 'none'; // Hide the form
+      formOverlay.style.display = 'none';
     });
   });
-});
 
-// THIS IS TO COPY THE SPECIFIC COIN ADDRESS
-document.getElementById('btc-address').addEventListener('click', function () {
-  // Get the address text
-  var address = document.getElementById('btc-address').textContent;
+  // Handle form submission and redirect to home page
+  document.querySelectorAll('#checkout-form').forEach(function (form) {
+    form.addEventListener('submit', function (event) {
+      event.preventDefault(); // Prevent the default form submission behavior
 
-  // Create a temporary textarea to copy the text
-  var textarea = document.createElement('textarea');
-  textarea.value = address;
-  document.body.appendChild(textarea);
-  textarea.select();
-  document.execCommand('copy');
-  document.body.removeChild(textarea);
+      // Display the payment confirmation popup
+      const paymentPopup = document.getElementById('payment-popup');
+      paymentPopup.textContent = 'Payment Information Submitted! Your goods should arrive in your inbox soon.';
+      paymentPopup.style.backgroundColor = '#007BFF'; // Light blue background
+      paymentPopup.style.display = 'block';
 
-  // Show the popup
-  var popup = document.getElementById('popup');
-  popup.classList.add('show');
+      // Hide the form
+      document.querySelector('.form-overlay').style.display = 'none';
 
-  // Hide the popup after 1 second
-  setTimeout(function () {
-    popup.classList.remove('show');
-  }, 1000);
-});
+      // Clear the form inputs
+      form.reset();
 
-// THIS IS TO SUBMIT THE FORM AND REDIRECT TO HOME
-document.addEventListener('DOMContentLoaded', function () {
-  const form = document.getElementById('checkout-form');
-  const paymentPopup = document.getElementById('payment-popup');
-  const closeFormButton = document.querySelector('.close-form');
-  const btcAddressSpan = document.getElementById('btc-address');
+      // Clear the cart
+      clearCart();
 
-  // Copy BTC Address to Clipboard
-  btcAddressSpan.addEventListener('click', function () {
-    navigator.clipboard.writeText(btcAddressSpan.textContent)
-      .then(() => {
-        paymentPopup.textContent = 'Address Copied!';
-        paymentPopup.style.backgroundColor = '#28a745'; // Green background
-        paymentPopup.style.display = 'block';
-        setTimeout(() => {
-          paymentPopup.style.display = 'none';
-        }, 1000);
-      })
-      .catch(err => {
-        console.error('Failed to copy text: ', err);
-      });
-  });
-
-  // Handle form submission
-  form.addEventListener('submit', function (event) {
-    event.preventDefault(); // Prevent the default form submission behavior
-
-    // Display the confirmation popup
-    paymentPopup.textContent = 'Payment Information Submitted! Your goods should arrive in your inbox soon.';
-    paymentPopup.style.backgroundColor = '#007BFF'; // Light blue background
-    paymentPopup.style.display = 'block';
-    
-    // Hide the form
-    document.querySelector('.form-overlay').style.display = 'none';
-    
-    // Clear the form inputs
-    form.reset();
-
-    // Clear the cart
-    clearCart();
-
-    // Redirect to the home page after 2 seconds
-    setTimeout(() => {
-      window.location.href = 'index.html'; // Replace with your home page URL
-    }, 2000);
+      // Redirect to the home page after 2 seconds
+      setTimeout(() => {
+        window.location.href = 'index.html'; // Replace with your home page URL
+      }, 2000);
+    });
   });
 
   // Close form button functionality
-  closeFormButton.addEventListener('click', function () {
-    document.querySelector('.form-overlay').style.display = 'none';
+  document.querySelectorAll('.close-form').forEach(function (button) {
+    button.addEventListener('click', function () {
+      document.querySelector('.form-overlay').style.display = 'none';
+    });
   });
 
   // Function to clear cart
   function clearCart() {
-    localStorage.removeItem('cartItems'); // Remove cart items from local storage
-    renderCartItems(); // Optionally, update the cart UI (if this script is also managing the cart UI)
+    localStorage.removeItem('cartItems');
+    renderCartItems();
+  }
+
+  // Copy BTC Address to Clipboard
+  const btcAddressSpan = document.getElementById('btc-address');
+  if (btcAddressSpan) {
+    btcAddressSpan.addEventListener('click', function () {
+      navigator.clipboard.writeText(btcAddressSpan.textContent)
+        .then(() => {
+          paymentPopup.textContent = 'Address Copied!';
+          paymentPopup.style.backgroundColor = '#28a745'; // Green background
+          paymentPopup.style.display = 'block';
+          setTimeout(() => {
+            paymentPopup.style.display = 'none';
+          }, 1000);
+        })
+        .catch(err => {
+          console.error('Failed to copy text: ', err);
+        });
+    });
   }
 });
-
-
-
-
