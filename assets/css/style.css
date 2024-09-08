@@ -1722,6 +1722,7 @@ body {
   max-width: 500px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   box-sizing: border-box; /* Ensures padding is included in width */
+  text-align: center; /* Center-align content */
 }
 
 .form-container h2 {
@@ -1732,22 +1733,10 @@ body {
 .form-container h4 {
   color: #FFFFFF; /* White text for headings */
   margin-bottom: 10px;
-  display: flex;
-  align-items: center;
 }
 
-.form-container h4 #copy-btn {
-  background-color: #007BFF; /* Light blue background */
-  color: #FFFFFF; /* White text */
-  border: none;
-  padding: 5px 10px;
-  border-radius: 5px;
+.form-container h4 .copyable {
   cursor: pointer;
-  margin-left: 10px;
-}
-
-.form-container h4 #copy-btn:hover {
-  background-color: #0056b3; /* Darker blue on hover */
 }
 
 .form-container input,
@@ -1791,3 +1780,27 @@ body {
 .close-form:hover {
   background-color: #FF0000; /* Darker red on hover */
 }
+
+/* Popup Styles */
+.popup {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #007BFF; /* Light blue background */
+  color: #FFFFFF; /* White text */
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  display: none; /* Initially hidden */
+}
+
+.popup.show {
+  display: block; /* Show popup */
+}
+
+
+
+
+
+
