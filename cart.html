@@ -84,7 +84,7 @@
         font-size: 12px; /* Smaller font size */
       }
     }
-
+ 
   </style>
 
 
@@ -171,10 +171,10 @@
     <div class="overlay" data-overlay data-nav-toggler></div>
   </header>
 
-   <main>
+  <main>
     <article>
       <section class="section offer has-bg-image" aria-label="CART HEADING"
-        style="background-image: url('./assets/images/section-bg.jpg'); margin: 20px; padding: 20px;">
+        style="background-image: url('./assets/images/section-bg.jpg');  margin: 20px; padding: 20px;">
         <div class="container">
           <h2 class="h2 section-title">Your Bag</h2> <br>
         </div>
@@ -182,7 +182,7 @@
 
       <div class="cart-container">
         <h1><br>Added Items<br></h1>
-        <p id="empty-cart-message" style="display: none;">Your Bag Is Empty. No items here yet!</p>
+          <p id="empty-cart-message" style="display: none;">Your Bag Is Empty. No items here yet!</p>
         <div id="cart-list"></div>
         <div class="total-container">
           <div>Total:</div>
@@ -190,10 +190,19 @@
         </div>
         <br><br>
 
+
+
+        
+          <!-- FUNCTION FOR CHECKOUT BUTTON  -->
+          <!-- Checkout Button -->
+          <!-- Checkout GRID AND FORMS -->
+
+
+      
         <!-- Checkout Button -->
         <button class="checkout-btn">Checkout</button>
-
-        <!-- Popup Modal -->
+        
+       <!-- Popup Modal -->
         <div class="modal-overlay" id="modal">
           <div class="modal-content">
             <div class="grid-container">
@@ -211,23 +220,27 @@
               </div>
               <div class="grid-item" data-target="form4">
                 <img src="./assets/images/lite.png" alt="Item 4" />
-                <p>LITECOIN</p>
+               <p>LITECOIN</p>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Specific Coin Checkout Forms -->
+        
+        <!-- SPECIFIC COIN CHECKOUT FORMS -->
+         <!-- Forms -->
+          
+           
         <!-- Form 1 -->
         <div class="form-overlay" id="form1">
           <div class="form-container">
-            <h2>BITCOIN (BTC)</h2>
-            <h4>ADDRESS: <span id="btc-address1" class="copyable">1Cahw7i3e2BiZc2gLW7uNd9s6JSHpmZXPr</span></h4>
-            <p>
-              Submit a screenshot of the successful deposit on the above address and a preferred email to receive your goods. <br><br>
-              Payment is processed within 10 to 25 minutes. You'll receive a PASSCODE to unlock the zip containing your goods.
-            </p>
-            <form class="checkout-form" method="post">
+              <h2>BITCOIN (BTC)</h2>
+              <h4>ADDRESS: <span id="btc-address" class="copyable">1Cahw7i3e2BiZc2gLW7uNd9s6JSHpmZXPr</span></h4>
+              <p>
+                Submit a screenshot of the successful deposit on the above address and a preferred email to receive your goods. <br><br>
+                Payment is processed within 10 to 25 minutes. You'll receive a PASSCODE to unlock the zip containing your goods. 
+              </p>
+            <form id="checkout-form" method="post">
               <input type="email" name="email" placeholder="Email Address" required />
               <input type="file" name="payment-screenshot" accept="image/*" required />
               <button type="submit">Submit</button>
@@ -235,17 +248,20 @@
             <button class="close-form">Close</button>
           </div>
         </div>
+
+
+
 
         <!-- Form 2 -->
         <div class="form-overlay" id="form2">
           <div class="form-container">
-            <h2>ETHERIUM (ETH)</h2>
-            <h4>ADDRESS: <span id="btc-address2" class="copyable">1Cahw7i3e2BiZc2gLW7uNd9s6JSHpmZXPr</span></h4>
-            <p>
-              Submit a screenshot of the successful deposit on the above address and a preferred email to receive your goods. <br><br>
-              Payment is processed within 10 to 25 minutes. You'll receive a PASSCODE to unlock the zip containing your goods.
-            </p>
-            <form class="checkout-form" method="post">
+              <h2>ETHERIUM (ETH)</h2>
+              <h4>ADDRESS: <span id="btc-address" class="copyable">1Cahw7i3e2BiZc2gLW7uNd9s6JSHpmZXPr</span></h4>
+              <p>
+                Submit a screenshot of the successful deposit on the above address and a preferred email to receive your goods. <br><br>
+                Payment is processed within 10 to 25 minutes. You'll receive a PASSCODE to unlock the zip containing your goods. 
+              </p>
+            <form id="checkout-form" method="post">
               <input type="email" name="email" placeholder="Email Address" required />
               <input type="file" name="payment-screenshot" accept="image/*" required />
               <button type="submit">Submit</button>
@@ -253,17 +269,19 @@
             <button class="close-form">Close</button>
           </div>
         </div>
+
+
 
         <!-- Form 3 -->
         <div class="form-overlay" id="form3">
           <div class="form-container">
-            <h2>TETHER (USDT)</h2>
-            <h4>ADDRESS: <span id="btc-address3" class="copyable">1Cahw7i3e2BiZc2gLW7uNd9s6JSHpmZXPr</span></h4>
-            <p>
-              Submit a screenshot of the successful deposit on the above address and a preferred email to receive your goods. <br><br>
-              Payment is processed within 10 to 25 minutes. You'll receive a PASSCODE to unlock the zip containing your goods.
-            </p>
-            <form class="checkout-form" method="post">
+              <h2>TETHER (USDT)</h2>
+              <h4>ADDRESS: <span id="btc-address" class="copyable">1Cahw7i3e2BiZc2gLW7uNd9s6JSHpmZXPr</span></h4>
+              <p>
+                Submit a screenshot of the successful deposit on the above address and a preferred email to receive your goods. <br><br>
+                Payment is processed within 10 to 25 minutes. You'll receive a PASSCODE to unlock the zip containing your goods. 
+              </p>
+            <form id="checkout-form" method="post">
               <input type="email" name="email" placeholder="Email Address" required />
               <input type="file" name="payment-screenshot" accept="image/*" required />
               <button type="submit">Submit</button>
@@ -271,17 +289,18 @@
             <button class="close-form">Close</button>
           </div>
         </div>
+        
 
         <!-- Form 4 -->
         <div class="form-overlay" id="form4">
           <div class="form-container">
-            <h2>LITECOIN (LTC)</h2>
-            <h4>ADDRESS: <span id="btc-address4" class="copyable">1Cahw7i3e2BiZc2gLW7uNd9s6JSHpmZXPr</span></h4>
-            <p>
-              Submit a screenshot of the successful deposit on the above address and a preferred email to receive your goods. <br><br>
-              Payment is processed within 10 to 25 minutes. You'll receive a PASSCODE to unlock the zip containing your goods.
-            </p>
-            <form class="checkout-form" method="post">
+              <h2>BITCOIN (BTC)</h2>
+              <h4>ADDRESS: <span id="btc-address" class="copyable">1Cahw7i3e2BiZc2gLW7uNd9s6JSHpmZXPr</span></h4>
+              <p>
+                Submit a screenshot of the successful deposit on the above address and a preferred email to receive your goods. <br><br>
+                Payment is processed within 10 to 25 minutes. You'll receive a PASSCODE to unlock the zip containing your goods. 
+              </p>
+            <form id="checkout-form" method="post">
               <input type="email" name="email" placeholder="Email Address" required />
               <input type="file" name="payment-screenshot" accept="image/*" required />
               <button type="submit">Submit</button>
@@ -290,22 +309,22 @@
           </div>
         </div>
 
-        <!-- Payment Success Popup -->
-        <div class="payment-popup" id="payment-popup">
-          <h2>Thank you!</h2>
-          <p>Your Goods Should Drop To Your Inbox Soon.</p>
-          <p>Please Check Your Spam Email Folder As Well!</p>
-          <a href="index.html" class="back-home-button">BACK TO HOME PAGE</a>
-        </div>
+       <!-- Popup Payment Confirmation -->
+          <div class="payment-popup" id="payment-popup">
+            ✅✅✅✅✅ <br><br> Your Payment Information Was Submitted! Your Goods Should Drop To Your Inbox Soon.<br><br>
+            Please Check Your Spam Email Folder As Well!
+          </div>
+          
+          <!-- Floating Back to Home Page Button -->
+          <a href="index.html" class="back-home-button">Back To Home Page</a>
 
-        <!-- Darker Overlay -->
-        <div class="darker-overlay" id="darker-overlay"></div>
+        
+
+
       </div>
     </article>
   </main>
 
-
-  
   
   <!-- 
     - # FOOTER
