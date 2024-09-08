@@ -1837,6 +1837,22 @@ body {
 
 
 /* PAYYMENT CONFIRMATION POPUP MESSAGE */
+
+
+
+/* Darker Transparent Overlay */
+.darker-overlay {
+  display: none; /* Initially hidden */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9); /* Very dark with high transparency */
+  z-index: 1000; /* Just below the payment-popup */
+}
+
+/* Style for the Payment Confirmation Popup */
 .payment-popup {
   display: none; /* Initially hidden */
   position: fixed;
@@ -1844,18 +1860,37 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #007BFF; /* Light blue background */
-  color: #ffffff;
-  padding: 15px;
-  border-radius: 8px;
+  color: #FFFFFF; /* White text */
+  padding: 20px;
+  border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  z-index: 3000; /* Ensure it is on top of other content */
+  z-index: 1001; /* Ensure it is on top of other content */
   text-align: center;
 }
 
-/* Responsive Design */
+/* Style for the Floating Back to Home Page Button */
+.back-home-button {
+  display: none; /* Initially hidden */
+  margin-top: 20px;
+  background-color: #FF4136; /* Red background */
+  color: #FFFFFF; /* White text */
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 16px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add shadow for better visibility */
+}
+
+.back-home-button:hover {
+  background-color: #FF0000; /* Darker red on hover */
+}
+
+/* Responsive Design for Payment Popup */
 @media (max-width: 600px) {
   .payment-popup {
     font-size: 14px; /* Adjust font size for small screens */
+    padding: 15px; /* Adjust padding for small screens */
   }
 }
 
