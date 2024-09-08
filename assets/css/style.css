@@ -2136,3 +2136,15 @@ body {
     padding: 15px;
   }
 }
+
+
+
+/* Modal and Form Display Styles */
+.show {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
