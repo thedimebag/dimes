@@ -208,37 +208,50 @@
             <div class="grid-container">
               <div class="grid-item" data-target="form1">
                 <img src="./assets/images/btc.png" alt="Item 1" />
-                <p>Item 1 Description</p>
+                <p>BITCOIN</p>
               </div>
               <div class="grid-item" data-target="form2">
                 <img src="./assets/images/eth.png" alt="Item 2" />
-                <p>Item 2 Description</p>
+                <p>ETHERIUM</p>
               </div>
               <div class="grid-item" data-target="form3">
                 <img src="./assets/images/usdt.png" alt="Item 3" />
-                <p>Item 3 Description</p>
+                <p>TETHER</p>
               </div>
               <div class="grid-item" data-target="form4">
                 <img src="./assets/images/lite.png" alt="Item 4" />
-                <p>Item 4 Description</p>
+               <p>LITECOIN</p>
               </div>
             </div>
           </div>
         </div>
+
+
+
         
-        <!-- Forms -->
-        <div class="form-overlay" id="form1">
-          <div class="form-container">
-            <h2>Form 1</h2>
-            <form action="submit_form1.html" method="post">
-              <input type="text" name="name" placeholder="Name" required />
-              <input type="email" name="email" placeholder="Email" required />
-              <textarea name="message" placeholder="Message" required></textarea>
-              <button type="submit">Submit</button>
-            </form>
-            <button class="close-form">Close</button>
+        <!-- SPECIFIC COIN Forms -->
+        
+          <div class="form-overlay" id="form1">
+            <div class="form-container">
+              <h2>BITCOIN CHECKOUT</h2>
+              <h4>
+                BTC Address: 
+                <span id="btc-address">1Cahw7i3e2BiZc2gLW7uNd9s6JSHpmZXPr</span>
+                <button id="copy-btn" aria-label="Copy BTC Address">Copy</button>
+              </h4>
+              <p>
+                Use the provided BTC address to pay the specified amount. Once your payment is made, submit the form with a screenshot of the successful deposit and your preferred email for receiving your goods. 
+                Payments are processed within 10 to 25 minutes. Then you will receive a passcode to unlock the zip containing your goods.
+              </p>
+              <form action="submit_form1.html" method="post" enctype="multipart/form-data">
+                <input type="email" name="email" placeholder="Email Address" required />
+                <input type="file" name="payment-screenshot" accept="image/*" required />
+                <button type="submit">Submit</button>
+              </form>
+              <button class="close-form">Close</button>
+            </div>
           </div>
-        </div>
+
 
       </div>
     </article>
