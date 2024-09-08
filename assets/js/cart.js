@@ -92,43 +92,44 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 document.addEventListener('DOMContentLoaded', function () {
-    const checkoutButton = document.querySelector('.checkout-btn');
-    const modal = document.getElementById('modal');
-    const closeModalButton = modal.querySelector('.close-modal');
+  const checkoutButton = document.querySelector('.checkout-btn');
+  const modal = document.getElementById('modal');
 
-    // Show the modal
-    checkoutButton.addEventListener('click', function () {
-        modal.style.display = 'flex'; // Or use 'block' depending on your CSS
-    });
+  // Show the modal
+  checkoutButton.addEventListener('click', function () {
+    modal.style.display = 'flex'; // Show the modal
+  });
 
-    // Hide the modal
-    closeModalButton.addEventListener('click', function () {
-        modal.style.display = 'none';
-    });
+  // Hide the modal when clicking outside of the modal content
+  modal.addEventListener('click', function (event) {
+    if (event.target === modal) {
+      modal.style.display = 'none'; // Hide the modal
+    }
+  });
 
-    // Hide the modal when clicking outside of the modal content
-    modal.addEventListener('click', function (event) {
-        if (event.target === modal) {
-            modal.style.display = 'none';
-        }
+  // Handle grid item clicks to open specific forms
+  document.querySelectorAll('.grid-item').forEach(function (item) {
+    item.addEventListener('click', function () {
+      const formId = item.getAttribute('data-target');
+      const formOverlay = document.getElementById(formId);
+      formOverlay.style.display = 'flex'; // Show the form
+      modal.style.display = 'none'; // Hide the modal
     });
+  });
 
-    // Handle close button for each form
-    document.querySelectorAll('.close-form').forEach(function (button) {
-        button.addEventListener('click', function () {
-            const formOverlay = button.closest('.form-overlay');
-            formOverlay.style.display = 'none';
-        });
+  // Handle close button for each form
+  document.querySelectorAll('.close-form').forEach(function (button) {
+    button.addEventListener('click', function () {
+      const formOverlay = button.closest('.form-overlay');
+      formOverlay.style.display = 'none'; // Hide the form
     });
-
-    // Handle grid item clicks to open specific forms
-    document.querySelectorAll('.grid-item').forEach(function (item) {
-        item.addEventListener('click', function () {
-            const formId = item.getAttribute('data-target');
-            const formOverlay = document.getElementById(formId);
-            formOverlay.style.display = 'flex'; // Or use 'block'
-            modal.style.display = 'none';
-        });
-    });
+  });
 });
+
+
+
+
+
+
+
 
