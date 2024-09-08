@@ -85,12 +85,8 @@ document.addEventListener('DOMContentLoaded', function () {
   renderCartItems();
 });
 
-
-
-//CHECKOUT BUTTON
-// Checkout FUnction:
-
-
+// CHECKOUT BUTTON
+// Checkout Function:
 document.addEventListener('DOMContentLoaded', function () {
   const checkoutButton = document.querySelector('.checkout-btn');
   const modal = document.getElementById('modal');
@@ -126,48 +122,38 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+// THIS IS TO COPY THE SPECIFIC COIN ADDRESS
+document.getElementById('btc-address').addEventListener('click', function () {
+  // Get the address text
+  var address = document.getElementById('btc-address').textContent;
 
+  // Create a temporary textarea to copy the text
+  var textarea = document.createElement('textarea');
+  textarea.value = address;
+  document.body.appendChild(textarea);
+  textarea.select();
+  document.execCommand('copy');
+  document.body.removeChild(textarea);
 
+  // Show the popup
+  var popup = document.getElementById('popup');
+  popup.classList.add('show');
 
+  // Hide the popup after 1 second
+  setTimeout(function () {
+    popup.classList.remove('show');
+  }, 1000);
+});
 
-//THIS IS TO COPY THE SPECIFIC COIN ADDRESS
-
-  document.getElementById('btc-address').addEventListener('click', function() {
-    // Get the address text
-    var address = document.getElementById('btc-address').textContent;
-
-    // Create a temporary textarea to copy the text
-    var textarea = document.createElement('textarea');
-    textarea.value = address;
-    document.body.appendChild(textarea);
-    textarea.select();
-    document.execCommand('copy');
-    document.body.removeChild(textarea);
-
-    // Show the popup
-    var popup = document.getElementById('popup');
-    popup.classList.add('show');
-
-    // Hide the popup after 1 second
-    setTimeout(function() {
-      popup.classList.remove('show');
-    }, 1000);
-  });
-
-
-
-
-
-//THIS IS TO SUBMIT THE FORM AND REDIRECT TO HOME
-
-document.addEventListener('DOMContentLoaded', function() {
+// THIS IS TO SUBMIT THE FORM AND REDIRECT TO HOME
+document.addEventListener('DOMContentLoaded', function () {
   const form = document.getElementById('checkout-form');
   const paymentPopup = document.getElementById('payment-popup');
   const closeFormButton = document.querySelector('.close-form');
   const btcAddressSpan = document.getElementById('btc-address');
 
   // Copy BTC Address to Clipboard
-  btcAddressSpan.addEventListener('click', function() {
+  btcAddressSpan.addEventListener('click', function () {
     navigator.clipboard.writeText(btcAddressSpan.textContent)
       .then(() => {
         paymentPopup.textContent = 'Address Copied!';
@@ -183,7 +169,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // Handle form submission
-  form.addEventListener('submit', function(event) {
+  form.addEventListener('submit', function (event) {
     event.preventDefault(); // Prevent the default form submission behavior
 
     // Display the confirmation popup
@@ -197,7 +183,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Clear the form inputs
     form.reset();
 
-    // Clear the cart (assuming you have a function or method to handle this)
+    // Clear the cart
     clearCart();
 
     // Redirect to the home page after 2 seconds
@@ -207,19 +193,16 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // Close form button functionality
-  closeFormButton.addEventListener('click', function() {
+  closeFormButton.addEventListener('click', function () {
     document.querySelector('.form-overlay').style.display = 'none';
   });
 
-  // Function to clear cart (replace with your own cart clearing logic)
+  // Function to clear cart
   function clearCart() {
-    // Example cart clearing logic
-    console.log('Cart cleared'); // Replace with actual cart clearing code
+    localStorage.removeItem('cartItems'); // Remove cart items from local storage
+    renderCartItems(); // Optionally, update the cart UI (if this script is also managing the cart UI)
   }
 });
-
-
-
 
 
 
