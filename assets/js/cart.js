@@ -23,9 +23,9 @@ document.addEventListener('DOMContentLoaded', function () {
     cartTotal.textContent = `$${total.toFixed(2)}`;
   }
 
-  // Get image size based on screen width
-  function getImageSize() {
-    return window.innerWidth <= 600 ? '80px' : '100px';
+  // Get image size class based on screen width
+  function getImageSizeClass() {
+    return window.innerWidth <= 600 ? 'cart-item-image-small' : 'cart-item-image-large';
   }
 
   // Render cart items
@@ -34,17 +34,17 @@ document.addEventListener('DOMContentLoaded', function () {
     cartList.innerHTML = '';
 
     if (cartItems.length === 0) {
-      emptyCartMessage.style.display = 'block';
+      emptyCartMessage.classList.remove('hidden');
     } else {
-      emptyCartMessage.style.display = 'none';
+      emptyCartMessage.classList.add('hidden');
       cartItems.forEach((item, index) => {
         const cartItem = document.createElement('div');
         cartItem.className = 'cart-item';
-        const imageSize = getImageSize();
+        const imageClass = getImageSizeClass();
 
         cartItem.innerHTML = `
-          <img src="${generalCardImage}" alt="General Card" style="border-radius: 10px; width: ${imageSize}; height: auto;">
-          <div class="cart-item-info" style="color: red;">
+          <img src="${generalCardImage}" alt="General Card" class="${imageClass}">
+          <div class="cart-item-info">
             <div class="card-title">${item.title}</div>
             <div class="card-description">${item.description}</div>
             <div class="card-price">${item.price}</div>
@@ -91,14 +91,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Show the modal with payment options
   checkoutBtn.addEventListener('click', () => {
-    modal.style.display = 'block';
-    darkerOverlay.style.display = 'block';
+    modal.classList.add('show');
+    darkerOverlay.classList.add('show');
   });
 
   // Hide the modal
   darkerOverlay.addEventListener('click', () => {
-    modal.style.display = 'none';
-    darkerOverlay.style.display = 'none';
+    modal.classList.remove('show');
+    darkerOverlay.classList.remove('show');
   });
 
   // Show specific form based on selected payment method
@@ -107,10 +107,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const targetId = e.target.getAttribute('data-target');
       formOverlays.forEach(overlay => {
         if (overlay.id === targetId) {
-          overlay.style.display = 'block';
-          darkerOverlay.style.display = 'block';
+          overlay.classList.add('show');
+          darkerOverlay.classList.add('show');
         } else {
-          overlay.style.display = 'none';
+          overlay.classList.remove('show');
         }
       });
     }
@@ -119,8 +119,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // Close the forms
   closeFormButtons.forEach(button => {
     button.addEventListener('click', () => {
-      button.closest('.form-overlay').style.display = 'none';
-      darkerOverlay.style.display = 'none';
+      button.closest('.form-overlay').classList.remove('show');
+      darkerOverlay.classList.remove('show');
     });
   });
 
@@ -145,9 +145,9 @@ document.addEventListener('DOMContentLoaded', () => {
       console.log('Form submitted with data:', Object.fromEntries(formData));
       
       // Hide form and show payment popup
-      form.closest('.form-overlay').style.display = 'none';
-      paymentPopup.style.display = 'block';
-      darkerOverlay.style.display = 'block';
+      form.closest('.form-overlay').classList.remove('show');
+      paymentPopup.classList.add('show');
+      darkerOverlay.classList.add('show');
 
       // Redirect to home page after 2 seconds
       setTimeout(() => {
