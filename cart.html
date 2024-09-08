@@ -226,48 +226,61 @@
           </div>
         </div>
 
-
-
         
-        <!-- SPECIFIC COIN Forms -->
+        <!-- SPECIFIC COIN CHECKOUT FORMS -->
          <!-- Forms -->
           
-           <div class="form-overlay" id="form1">
-            <div class="form-container">
-              <h2>BITCOIN [BTC]</h2>
-              <h4>
-                Address: 
-                <span id="btc-address" class="copyable">1Cahw7i3e2BiZc2gLW7uNd9s6JSHpmZXPr</span>
-              </h4>
+           
+        <!-- Form 1 -->
+        <div class="form-overlay" id="form1">
+          <div class="form-container">
+              <h2>BITCOIN (BTC)</h2>
+              <h4>ADDRESS: <span id="btc-address" class="copyable">1Cahw7i3e2BiZc2gLW7uNd9s6JSHpmZXPr</span></h4>
               <p>
-                Submit a screenshot of the successful deposit on the above adress and a preferred email to receive your goods. <br><br>
+                Submit a screenshot of the successful deposit on the above address and a preferred email to receive your goods. <br><br>
                 Payment is processed within 10 to 25 minutes. You'll receive a PASSCODE to unlock the zip containing your goods. 
               </p>
-              <form action="submit_form1.html" method="post" enctype="multipart/form-data">
-                <input type="email" name="email" placeholder="Email Address" required />
-                <input type="file" name="payment-screenshot" accept="image/*" required />
-                <button type="submit">Submit</button>
-              </form>
-              <button class="close-form">Close</button>
-              <!-- Address Copied Popup -->
-              <div id="popup" class="popup">Address Copied</div>
-            </div>
+            <form id="checkout-form" method="post">
+              <input type="email" name="email" placeholder="Email Address" required />
+              <input type="file" name="payment-screenshot" accept="image/*" required />
+              <button type="submit">Submit</button>
+            </form>
+            <button class="close-form">Close</button>
           </div>
-
-          <!-- Popup Payment Confirmation -->
-          <div class="payment-popup" id="payment-popup">
-            Payment Information Submitted! Your goods should arrive in your inbox soon.<br><br>
-            PPlease Check Your Spam Email Folder As Well!
-          </div>
+        </div>
 
 
-        <!-- Forms -->
+
+
+        <!-- Form 2 -->
         <div class="form-overlay" id="form2">
           <div class="form-container">
-            <h2>ETHERIUM [ETH]</h2>
-            <h4>BTC Address : <span id="btc-address">1Cahw7i3e2BiZc2gLW7uNd9s6JSHpmZXPr</span></h4>
-            <p>Use the provided BTC address to pay the specified amount. Once your payment is made, submit the form with a screenshot of the successful deposit and your preferred email for receiving your goods. 
-              Payments are processed within 10 to 25 minutes, Then you will receive a passcode to unlock the zip containing your goods.</p>
+              <h2>ETHERIUM (ETH)</h2>
+              <h4>ADDRESS: <span id="btc-address" class="copyable">1Cahw7i3e2BiZc2gLW7uNd9s6JSHpmZXPr</span></h4>
+              <p>
+                Submit a screenshot of the successful deposit on the above address and a preferred email to receive your goods. <br><br>
+                Payment is processed within 10 to 25 minutes. You'll receive a PASSCODE to unlock the zip containing your goods. 
+              </p>
+            <form id="checkout-form" method="post">
+              <input type="email" name="email" placeholder="Email Address" required />
+              <input type="file" name="payment-screenshot" accept="image/*" required />
+              <button type="submit">Submit</button>
+            </form>
+            <button class="close-form">Close</button>
+          </div>
+        </div>
+
+
+
+        <!-- Form 3 -->
+        <div class="form-overlay" id="form3">
+          <div class="form-container">
+              <h2>TETHER (USDT)</h2>
+              <h4>ADDRESS: <span id="btc-address" class="copyable">1Cahw7i3e2BiZc2gLW7uNd9s6JSHpmZXPr</span></h4>
+              <p>
+                Submit a screenshot of the successful deposit on the above address and a preferred email to receive your goods. <br><br>
+                Payment is processed within 10 to 25 minutes. You'll receive a PASSCODE to unlock the zip containing your goods. 
+              </p>
             <form id="checkout-form" method="post">
               <input type="email" name="email" placeholder="Email Address" required />
               <input type="file" name="payment-screenshot" accept="image/*" required />
@@ -277,8 +290,31 @@
           </div>
         </div>
         
-        <!-- Payment Popup -->
-        <div id="payment-popup" class="payment-popup">Payment Information Submitted! Your goods should arrive in your inbox soon.</div>
+
+        <!-- Form 4 -->
+        <div class="form-overlay" id="form4">
+          <div class="form-container">
+              <h2>BITCOIN (BTC)</h2>
+              <h4>ADDRESS: <span id="btc-address" class="copyable">1Cahw7i3e2BiZc2gLW7uNd9s6JSHpmZXPr</span></h4>
+              <p>
+                Submit a screenshot of the successful deposit on the above address and a preferred email to receive your goods. <br><br>
+                Payment is processed within 10 to 25 minutes. You'll receive a PASSCODE to unlock the zip containing your goods. 
+              </p>
+            <form id="checkout-form" method="post">
+              <input type="email" name="email" placeholder="Email Address" required />
+              <input type="file" name="payment-screenshot" accept="image/*" required />
+              <button type="submit">Submit</button>
+            </form>
+            <button class="close-form">Close</button>
+          </div>
+        </div>
+
+       <!-- Popup Payment Confirmation -->
+          <div class="payment-popup" id="payment-popup">
+            Payment Information Submitted! Your goods should arrive in your inbox soon.<br><br>
+            Please Check Your Spam Email Folder As Well!
+          </div>
+        
 
 
       </div>
