@@ -1727,12 +1727,12 @@ body {
 }
 
 .form-container h2 {
-  color: #ADD8E6; /* Light blue headings */
+  color: #f7d61b; /* Light Orange headings */
   margin-top: 0;
 }
 
 .form-container h4 {
-  color: #FFFFFF; /* White text for headings */
+  color: #ccffff; /* cyan Blue text for headings */
   margin-bottom: 10px;
   font-size: 18px; /* Default font size */
 }
@@ -1818,7 +1818,7 @@ body {
   }
 
   .form-container h4 {
-    font-size: 16px; /* Smaller font size for BTC address */
+    font-size: 13px; /* Smaller font size for BTC address */
   }
 
   .form-container p {
