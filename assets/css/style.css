@@ -1612,6 +1612,7 @@ body {
 
 
         /* Popup Modal Styles */
+        /* Modal Styles */
           .modal-overlay {
               display: none;
               position: fixed;
@@ -1623,23 +1624,25 @@ body {
               z-index: 1000;
               align-items: center;
               justify-content: center;
-              overflow: auto; /* Added for better handling of overflow content */
+              overflow: auto; /* Handle overflow */
           }
           
           .modal-content {
               background-color: #002B5E; /* Dark blue background for modal */
               padding: 20px;
               border-radius: 10px;
-              width: 60%; /* Set width to 60% of the screen width */
-              max-width: 800px; /* Ensure the modal does not get too large */
+              width: 50%; /* Reduced width to 50% of the viewport width */
+              max-width: 600px; /* Smaller maximum width */
+              height: 80%; /* Fixed height to fit the screen */
+              max-height: 80vh; /* Max height to be 80% of viewport height */
               box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-              margin: 0 auto; /* Center the modal horizontally */
+              margin: 0 auto; /* Center horizontally */
+              overflow-y: auto; /* Handle vertical overflow */
           }
-          
           
           .grid-container {
               display: grid;
-              grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+              grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* 4 items per row on small screens */
               gap: 20px;
           }
           
@@ -1662,6 +1665,11 @@ body {
               height: auto;
               border-radius: 10px;
           }
+
+
+        
+
+         /* Final for Styles */
 
 
         .form-overlay {
