@@ -230,18 +230,18 @@
 
         
         <!-- SPECIFIC COIN Forms -->
-        
-          <div class="form-overlay" id="form1">
+         <!-- Forms -->
+          
+           <div class="form-overlay" id="form1">
             <div class="form-container">
-              <h2>BITCOIN CHECKOUT</h2>
+              <h2>BITCOIN [BTC]</h2>
               <h4>
-                BTC Address: 
-                <span id="btc-address">1Cahw7i3e2BiZc2gLW7uNd9s6JSHpmZXPr</span>
-                <button id="copy-btn" aria-label="Copy BTC Address">Copy</button>
+                Address: 
+                <span id="btc-address" class="copyable">1Cahw7i3e2BiZc2gLW7uNd9s6JSHpmZXPr</span>
               </h4>
               <p>
-                Use the provided BTC address to pay the specified amount. Once your payment is made, submit the form with a screenshot of the successful deposit and your preferred email for receiving your goods. 
-                Payments are processed within 10 to 25 minutes. Then you will receive a passcode to unlock the zip containing your goods.
+                Use the BTC address to pay (AMOUNT). Then submit a screenshot of the successful deposit and a preferred email to receiving your goods. 
+                Payments are processed within 10 to 25 minutes. You'll receive a PASSCODE to unlock the zip containing your goods. 
               </p>
               <form action="submit_form1.html" method="post" enctype="multipart/form-data">
                 <input type="email" name="email" placeholder="Email Address" required />
@@ -249,8 +249,11 @@
                 <button type="submit">Submit</button>
               </form>
               <button class="close-form">Close</button>
+              <!-- Address Copied Popup -->
+              <div id="popup" class="popup">Address Copied</div>
             </div>
           </div>
+
 
 
       </div>
