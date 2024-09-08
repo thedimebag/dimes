@@ -1852,6 +1852,51 @@ body {
   text-align: center;
 }
 
+
+
+/* TEMP POPUP SUCCESS MESSAGE & BUTTON */
+
+/* Payment Popup Styles */
+.payment-popup {
+  display: none; /* Hidden by default, will be shown on form submission */
+  background-color: #003366; /* Dark blue background */
+  color: white; /* White text */
+  border-radius: 10px; /* Rounded corners */
+  padding: 20px; /* Padding inside the popup */
+  max-width: calc(100% - 30px); /* Max width with spacing */
+  margin: 0 auto; /* Center align horizontally */
+  text-align: center; /* Center align text */
+  position: relative; /* For positioning the button */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for better visibility */
+}
+
+/* Back To Home Page Button Styles */
+.back-home-button {
+  display: none; /* Hidden by default, will be shown after form submission */
+  background-color: #FFD700; /* Gold color */
+  color: #003366; /* Dark blue text for contrast */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px 20px; /* Padding inside the button */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  text-decoration: none; /* Remove underline from link */
+  display: block; /* Make the button block-level to ensure it stays on its own line */
+  margin: 20px auto 0; /* Margin above the button and center align */
+  max-width: 200px; /* Optional max-width for the button */
+  text-align: center; /* Center align button text */
+}
+
+/* Ensure the button is visible below the popup */
+.payment-popup + .back-home-button {
+  margin-top: 20px; /* Space between popup and button */
+}
+
+/* Optional: Hover effect for the button */
+.back-home-button:hover {
+  background-color: #e5c100; /* Lighter gold on hover */
+}
+
 /* Responsive Design */
 @media (max-width: 600px) {
   .payment-popup {
