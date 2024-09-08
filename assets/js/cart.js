@@ -130,6 +130,27 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+//THIS IS TO COPY THE SPECIFIC COIN ADDRESS
+
+  document.getElementById('copy-btn').addEventListener('click', function() {
+    // Get the address text
+    var address = document.getElementById('btc-address').textContent;
+
+    // Create a temporary textarea to copy the text
+    var textarea = document.createElement('textarea');
+    textarea.value = address;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textarea);
+
+    // Optional: Alert the user that the address was copied
+    alert('BTC Address copied to clipboard!');
+  });
+
+
+
+
 
 
 
