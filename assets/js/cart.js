@@ -158,6 +158,69 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+//THIS IS TO SUBMIT THE FORM AND REDIRECT TO HOME
+
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('checkout-form');
+  const paymentPopup = document.getElementById('payment-popup');
+  const closeFormButton = document.querySelector('.close-form');
+  const btcAddressSpan = document.getElementById('btc-address');
+
+  // Copy BTC Address to Clipboard
+  btcAddressSpan.addEventListener('click', function() {
+    navigator.clipboard.writeText(btcAddressSpan.textContent)
+      .then(() => {
+        paymentPopup.textContent = 'Address Copied!';
+        paymentPopup.style.backgroundColor = '#28a745'; // Green background
+        paymentPopup.style.display = 'block';
+        setTimeout(() => {
+          paymentPopup.style.display = 'none';
+        }, 1000);
+      })
+      .catch(err => {
+        console.error('Failed to copy text: ', err);
+      });
+  });
+
+  // Handle form submission
+  form.addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission behavior
+
+    // Display the confirmation popup
+    paymentPopup.textContent = 'Payment Information Submitted! Your goods should arrive in your inbox soon.';
+    paymentPopup.style.backgroundColor = '#007BFF'; // Light blue background
+    paymentPopup.style.display = 'block';
+    
+    // Hide the form
+    document.querySelector('.form-overlay').style.display = 'none';
+    
+    // Clear the form inputs
+    form.reset();
+
+    // Clear the cart (assuming you have a function or method to handle this)
+    clearCart();
+
+    // Redirect to the home page after 2 seconds
+    setTimeout(() => {
+      window.location.href = 'index.html'; // Replace with your home page URL
+    }, 2000);
+  });
+
+  // Close form button functionality
+  closeFormButton.addEventListener('click', function() {
+    document.querySelector('.form-overlay').style.display = 'none';
+  });
+
+  // Function to clear cart (replace with your own cart clearing logic)
+  function clearCart() {
+    // Example cart clearing logic
+    console.log('Cart cleared'); // Replace with actual cart clearing code
+  }
+});
+
+
+
+
 
 
 
