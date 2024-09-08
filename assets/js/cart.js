@@ -110,16 +110,24 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // Handle form submission and redirect to home page
-  document.querySelectorAll('#checkout-form').forEach(function (form) {
+  // Handle form submission and show the payment popup
+  const form = document.getElementById('checkout-form');
+  if (form) {
     form.addEventListener('submit', function (event) {
       event.preventDefault(); // Prevent the default form submission behavior
 
       // Display the payment confirmation popup
       const paymentPopup = document.getElementById('payment-popup');
-      paymentPopup.textContent = 'Payment Information Submitted! Your goods should arrive in your inbox soon.';
+      paymentPopup.innerHTML = `
+        ✅✅✅✅✅ <br><br> Your Payment Information Was Submitted! Your Goods Should Drop To Your Inbox Soon.<br><br>
+        Please Check Your Spam Email Folder As Well!
+      `;
       paymentPopup.style.backgroundColor = '#007BFF'; // Light blue background
       paymentPopup.style.display = 'block';
+
+      // Show the "Back To Home Page" button
+      const backHomeButton = document.querySelector('.back-home-button');
+      backHomeButton.style.display = 'block';
 
       // Hide the form
       document.querySelector('.form-overlay').style.display = 'none';
@@ -130,12 +138,9 @@ document.addEventListener('DOMContentLoaded', function () {
       // Clear the cart
       clearCart();
 
-      // Redirect to the home page after 2 seconds
-      setTimeout(() => {
-        window.location.href = 'index.html'; // Replace with your home page URL
-      }, 2000);
+      // Optionally, you could redirect after a delay or let the user click the button
     });
-  });
+  }
 
   // Close form button functionality
   document.querySelectorAll('.close-form').forEach(function (button) {
@@ -156,6 +161,7 @@ document.addEventListener('DOMContentLoaded', function () {
     btcAddressSpan.addEventListener('click', function () {
       navigator.clipboard.writeText(btcAddressSpan.textContent)
         .then(() => {
+          const paymentPopup = document.getElementById('payment-popup');
           paymentPopup.textContent = 'Address Copied!';
           paymentPopup.style.backgroundColor = '#28a745'; // Green background
           paymentPopup.style.display = 'block';
@@ -169,3 +175,10 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
+
+
+
+
+
+
+
