@@ -7,197 +7,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Cards - Capital</title>
-  <meta name="title" content="Cards Page">
-  <meta name="description" content="All available cards listed on Capital">
+  <meta name="title" content="Bread Today - CAPITAL Tomorrow">
+  <meta name="description" content="CAPITAL is all about flipping the script. From Earning Bread to Living Big.">
 
   <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./assets/css/style.css">
-
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&family=Work+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-  <style>
-    /* Container for the cards grid */
-    .cards-container {
-      position: relative;
-      width: 100%;
-      overflow: hidden;
-      background-color: transparent;
-      padding: 20px; /* Add padding to the container */
-    }
-
-    /* Cards grid layout */
-    .cards-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr); /* 3 columns */
-      gap: 20px;
-      width: 100%;
-    }
-
-    /* Individual card styling */
-    .card {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: flex-end;
-      position: relative;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      color: white;
-      padding: 20px;
-      box-sizing: border-box;
-      min-width: 250px; /* Min width for the card */
-      height: 100%; /* Make sure cards are equal height */
-    }
-
-    /* Card image styling */
-    .card-image {
-      width: 60px;
-      height: auto;
-      position: absolute;
-      top: 10px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    /* Card info styling */
-    .card-info {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      position: absolute;
-      bottom: 16px;
-      width: calc(100% - 30px); /* Full width minus padding */
-      padding-left: 15px;
-    }
-
-    /* Card title */
-    .card-title {
-      font-weight: bold;
-      color: white;
-      margin-bottom: 5px;
-    }
-
-    /* Card description */
-    .card-description {
-      font-size: 14px;
-      color: white;
-      margin-bottom: 5px;
-    }
-
-    /* Card price */
-    .card-price {
-      font-size: 16px;
-      color: white;
-      margin-bottom: 20px;
-    }
-
-    /* Button styling */
-    .add-to-cart-btn {
-      background-color: #ff6f61;
-      border: none;
-      padding: 10px;
-      color: white;
-      border-radius: 5px;
-      font-size: 1rem;
-      cursor: pointer;
-      margin-top: 10px;
-      transition: background-color 0.3s ease;
-    }
-
-    .add-to-cart-btn:hover {
-      background-color: #e65b4f;
-    }
-
-    /* Responsive Adjustments */
-    @media screen and (max-width: 1024px) {
-      .cards-grid {
-        grid-template-columns: repeat(3, 1fr); /* 3 columns for medium screens */
-      }
-    }
-
-    @media screen and (max-width: 768px) {
-      .cards-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns for mobile screens */
-      }
-    }
-  </style>
-  
 </head>
 
 <body id="top" style="overflow-x: hidden;">
 
-  <!-- HEADER -->
   <header class="header" data-header>
-    <div class="header-top">
-      <div class="container">
-        <a href="index.html" class="logo">
-          <img src="./assets/images/logo.svg" width="50" height="auto" alt="Logo home">
-        </a>
-
-        <div class="input-wrapper">
-          <input type="search" name="search" placeholder="Search our store" class="input-field">
-          <button class="btn btn-primary">Search</button>
-        </div>
-
-        <div class="header-action">
-          <button class="header-action-btn cart-btn" aria-label="cart" title="Cart" id="cart-btn">
-            <span class="span">0</span>
-            <ion-icon name="cart" aria-hidden="true"></ion-icon>
-          </button>
-
-          <button class="nav-open-btn" aria-label="open menu" title="Open Menu" data-nav-toggler>
-            <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
-          </button>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="header-bottom" data-navbar>
-      <div class="container">
-        <nav class="navbar">
-          <button class="nav-close-btn" data-nav-toggler aria-label="close menu" title="Close Menu">
-            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
-          </button>
-
-          <div class="navbar-top">
-            <input type="search" name="search" placeholder="Search our store" class="input-field">
-            <button class="search-btn" aria-label="Search">
-              <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
-            </button>
-          </div>
-
-          <ul class="navbar-list">
-            <li><a href="index.html" class="navbar-link">Home</a></li>
-            <li><a href="shop.html" class="navbar-link">Store</a></li>
-            <li><a href="escrow.html" class="navbar-link">Escrow</a></li>
-            <li><a href="contact.html" class="navbar-link">Contact</a></li>
-            <li><a href="cart.html" class="navbar-link">Your Bag</a></li>
-          </ul>
-
-        </nav>
-      </div>
-    </div>
-    <div class="overlay" data-overlay data-nav-toggler></div>
+    <!-- Same header as index.html -->
   </header>
 
-  <!-- MAIN CONTENT -->
   <main>
     <article>
-      <section class="section cards-section" aria-label="all cards">
-        <div class="container">
-          <h1 class="h1 section-title">Cards</h1>
-          <p class="section-text">These are all our cards</p>
 
-          <div class="cards-grid">
-            <div class="new-card" id="new-card1" style="background-image: url('assets/images/card1.png');">
+      <!-- Store Cards Section -->
+      <section class="section offer has-bg-image" aria-label="store cards" style="overflow-x: hidden;">
+        <div class="container">
+          <h2 class="h2 section-title">Our Store<br>________</h2>
+          <p class="section-text">Featured Credit Cards. Find your perfect deal.</p>
+
+          <!-- Grid layout for cards -->
+          <div class="card-grid">
+            <div class="card" style="background-image: url('assets/images/card1.png');">
               <div class="card-info">
                 <div class="card-title">BAL - $9,680</div>
                 <div class="card-description">5399 **** **** 6904</div>
@@ -207,7 +47,7 @@
               <button class="add-to-cart-btn">Add to Cart</button>
             </div>
 
-            <div class="new-card" id="new-card2" style="background-image: url('assets/images/card2.png');">
+            <div class="card" style="background-image: url('assets/images/card2.png');">
               <div class="card-info">
                 <div class="card-title">BAL - $29,680</div>
                 <div class="card-description">3009 **** **** 1135</div>
@@ -217,7 +57,7 @@
               <button class="add-to-cart-btn">Add to Cart</button>
             </div>
 
-            <div class="new-card" id="new-card3" style="background-image: url('assets/images/card3.png');">
+            <div class="card" style="background-image: url('assets/images/card3.png');">
               <div class="card-info">
                 <div class="card-title">BAL - $2,330</div>
                 <div class="card-description">2522 **** **** 2424</div>
@@ -227,7 +67,7 @@
               <button class="add-to-cart-btn">Add to Cart</button>
             </div>
 
-            <div class="new-card" id="new-card4" style="background-image: url('assets/images/card4.png');">
+            <div class="card" style="background-image: url('assets/images/card4.png');">
               <div class="card-info">
                 <div class="card-title">BAL - $94,255</div>
                 <div class="card-description">2199 **** **** 3053</div>
@@ -237,7 +77,7 @@
               <button class="add-to-cart-btn">Add to Cart</button>
             </div>
 
-            <div class="new-card" id="new-card5" style="background-image: url('assets/images/card5.png');">
+            <div class="card" style="background-image: url('assets/images/card5.png');">
               <div class="card-info">
                 <div class="card-title">BAL - $36,480</div>
                 <div class="card-description">62214 **** **** 0562</div>
@@ -247,7 +87,7 @@
               <button class="add-to-cart-btn">Add to Cart</button>
             </div>
 
-            <div class="new-card" id="new-card6" style="background-image: url('assets/images/card6.png');">
+            <div class="card" style="background-image: url('assets/images/card1.png');">
               <div class="card-info">
                 <div class="card-title">BAL - 12,400</div>
                 <div class="card-description">2399 **** **** 6904</div>
@@ -256,71 +96,24 @@
               </div>
               <button class="add-to-cart-btn">Add to Cart</button>
             </div>
-
-            <div class="new-card" id="new-card7" style="background-image: url('assets/images/card2.png');">
-              <div class="card-info">
-                <div class="card-title">BAL - 7,400</div>
-                <div class="card-description">1244 **** **** 2835</div>
-                <div class="card-price">Price $640</div>
-                <div class="card-valid">THRU 04/25</div>
-              </div>
-              <button class="add-to-cart-btn">Add to Cart</button>
-            </div>
           </div>
+          
         </div>
       </section>
+
     </article>
   </main>
 
-  <!-- FOOTER -->
   <footer class="footer has-bg-image" style="background-image: url('./assets/images/section-bg.jpg')">
-    <div class="footer-top section">
-      <div class="container grid-list">
-        <div class="footer-brand">
-          <a href="index.html" class="logo">
-            <img src="./assets/images/logo.svg" width="100" height="auto" alt="Capital Home">
-          </a>
-          <p class="footer-text">Your Opportunity To Make Today Count!</p>
-          <ul class="social-list">
-            <li>
-              <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-            </li>
-            <li>
-              <a href="#" class="social-link"><i class="fab fa-telegram-plane"></i></a>
-            </li>
-          </ul>
-        </div>
-
-        <ul class="footer-list">
-          <li><p class="footer-list-title">LINKS</p></li>
-          <li><a href="index.html" class="footer-link">Home</a></li>
-          <li><a href="escrow.html" class="footer-link">Escrow</a></li>
-        </ul>
-
-        <ul class="footer-list">
-          <li><p class="footer-list-title">SUPPORT</p></li>
-          <li><a href="#" class="footer-link">Contact us</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <div class="container">
-        <p class="copyright">&copy; 2024 Capital. All rights reserved</p>
-      </div>
-    </div>
+    <!-- Same footer as index.html -->
   </footer>
 
-  <!-- FLOATING CART BUTTON -->
-  <button class="floating-cart-btn" id="floating-cart-btn" aria-label="cart" title="View Cart">
-    <span class="icon"><ion-icon name="cart-outline" aria-hidden="true"></ion-icon></span>
-    <span class="count">0</span>
-  </button>
+  <!-- custom js link -->
+  <script src="./assets/js/script.js" defer></script>
+  <script src="./assets/js/cart.js" defer></script>
 
-  <!-- SCRIPTS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.5.2/ionicons/ionicons.esm.js" type="module"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.5.2/ionicons/ionicons.js" nomodule></script>
-  <script src="./assets/js/script.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 </body>
 
