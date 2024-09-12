@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Cards - Capital</title>
+  <title>Store - Capital</title>
   <meta name="title" content="Bread Today - CAPITAL Tomorrow">
   <meta name="description" content="CAPITAL is all about flipping the script. From Earning Bread to Living Big.">
 
@@ -15,29 +15,94 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&family=Work+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&family=Work+Sans:wght@400;500;700&display=swap"rel="stylesheet">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body id="top" style="overflow-x: hidden;">
 
+  <!-- Header -->
   <header class="header" data-header>
-    <!-- Same header as index.html -->
+    <div class="header-top">
+      <div class="container">
+
+        <a href="index.html" class="logo">
+          <img src="./assets/images/logo.svg" width="50" height="auto" alt="Logo home">
+        </a>
+
+        <div class="input-wrapper">
+          <input type="search" name="search" placeholder="Search our store" class="input-field">
+          <button class="btn btn-primary">Search</button>
+        </div>
+
+        <div class="header-action">
+          <button class="header-action-btn cart-btn" aria-label="cart" title="Cart" id="cart-btn">
+            <span class="span">0</span>
+            <ion-icon name="cart" aria-hidden="true"></ion-icon>
+          </button>
+
+          <button class="nav-open-btn" aria-label="open menu" title="Open Menu" data-nav-toggler>
+            <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+          </button>
+
+        </div>
+        
+      </div>
+    </div>
+
+    <div class="header-bottom" data-navbar>
+      <div class="container">
+        
+        <nav class="navbar">
+          <button class="nav-close-btn" data-nav-toggler aria-label="close menu" title="Close Menu">
+            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+          </button>
+
+          <div class="navbar-top">
+            <input type="search" name="search" placeholder="Search our store" class="input-field">
+            <button class="search-btn" aria-label="Search">
+              <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
+            </button>
+          </div>
+
+          <ul class="navbar-list">
+            <li><a href="index.html" class="navbar-link">Home</a></li>
+            <li><a href="cards.html" class="navbar-link">Store</a></li>
+            <li><a href="escrow.html" class="navbar-link">Escrow</a></li>
+            <li><a href="contact.html" class="navbar-link">Contact</a></li>
+            <li><a href="cart.html" class="navbar-link">Your Bag</a></li>
+          </ul>
+          
+        </nav>
+      </div>
+    </div>
+    <div class="overlay" data-overlay data-nav-toggler></div>
   </header>
 
+  <!-- Main Content -->
   <main>
     <article>
 
-      <!-- Store Cards Section -->
-      <section class="section offer has-bg-image" aria-label="store cards" style="overflow-x: hidden;">
+      <!-- Store Section -->
+      <section class="section store" aria-label="store">
         <div class="container">
-          <h2 class="h2 section-title">Our Store<br>________</h2>
-          <p class="section-text">Featured Credit Cards. Find your perfect deal.</p>
+          <h2 class="h2 section-title">STORE SECTION<br>________</h2>
+          <p class="section-text">
+            <h3>Featured CCs</h3>
+            <br>The Below CCs Are On a 25% Discount. <br>This Offer Will Be Adjusted Or Closed Soon.<br><br>
+          </p>
+          <a href="shop.html" class="btn" style="display: block; text-align: center; margin: 10px auto; padding: 15px 25px; background-color: #66c4cc; color: white; text-decoration: none; border-radius: 10px;">
+            VIEW MORE CCs
+          </a>
+        </div>
+      </section>
 
-          <!-- Grid layout for cards -->
+      <!-- Cards in Columns -->
+      <section>
+        <div class="container">
           <div class="card-grid">
-            <div class="card" style="background-image: url('assets/images/card1.png');">
+            <div class="card" id="card1" style="background-image: url('./assets/images/card1.png');">
               <div class="card-info">
                 <div class="card-title">BAL - $9,680</div>
                 <div class="card-description">5399 **** **** 6904</div>
@@ -46,8 +111,8 @@
               </div>
               <button class="add-to-cart-btn">Add to Cart</button>
             </div>
-
-            <div class="card" style="background-image: url('assets/images/card2.png');">
+            
+            <div class="card" id="card2" style="background-image: url('./assets/images/card2.png');">
               <div class="card-info">
                 <div class="card-title">BAL - $29,680</div>
                 <div class="card-description">3009 **** **** 1135</div>
@@ -56,8 +121,8 @@
               </div>
               <button class="add-to-cart-btn">Add to Cart</button>
             </div>
-
-            <div class="card" style="background-image: url('assets/images/card3.png');">
+            
+            <div class="card" id="card3" style="background-image: url('./assets/images/card3.png');">
               <div class="card-info">
                 <div class="card-title">BAL - $2,330</div>
                 <div class="card-description">2522 **** **** 2424</div>
@@ -66,8 +131,8 @@
               </div>
               <button class="add-to-cart-btn">Add to Cart</button>
             </div>
-
-            <div class="card" style="background-image: url('assets/images/card4.png');">
+            
+            <div class="card" id="card4" style="background-image: url('./assets/images/card4.png');">
               <div class="card-info">
                 <div class="card-title">BAL - $94,255</div>
                 <div class="card-description">2199 **** **** 3053</div>
@@ -77,7 +142,7 @@
               <button class="add-to-cart-btn">Add to Cart</button>
             </div>
 
-            <div class="card" style="background-image: url('assets/images/card5.png');">
+            <div class="card" id="card5" style="background-image: url('./assets/images/card5.png');">
               <div class="card-info">
                 <div class="card-title">BAL - $36,480</div>
                 <div class="card-description">62214 **** **** 0562</div>
@@ -86,8 +151,8 @@
               </div>
               <button class="add-to-cart-btn">Add to Cart</button>
             </div>
-
-            <div class="card" style="background-image: url('assets/images/card1.png');">
+       
+            <div class="card" id="card6" style="background-image: url('./assets/images/card1.png');">
               <div class="card-info">
                 <div class="card-title">BAL - 12,400</div>
                 <div class="card-description">2399 **** **** 6904</div>
@@ -96,25 +161,77 @@
               </div>
               <button class="add-to-cart-btn">Add to Cart</button>
             </div>
+      
+            <div class="card" id="card7" style="background-image: url('./assets/images/card2.png');">
+              <div class="card-info">
+                <div class="card-title">BAL - 7,400</div>
+                <div class="card-description">1244 **** **** 2835</div>
+                <div class="card-price">Price $640</div>
+                <div class="card-valid">THRU 04/25</div>
+              </div>
+              <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+
+            <div class="card" id="card8" style="background-image: url('./assets/images/card3.png');">
+              <div class="card-info">
+                <div class="card-title">BAL - 7,400</div>
+                <div class="card-description">1244 **** **** 2835</div>
+                <div class="card-price">Price $640</div>
+                <div class="card-valid">THRU 04/25</div>
+              </div>
+              <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+
+            <div class="card" id="card9" style="background-image: url('./assets/images/card4.png');">
+              <div class="card-info">
+                <div class="card-title">BAL - 7,400</div>
+                <div class="card-description">1244 **** **** 2835</div>
+                <div class="card-price">Price $640</div>
+                <div class="card-valid">THRU 04/25</div>
+              </div>
+              <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
           </div>
-          
         </div>
       </section>
 
     </article>
   </main>
 
-  <footer class="footer has-bg-image" style="background-image: url('./assets/images/section-bg.jpg')">
-    <!-- Same footer as index.html -->
+  <!-- Floating Cart -->
+  <div class="cart-floating" id="floating-cart">
+    <h2 class="h2 cart-title">Your Bag</h2>
+    <ul class="cart-list">
+      <!-- Cart items will be dynamically inserted here -->
+    </ul>
+    <a href="cart.html" class="btn btn-primary">Go to Cart</a>
+    <button class="btn btn-secondary" id="clear-cart-btn">Clear Cart</button>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <a href="index.html" class="logo">
+          <img src="./assets/images/logo.svg" width="50" height="auto" alt="Logo footer">
+        </a>
+        <ul class="footer-list">
+          <li><a href="index.html" class="footer-link">Home</a></li>
+          <li><a href="cards.html" class="footer-link">Store</a></li>
+          <li><a href="escrow.html" class="footer-link">Escrow</a></li>
+          <li><a href="contact.html" class="footer-link">Contact</a></li>
+          <li><a href="cart.html" class="footer-link">Your Bag</a></li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Capital. All rights reserved.</p>
+      </div>
+    </div>
   </footer>
 
-  <!-- custom js link -->
-  <script src="./assets/js/script.js" defer></script>
-  <script src="./assets/js/cart.js" defer></script>
-
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.5.2/ionicons.min.js"></script>
+  <script src="script.js"></script>
+  <script src="cart.js"></script>
 </body>
 
 </html>
