@@ -19,99 +19,79 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-   <style>
-        /* Card styling */
-        .card {
-            min-width: 300px; /* Adjust this width based on your design */
-            height: auto; /* Ensure the height adjusts based on content */
-            margin: 0 10px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start; /* Align content to the left */
-            justify-content: flex-end; /* Position content at the bottom */
-            position: relative;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            background-size: cover; /* Ensure background image covers the card */
-            background-position: center; /* Center the background image */
-            background-repeat: no-repeat; /* Prevent background image from repeating */
-            color: white; /* Adjust text color to ensure visibility */
-            padding: 20px; /* Add padding to avoid text touching the edges */
-            box-sizing: border-box; /* Include padding and border in the element's total width and height */
-        }
+  <style>
+    /* General styling for cards container */
+    .card-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      padding: 20px;
+    }
 
-        /* Card Image styling */
-        .card-image {
-            width: 60px;
-            height: auto;
-            position: absolute;
-            top: 10px;
-            left: 50%; /* Center horizontally */
-            transform: translateX(-50%); /* Adjust for center alignment */
-        }
+    /* Card styling */
+    .card {
+      min-width: 300px; /* Adjust this width based on your design */
+      height: 400px; /* Adjust height as needed */
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start; /* Align content to the left */
+      justify-content: flex-end; /* Position content at the bottom */
+      position: relative;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      background-size: cover; /* Ensure background image covers the card */
+      background-position: center; /* Center the background image */
+      background-repeat: no-repeat; /* Prevent background image from repeating */
+      color: white; /* Adjust text color to ensure visibility */
+      padding: 20px; /* Add padding to avoid text touching the edges */
+      box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    }
 
-        /* Card info styling */
-        .card-info {
-            display: flex;
-            flex-direction: column; /* Stack title, description, and price vertically */
-            align-items: flex-start; /* Align items to the left */
-            position: absolute;
-            bottom: 16px;
-            width: calc(100% - 20px); /* Full width minus padding */
-            padding-left: 15px; /* Add left padding for spacing */
-            left: 15px; /* Ensure content is not too close to the left edge */
-            right: 15px; /* Ensure content is not too close to the right edge */
-        }
+    /* Card Image styling */
+    .card-image {
+      width: 60px;
+      height: auto;
+      position: absolute;
+      top: 10px;
+      left: 50%; /* Center horizontally */
+      transform: translateX(-50%); /* Adjust for center alignment */
+    }
 
-        /* Card title */
-        .card-title {
-            font-weight: bold;
-            color: white;
-            margin-bottom: 5px; /* Space between title and description */
-        }
+    /* Card info styling */
+    .card-info {
+      display: flex;
+      flex-direction: column; /* Stack title, description, and price vertically */
+      align-items: flex-start; /* Align items to the left */
+      position: absolute;
+      bottom: 16px;
+      width: calc(100% - 20px); /* Full width minus padding */
+      padding-left: 15px; /* Add left padding for spacing */
+      left: 15px; /* Ensure content is not too close to the left edge */
+      right: 15px; /* Ensure content is not too close to the right edge */
+    }
 
-        /* Card description */
-        .card-description {
-            font-size: 14px;
-            color: white;
-            margin-bottom: 5px; /* Space between description and price */
-        }
+    /* Card title */
+    .card-title {
+      font-weight: bold;
+      color: white;
+      margin-bottom: 5px; /* Space between title and description */
+    }
 
-        /* Card price */
-        .card-price {
-            font-size: 16px;
-            color: white;
-            margin-bottom: 20px;
-        }
+    /* Card description */
+    .card-description {
+      font-size: 14px;
+      color: white;
+      margin-bottom: 5px; /* Space between description and price */
+    }
 
-        /* Add to Cart button */
-        .add-to-cart-btn {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #66c4cc;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            display: none; /* Hide the button by default */
-        }
-
-        .card:hover .add-to-cart-btn,
-        .card:focus-within .add-to-cart-btn {
-            display: block; /* Show the button on hover or focus */
-        }
-
-        /* Responsive styling */
-        @media (max-width: 768px) {
-            .card {
-                min-width: 100%; /* Full width on smaller screens */
-                margin: 10px 0; /* Adjust margin for smaller screens */
-            }
-        }
-    </style>
+    /* Card price */
+    .card-price {
+      font-size: 16px;
+      color: white;
+      margin-bottom: 20px;
+    }
+  </style>
 </head>
 
 <body id="top" style="overflow-x: hidden;">
