@@ -1858,20 +1858,17 @@ body {
 }
 
 /* Responsive Adjustments */
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1024px) {
   .cards-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on medium screens */
   }
 }
 
 @media screen and (max-width: 768px) {
   .cards-grid {
-    grid-template-columns: 1fr; /* 1 column for mobile screens */
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile screens */
   }
 }
-
-
-
 
 
 
