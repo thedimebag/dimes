@@ -110,9 +110,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // Handle form submission and show the payment popup
-  const form = document.getElementById('checkout-form');
-  if (form) {
+  // Handle form submissions for each checkout form
+  document.querySelectorAll('[id^="checkout-form"]').forEach(function (form) {
     form.addEventListener('submit', function (event) {
       event.preventDefault(); // Prevent the default form submission behavior
 
@@ -130,22 +129,14 @@ document.addEventListener('DOMContentLoaded', function () {
       backHomeButton.style.display = 'block';
 
       // Hide the form
-      document.querySelector('.form-overlay').style.display = 'none';
+      const formOverlay = form.closest('.form-overlay');
+      formOverlay.style.display = 'none';
 
       // Clear the form inputs
       form.reset();
 
       // Clear the cart
       clearCart();
-
-      // Optionally, you could redirect after a delay or let the user click the button
-    });
-  }
-
-  // Close form button functionality
-  document.querySelectorAll('.close-form').forEach(function (button) {
-    button.addEventListener('click', function () {
-      document.querySelector('.form-overlay').style.display = 'none';
     });
   });
 
@@ -175,10 +166,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
-
-
-
-
 
 
 
