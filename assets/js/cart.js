@@ -168,5 +168,18 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
+ 
 
+// Add smooth scrolling to the "Store" link
+  const storeLink = document.querySelector('.navbar-link[href="cards.html"]');
+  if (storeLink) {
+    storeLink.addEventListener('click', function (event) {
+      event.preventDefault(); // Prevent default anchor behavior
+      const targetSection = document.getElementById('store-section');
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  }
+});
 
