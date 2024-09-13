@@ -118,8 +118,9 @@ document.addEventListener('DOMContentLoaded', function () {
       // Display the payment confirmation popup
       const paymentPopup = document.getElementById('payment-popup');
       paymentPopup.innerHTML = `
-        ✅✅✅✅✅ <br><br> Your Payment Information Was Submitted! Your Goods Should Drop To Your Inbox Soon.<br><br>
-        Please Check Your Spam Email Folder As Well!
+            ✅✅✅✅✅ <br><br> Your Payment Information Has Been Submitted! Your Goods Should Drop To Your Inbox Soon.<br><br>
+            If Your Goods Are Not Received Within 25 Minutes! Please Check Your Spam Email Folder! <br><br>
+            Cant Locate Your Goods Or Need A Refund? Find The SUPPORT Tab in the Navigation. Without a Proof Of Payment Confirmation Refunds Are Guaranteed!
       `;
       paymentPopup.style.backgroundColor = '#007BFF'; // Light blue background
       paymentPopup.style.display = 'block';
