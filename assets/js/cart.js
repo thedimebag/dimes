@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function renderCartItems() {
     const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
     cartList.innerHTML = '';
-
+  
     if (cartItems.length === 0) {
       emptyCartMessage.style.display = 'block';
     } else {
@@ -40,10 +40,10 @@ document.addEventListener('DOMContentLoaded', function () {
       cartItems.forEach((item, index) => {
         const cartItem = document.createElement('div');
         cartItem.className = 'cart-item';
-
+  
         // Set image size based on screen width
         const imageSize = getImageSize();
-
+  
         cartItem.innerHTML = `
           <img src="${generalCardImage}" alt="General Card" style="border-radius: 10px; width: ${imageSize}; height: auto;">
           <div class="cart-item-info" style="color: red;">
@@ -53,14 +53,36 @@ document.addEventListener('DOMContentLoaded', function () {
           </div>
           <button class="remove-item" data-index="${index}">x</button>
         `;
-
+  
         cartList.appendChild(cartItem);
       });
     }
-
+  
     updateCartTotal();
+    updateModalCartTotal(); // Update modal total
   }
 
+
+
+  
+  
+  // Function to add cart Items to checkout Modal
+  function updateModalCartTotal() {
+    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+    const total = cartItems.reduce((sum, item) => {
+      const price = parseFloat(item.price.replace(/[^0-9.-]+/g, ""));
+      return sum + price;
+    }, 0);
+  
+    // Update the cart total in the modal
+    const modalCartTotal = document.getElementById('modal-cart-total');
+    if (modalCartTotal) {
+      modalCartTotal.textContent = `$${total.toFixed(2)}`;
+    }
+  }
+
+
+  
   // Function to remove item from cart
   function removeCartItem(index) {
     const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
@@ -85,6 +107,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const modal = document.getElementById('modal');
 
   checkoutButton.addEventListener('click', function () {
+    updateModalCartTotal(); // Update the total before showing the modal
     modal.style.display = 'flex';
   });
 
