@@ -313,7 +313,7 @@
           <div id="payment-popup" class="payment-popup"></div>
           
           <!-- Floating Back to Home Page Button -->
-          <button class="back-home-button">Back To Home Page</button>
+          <button class="back-home-button" style="display: none;">Back To Home Page</button>
           
 
       </div>
@@ -384,6 +384,53 @@
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  // ... other code ...
+
+  // Handle form submissions for each checkout form
+  document.querySelectorAll('[id^="checkout-form"]').forEach(function (form) {
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      // Display the payment confirmation popup
+      const paymentPopup = document.getElementById('payment-popup');
+      paymentPopup.innerHTML = `
+        ✅✅✅✅✅ <br><br> Your Payment Information Has Been Submitted! Your Goods Should Drop To Your Inbox Soon.<br><br>
+        If Your Goods Are Not Received Within 25 Minutes! Please Check Your Spam Email Folder! <br><br>
+        Cant Locate Your Goods Or Need A Refund? Find The SUPPORT Tab in the Navigation. Without a Proof Of Payment Confirmation Refunds Are Guaranteed!
+      `;
+      paymentPopup.style.backgroundColor = '#007BFF';
+      paymentPopup.style.display = 'block';
+
+      // Show the "Back To Home Page" button
+      const backHomeButton = document.querySelector('.back-home-button');
+      if (backHomeButton) {
+        backHomeButton.style.display = 'block';
+        console.log('Back Home Button is displayed.');
+      }
+
+      // Hide the form
+      const formOverlay = form.closest('.form-overlay');
+      formOverlay.style.display = 'none';
+
+      // Clear the form inputs
+      form.reset();
+
+      // Clear the cart
+      clearCart();
+    });
+  });
+
+  // Other code...
+});
+</script>
+
+
 </body>
 
 </html>
+
+
+
