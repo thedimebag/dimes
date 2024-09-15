@@ -1737,17 +1737,17 @@ body {
 
 
 /* PAYYMENT CONFIRMATION POPUP MESSAGE */
+/* AND BACK TO HOME BUTTON BELOW THE PUPOP */
 
 
-/* Payment Popup Styles */
-/* Payment Popup Styles */
 .payment-popup {
   display: none; /* Hidden by default, will be shown on form submission */
   background-color: #003366; /* Dark blue background */
   color: white; /* White text */
   border-radius: 10px; /* Rounded corners */
   padding: 20px; /* Padding inside the popup */
-  max-width: calc(100% - 30px); /* Max width with spacing */
+  max-width: 100%; /* Max width as a percentage */
+  width: 90%; /* Default width as a percentage */
   margin: 0 auto; /* Center align horizontally */
   text-align: center; /* Center align text */
   position: fixed; /* Fixed position relative to the viewport */
@@ -1771,13 +1771,18 @@ body {
   text-decoration: none; /* Remove underline from link */
   display: block; /* Make the button block-level to ensure it stays on its own line */
   margin: 20px auto 0; /* Margin above the button and center align */
-  max-width: 200px; /* Optional max-width for the button */
+  max-width: 90%; /* Optional max-width for the button */
   text-align: center; /* Center align button text */
+  position: fixed; /* Fixed position relative to the viewport */
+  top: calc(40px + 100px); /* Position the button 30px below the popup */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Offset by half of its own width */
+  z-index: 9998; /* Ensure it appears below the popup */
 }
 
 /* Ensure the button is visible below the popup */
 .payment-popup + .back-home-button {
-  margin-top: 20px; /* Space between popup and button */
+  margin-top: 30px; /* Space between popup and button */
 }
 
 /* Optional: Hover effect for the button */
@@ -1785,10 +1790,20 @@ body {
   background-color: #e5c100; /* Lighter gold on hover */
 }
 
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .payment-popup {
+    width: 90%; /* Wider width on smaller screens */
+    max-width: none; /* Remove max-width restriction */
+    top: 20px; /* Adjust top margin for smaller screens */
+  }
+
+  .back-home-button {
+    width: 90%; /* Match button width with popup on smaller screens */
+    max-width: none; /* Remove max-width restriction */
+    top: calc(20px + 100px); /* Adjust top margin for smaller screens */
+  }
+}
 
 
-
-
-/*CARDS PAGE*/
-/* Style for the new cards grid section */
 
