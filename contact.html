@@ -15,7 +15,7 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&family=Work+Sans:wght@400;500;700&display=swap"rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&family=Work+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
@@ -91,16 +91,17 @@
           <h2 class="h2 section-title">WHATS THE WORD?<br>________</h2>
         </div>
         
-        <div class="form-container">
+        <div class="form-container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px;">
             <p> 
               Make sure to have checked Your Spam Email Folder, before reporting your goods missing! <br><br>
-              A Refunds is not an option for spolied Goods! Request support before use if anything seems unfamiliar<br><br>
-              NOTE: Without Proof Of Payment Confirmation, Refunds Are Not Guaranteed! ScreenShot Is Required!
+              A Refunds is not an option for spoiled Goods! Request support before use if anything seems unfamiliar.<br><br>
+              NOTE: Without Proof Of Payment Confirmation, Refunds Are Not Guaranteed! Screenshot Is Required!
             </p>
-            <form id="checkout-form4" method="post">
-              <input type="email" name="email" placeholder="Email Address" required />
-              <input type="file" name="payment-screenshot" accept="image/*" required />
-              <button type="submit">Submit</button>
+            <form id="checkout-form4" method="post" style="width: 100%; max-width: 600px;">
+              <input type="email" name="email" placeholder="Email Address" required style="width: 100%; padding: 10px; margin-bottom: 10px;" />
+              <input type="file" name="payment-screenshot" accept="image/*" required style="width: 100%; padding: 10px; margin-bottom: 10px;" />
+              <textarea name="message" placeholder="Your Message" rows="4" required style="width: 100%; padding: 10px; margin-bottom: 10px;"></textarea>
+              <button type="submit" style="width: 100%; padding: 10px; background-color: #007BFF; color: white; border: none; border-radius: 5px; font-size: 16px;">Submit</button>
             </form>
           </div>
       </section>
@@ -108,9 +109,7 @@
     </article>
   </main>
 
-
-
- <!-- 
+  <!-- 
     - #FOOTER
   -->
   <footer class="footer has-bg-image" style="background-image: url('./assets/images/section-bg.jpg')">
@@ -150,7 +149,6 @@
       </div>
     </div>
 
-    
     <div class="footer-bottom">
       <div class="container">
         <p class="copyright">
@@ -163,35 +161,27 @@
     </div>
   </footer>
 
-
-  
   <!-- 
-  - Floating Cart Button 
+    - Floating Cart Button 
   -->
-  
-    <a href="cart.html" class="floating-cart-btn" aria-label="Cart" title="View Cart">
-      <span class="cart-icon">
-        <ion-icon name="cart" aria-hidden="true"></ion-icon>
-      </span>
-      <span class="cart-count">0</span>
-    </a>
+  <a href="cart.html" class="floating-cart-btn" aria-label="Cart" title="View Cart">
+    <span class="cart-icon">
+      <ion-icon name="cart" aria-hidden="true"></ion-icon>
+    </span>
+    <span class="cart-count">0</span>
+  </a>
 
-
-
-  
   <!-- 
     - custom js link
   -->
   <script src="./assets/js/script.js" defer></script>
   <script src="./assets/js/cart.js" defer></script>
 
-  
   <!-- 
     - ionicon link
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
 
 </body>
 </html>
