@@ -1746,8 +1746,8 @@ body {
   color: white; /* White text */
   border-radius: 10px; /* Rounded corners */
   padding: 20px; /* Padding inside the popup */
-  max-width: 100%; /* Max width as a percentage */
-  width: 90%; /* Default width as a percentage */
+  width: 90%; /* Width as a percentage of the viewport width */
+  max-width: 600px; /* Optional max-width for larger screens */
   margin: 0 auto; /* Center align horizontally */
   text-align: center; /* Center align text */
   position: fixed; /* Fixed position relative to the viewport */
@@ -1769,20 +1769,15 @@ body {
   font-size: 16px; /* Font size */
   cursor: pointer; /* Pointer cursor on hover */
   text-decoration: none; /* Remove underline from link */
-  display: block; /* Make the button block-level to ensure it stays on its own line */
-  margin: 20px auto 0; /* Margin above the button and center align */
-  max-width: 90%; /* Optional max-width for the button */
+  width: 90%; /* Width as a percentage of the viewport width */
+  max-width: 600px; /* Match max-width of the popup */
+  margin: 30px auto 0; /* Margin above the button and center align */
   text-align: center; /* Center align button text */
   position: fixed; /* Fixed position relative to the viewport */
-  top: calc(40px + 100px); /* Position the button 30px below the popup */
+  top: calc(40px + 200px); /* Position the button 30px below the popup */
   left: 50%; /* Center horizontally */
   transform: translateX(-50%); /* Offset by half of its own width */
   z-index: 9998; /* Ensure it appears below the popup */
-}
-
-/* Ensure the button is visible below the popup */
-.payment-popup + .back-home-button {
-  margin-top: 30px; /* Space between popup and button */
 }
 
 /* Optional: Hover effect for the button */
@@ -1792,18 +1787,18 @@ body {
 
 /* Responsive design for smaller screens */
 @media (max-width: 768px) {
-  .payment-popup {
+  .payment-popup, .back-home-button {
     width: 90%; /* Wider width on smaller screens */
     max-width: none; /* Remove max-width restriction */
+  }
+
+  .payment-popup {
     top: 20px; /* Adjust top margin for smaller screens */
   }
 
   .back-home-button {
-    width: 90%; /* Match button width with popup on smaller screens */
-    max-width: none; /* Remove max-width restriction */
-    top: calc(20px + 100px); /* Adjust top margin for smaller screens */
+    top: calc(20px + 100px + 30px); /* Adjust top margin for smaller screens */
   }
 }
-
 
 
