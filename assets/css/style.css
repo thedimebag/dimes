@@ -1739,7 +1739,6 @@ body {
 /* PAYYMENT CONFIRMATION POPUP MESSAGE */
 /* AND BACK TO HOME BUTTON BELOW THE PUPOP */
 
-
 .payment-popup {
   display: none; /* Hidden by default, will be shown on form submission */
   background-color: #003366; /* Dark blue background */
@@ -1751,7 +1750,7 @@ body {
   margin: 0 auto; /* Center align horizontally */
   text-align: center; /* Center align text */
   position: fixed; /* Fixed position relative to the viewport */
-  top: 40px; /* Fixed margin from the top edge of the page */
+  top: 20px; /* Fixed margin from the top edge of the page */
   left: 50%; /* Center horizontally */
   transform: translateX(-50%); /* Offset by half of its own width */
   z-index: 9999; /* Ensure it appears above other content */
@@ -1771,10 +1770,10 @@ body {
   text-decoration: none; /* Remove underline from link */
   width: 90%; /* Width as a percentage of the viewport width */
   max-width: 600px; /* Match max-width of the popup */
-  margin: 30px auto 0; /* Margin above the button and center align */
+  margin: 0 auto; /* Center align horizontally */
   text-align: center; /* Center align button text */
   position: fixed; /* Fixed position relative to the viewport */
-  top: calc(40px + 200px); /* Position the button 30px below the popup */
+  bottom: 20px; /* Position the button at the bottom of the viewport */
   left: 50%; /* Center horizontally */
   transform: translateX(-50%); /* Offset by half of its own width */
   z-index: 9998; /* Ensure it appears below the popup */
@@ -1797,7 +1796,7 @@ body {
   }
 
   .back-home-button {
-    top: calc(20px + 100px + 30px); /* Adjust top margin for smaller screens */
+    bottom: 20px; /* Adjust bottom margin for smaller screens */
   }
 }
 
