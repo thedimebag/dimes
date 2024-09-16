@@ -485,7 +485,7 @@ body {
 
 
 .hero {
-  padding-block-start: 90px;
+  padding-block-start: 40px;
   background-position: left;
 }
 
@@ -1058,7 +1058,7 @@ body {
    * HERO
    */
 
-  .hero { padding-block-start: 250px; }
+  .hero { padding-block-start: 200px; }
 
   .hero-banner { max-width: unset; }
 
