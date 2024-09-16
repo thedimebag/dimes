@@ -1747,7 +1747,7 @@ body {
   padding: 20px; /* Padding inside the popup */
   width: 90%; /* Width as a percentage of the viewport width */
   max-width: 600px; /* Optional max-width for larger screens */
-  margin: 0 auto; /* Center align horizontally */
+  margin: 100px auto; /* Center align horizontally */
   text-align: center; /* Center align text */
   position: fixed; /* Fixed position relative to the viewport */
   top: 20px; /* Fixed margin from the top edge of the page */
@@ -1792,11 +1792,11 @@ body {
   }
 
   .payment-popup {
-    top: 60px; /* Adjust top margin for smaller screens */
+    top: 90px; /* Adjust top margin for smaller screens */
   }
 
   .back-home-button {
-    bottom: 60px; /* Adjust bottom margin for smaller screens */
+    bottom: 90px; /* Adjust bottom margin for smaller screens */
   }
 }
 
