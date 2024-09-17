@@ -30,33 +30,34 @@
     }
 
     /* Card styling */
+    /* Card styling */
     .card {
       min-width: 300px;
       background-color: white;
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      padding: 20px;
-      box-sizing: border-box;
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
     }
-
+    
     /* Image styling */
     .card img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 10px;
-      margin-bottom: 15px;
+      width: 100%; /* Full width of the card */
+      height: 50px; /* Fixed height */
+      object-fit: cover; /* Ensure the image covers the area without distortion */
+      border-radius: 10px 10px 0 0; /* Rounded corners only at the top */
+      margin-bottom: 15px; /* Space between image and card info */
     }
-
+    
     /* Card info styling */
     .card-info {
       display: flex;
       flex-direction: column;
       align-items: center;
     }
+
 
     /* Card title */
     .card-title {
@@ -82,7 +83,7 @@
     /* Add to Cart Button */
     .add-to-cart-btn {
       padding: 10px 20px;
-      background-color: #ff6600;
+      background-color: #0091e6;
       color: white;
       border: none;
       border-radius: 5px;
@@ -92,7 +93,7 @@
     }
 
     .add-to-cart-btn:hover {
-      background-color: #ff4500;
+      background-color: #002c45;
     }
   </style>
 </head>
