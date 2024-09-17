@@ -18,117 +18,40 @@
   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&family=Work+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-  <style>
-    /* General styling for cards container */
-    .card-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-      padding: 20px;
-    }
-
-    /* Card styling */
-    .card {
-      min-width: 300px;
-      background-color: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-    
-    /* Image styling */
-    .card img {
-      width: 100%; /* Full width of the card */
-      height: 50px; /* Fixed height */
-      object-fit: cover; /* Ensure the image covers the area without distortion */
-      border-radius: 10px 10px 0 0; /* Rounded corners only at the top */
-      margin-bottom: 0; /* No margin between image and card info */
-    }
-    
-    /* Card info styling */
-    .card-info {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100%; /* Ensure the card info takes the full width of the card */
-      padding: 15px 20px; /* Add padding around the card info */
-    }
-
-    /* Card title */
-    .card-title {
-      font-weight: bold;
-      color: #333;
-      margin-bottom: 5px;
-    }
-
-    /* Card description */
-    .card-description {
-      font-size: 14px;
-      color: #666;
-      margin-bottom: 5px;
-    }
-
-    /* Card price */
-    .card-price {
-      font-size: 16px;
-      color: #333;
-      margin-bottom: 10px;
-    }
-
-    /* Add to Cart Button */
-    .add-to-cart-btn {
-      padding: 10px 20px;
-      background-color: #0091e6;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 14px;
-      transition: background-color 0.3s ease;
-    }
-
-    .add-to-cart-btn:hover {
-      background-color: #002c45;
-    }
-  </style>
 </head>
 
 <body id="top" style="overflow-x: hidden;">
 
-  <!-- Header -->
-  <div class="header-bottom" data-navbar>
-    <div class="container">
-      <nav class="navbar">
-        <button class="nav-close-btn" data-nav-toggler aria-label="close menu" title="Close Menu">
-          <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
-        </button>
-        <div class="navbar-top">
-          <input type="search" name="search" placeholder="Search our store" class="input-field">
-          <button class="search-btn" aria-label="Search">
-            <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
+  <header>
+    <div class="header-bottom" data-navbar>
+      <div class="container">
+        <nav class="navbar">
+          <button class="nav-close-btn" data-nav-toggler aria-label="close menu" title="Close Menu">
+            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
           </button>
-        </div>
-        <ul class="navbar-list">
-          <li><a href="index.html" class="navbar-link">Home</a></li>
-          <li><a href="escrow.html" class="navbar-link">Escrow</a></li>
-          <li><a href="cart.html" class="navbar-link">Your Bag</a></li>
-          <li><a href="contact.html" class="navbar-link">Support</a></li>
-        </ul>
-      </nav>
+          <div class="navbar-top">
+            <input type="search" name="search" placeholder="Search our store" class="input-field">
+            <button class="search-btn" aria-label="Search">
+              <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
+            </button>
+          </div>
+          <ul class="navbar-list">
+            <li><a href="index.html" class="navbar-link">Home</a></li>
+            <li><a href="escrow.html" class="navbar-link">Escrow</a></li>
+            <li><a href="cart.html" class="navbar-link">Your Bag</a></li>
+            <li><a href="contact.html" class="navbar-link">Support</a></li>
+          </ul>
+        </nav>
+      </div>
     </div>
-  </div>
-  <div class="overlay" data-overlay data-nav-toggler></div>
+    <div class="overlay" data-overlay data-nav-toggler></div>
+  </header>
 
   <!-- Main Content -->
   <main>
     <article>
       <!-- Store Section -->
-      <section class="section offer has-bg-image" aria-label=" CARDS HEADING"
+      <section class="section offer has-bg-image" aria-label="CARDS HEADING"
         style="background-image: url('./assets/images/section-bg.jpg'); margin: 20px; padding: 20px;">
         <div class="container">
           <h2 class="h2 section-title">AVAILABLE CCS <br>______________</h2> <br>
@@ -138,46 +61,85 @@
       <!-- Cards in Columns -->
       <section>
         <div class="container">
-          <div class="card-grid">
-            <div class="card" id="card51">
-              <img src="./assets/images/boa.png" alt="Card Image 1">
-              <div class="card-info">
-                <div class="card-title">BAL - $9,680</div>
-                <div class="card-description">5399 **** **** 6904</div>
-                <div class="card-price">Price $720</div>
-                <div class="card-valid">THRU 05/28</div>
+          <div class="card-grid" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; padding: 20px;">
+
+            <div class="custom-card" style="min-width: 300px; background-color: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); display: flex; flex-direction: column; align-items: center; text-align: center;">
+              <img src="./assets/images/boa.png" alt="Card Image 1" style="width: 100%; height: 50px; object-fit: cover; border-radius: 10px 10px 0 0; margin-bottom: 0;">
+              <div class="card-info" style="display: flex; flex-direction: column; align-items: center; padding: 10px;">
+                <div class="card-title" style="font-weight: bold; color: #333; margin-bottom: 5px;">BAL - $9,680</div>
+                <div class="card-description" style="font-size: 14px; color: #666; margin-bottom: 5px;">5399 **** **** 6904</div>
+                <div class="card-price" style="font-size: 16px; color: #333; margin-bottom: 10px;">Price $720</div>
+                <div class="card-valid" style="font-size: 14px; color: #666; margin-bottom: 10px;">THRU 05/28</div>
               </div>
-              <button class="add-to-cart-btn">Add To Bag</button>
+              <button class="add-to-cart-btn" style="padding: 10px 20px; background-color: #0091e6; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 14px; transition: background-color 0.3s ease;">Add To Bag</button>
             </div>
 
-            <div class="card" id="card52">
-              <img src="./assets/images/wells.png" alt="Card Image 2">
-              <div class="card-info">
-                <div class="card-title">BAL - $29,680</div>
-                <div class="card-description">3209 **** **** 1135</div>
-                <div class="card-price">Price $2100</div>
-                <div class="card-valid">THRU 04/26</div>
+            <div class="custom-card" style="min-width: 300px; background-color: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); display: flex; flex-direction: column; align-items: center; text-align: center;">
+              <img src="./assets/images/wells.png" alt="Card Image 2" style="width: 100%; height: 50px; object-fit: cover; border-radius: 10px 10px 0 0; margin-bottom: 0;">
+              <div class="card-info" style="display: flex; flex-direction: column; align-items: center; padding: 10px;">
+                <div class="card-title" style="font-weight: bold; color: #333; margin-bottom: 5px;">BAL - $29,680</div>
+                <div class="card-description" style="font-size: 14px; color: #666; margin-bottom: 5px;">3209 **** **** 1135</div>
+                <div class="card-price" style="font-size: 16px; color: #333; margin-bottom: 10px;">Price $2100</div>
+                <div class="card-valid" style="font-size: 14px; color: #666; margin-bottom: 10px;">THRU 04/26</div>
               </div>
-              <button class="add-to-cart-btn">Add To Bag</button>
+              <button class="add-to-cart-btn" style="padding: 10px 20px; background-color: #0091e6; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 14px; transition: background-color 0.3s ease;">Add To Bag</button>
             </div>
 
-            <div class="card" id="card53">
-              <img src="./assets/images/wells.png" alt="Card Image 3">
-              <div class="card-info">
-                <div class="card-title">BAL - $29,680</div>
-                <div class="card-description">3209 **** **** 1135</div>
-                <div class="card-price">Price $2100</div>
-                <div class="card-valid">THRU 04/26</div>
+            <div class="custom-card" style="min-width: 300px; background-color: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); display: flex; flex-direction: column; align-items: center; text-align: center;">
+              <img src="./assets/images/chime.png" alt="Card Image 2" style="width: 100%; height: 50px; object-fit: cover; border-radius: 10px 10px 0 0; margin-bottom: 0;">
+              <div class="card-info" style="display: flex; flex-direction: column; align-items: center; padding: 10px;">
+                <div class="card-title" style="font-weight: bold; color: #333; margin-bottom: 5px;">BAL - $29,680</div>
+                <div class="card-description" style="font-size: 14px; color: #666; margin-bottom: 5px;">3209 **** **** 1135</div>
+                <div class="card-price" style="font-size: 16px; color: #333; margin-bottom: 10px;">Price $2100</div>
+                <div class="card-valid" style="font-size: 14px; color: #666; margin-bottom: 10px;">THRU 04/26</div>
               </div>
-              <button class="add-to-cart-btn">Add To Bag</button>
+              <button class="add-to-cart-btn" style="padding: 10px 20px; background-color: #0091e6; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 14px; transition: background-color 0.3s ease;">Add To Bag</button>
+            </div>
+
+
+            <div class="custom-card" style="min-width: 300px; background-color: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); display: flex; flex-direction: column; align-items: center; text-align: center;">
+              <img src="./assets/images/arvest.png" alt="Card Image 2" style="width: 100%; height: 50px; object-fit: cover; border-radius: 10px 10px 0 0; margin-bottom: 0;">
+              <div class="card-info" style="display: flex; flex-direction: column; align-items: center; padding: 10px;">
+                <div class="card-title" style="font-weight: bold; color: #333; margin-bottom: 5px;">BAL - $29,680</div>
+                <div class="card-description" style="font-size: 14px; color: #666; margin-bottom: 5px;">3209 **** **** 1135</div>
+                <div class="card-price" style="font-size: 16px; color: #333; margin-bottom: 10px;">Price $2100</div>
+                <div class="card-valid" style="font-size: 14px; color: #666; margin-bottom: 10px;">THRU 04/26</div>
+              </div>
+              <button class="add-to-cart-btn" style="padding: 10px 20px; background-color: #0091e6; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 14px; transition: background-color 0.3s ease;">Add To Bag</button>
+            </div>
+
+
+            <div class="custom-card" style="min-width: 300px; background-color: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); display: flex; flex-direction: column; align-items: center; text-align: center;">
+              <img src="./assets/images/hunt.png" alt="Card Image 2" style="width: 100%; height: 50px; object-fit: cover; border-radius: 10px 10px 0 0; margin-bottom: 0;">
+              <div class="card-info" style="display: flex; flex-direction: column; align-items: center; padding: 10px;">
+                <div class="card-title" style="font-weight: bold; color: #333; margin-bottom: 5px;">BAL - $29,680</div>
+                <div class="card-description" style="font-size: 14px; color: #666; margin-bottom: 5px;">3209 **** **** 1135</div>
+                <div class="card-price" style="font-size: 16px; color: #333; margin-bottom: 10px;">Price $2100</div>
+                <div class="card-valid" style="font-size: 14px; color: #666; margin-bottom: 10px;">THRU 04/26</div>
+              </div>
+              <button class="add-to-cart-btn" style="padding: 10px 20px; background-color: #0091e6; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 14px; transition: background-color 0.3s ease;">Add To Bag</button>
+            </div>
+
+
+            <div class="custom-card" style="min-width: 300px; background-color: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); display: flex; flex-direction: column; align-items: center; text-align: center;">
+              <img src="./assets/images/chase.png" alt="Card Image 2" style="width: 100%; height: 50px; object-fit: cover; border-radius: 10px 10px 0 0; margin-bottom: 0;">
+              <div class="card-info" style="display: flex; flex-direction: column; align-items: center; padding: 10px;">
+                <div class="card-title" style="font-weight: bold; color: #333; margin-bottom: 5px;">BAL - $29,680</div>
+                <div class="card-description" style="font-size: 14px; color: #666; margin-bottom: 5px;">3209 **** **** 1135</div>
+                <div class="card-price" style="font-size: 16px; color: #333; margin-bottom: 10px;">Price $2100</div>
+                <div class="card-valid" style="font-size: 14px; color: #666; margin-bottom: 10px;">THRU 04/26</div>
+              </div>
+              <button class="add-to-cart-btn" style="padding: 10px 20px; background-color: #0091e6; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 14px; transition: background-color 0.3s ease;">Add To Bag</button>
             </div>
 
             <!-- Add more cards in the same format -->
+            
           </div>
         </div>
       </section>
     </article>
   </main>
+    
 
   <!-- Footer -->
   <footer class="footer has-bg-image" style="background-image: url('./assets/images/section-bg.jpg')">
