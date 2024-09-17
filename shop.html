@@ -30,7 +30,6 @@
     }
 
     /* Card styling */
-    /* Card styling */
     .card {
       min-width: 300px;
       background-color: white;
@@ -48,7 +47,7 @@
       height: 50px; /* Fixed height */
       object-fit: cover; /* Ensure the image covers the area without distortion */
       border-radius: 10px 10px 0 0; /* Rounded corners only at the top */
-      margin-bottom: 15px; /* Space between image and card info */
+      margin-bottom: 0; /* No margin between image and card info */
     }
     
     /* Card info styling */
@@ -56,8 +55,9 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      width: 100%; /* Ensure the card info takes the full width of the card */
+      padding: 15px 20px; /* Add padding around the card info */
     }
-
 
     /* Card title */
     .card-title {
@@ -100,44 +100,33 @@
 
 <body id="top" style="overflow-x: hidden;">
 
-
-  
- <div class="header-bottom" data-navbar>
-      <div class="container">
-        
-        <nav class="navbar">
-
-          <button class="nav-close-btn" data-nav-toggler aria-label="close menu" title="Close Menu">
-            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+  <!-- Header -->
+  <div class="header-bottom" data-navbar>
+    <div class="container">
+      <nav class="navbar">
+        <button class="nav-close-btn" data-nav-toggler aria-label="close menu" title="Close Menu">
+          <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+        </button>
+        <div class="navbar-top">
+          <input type="search" name="search" placeholder="Search our store" class="input-field">
+          <button class="search-btn" aria-label="Search">
+            <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
           </button>
-
-          <div class="navbar-top">
-            <input type="search" name="search" placeholder="Search our store" class="input-field">
-            <button class="search-btn" aria-label="Search">
-              <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
-            </button>
-          </div>
-
-          <ul class="navbar-list">
-            <li><a href="index.html" class="navbar-link">Home</a></li>
-            <li><a href="escrow.html" class="navbar-link">Escrow</a></li>
-            <li><a href="cart.html" class="navbar-link">Your Bag</a></li>
-            <li><a href="contact.html" class="navbar-link">Support</a></li>
-          </ul>
-          
-        </nav>
-      </div>
+        </div>
+        <ul class="navbar-list">
+          <li><a href="index.html" class="navbar-link">Home</a></li>
+          <li><a href="escrow.html" class="navbar-link">Escrow</a></li>
+          <li><a href="cart.html" class="navbar-link">Your Bag</a></li>
+          <li><a href="contact.html" class="navbar-link">Support</a></li>
+        </ul>
+      </nav>
     </div>
-    <div class="overlay" data-overlay data-nav-toggler></div>
-  </header>
-
-
-  
+  </div>
+  <div class="overlay" data-overlay data-nav-toggler></div>
 
   <!-- Main Content -->
   <main>
     <article>
-
       <!-- Store Section -->
       <section class="section offer has-bg-image" aria-label=" CARDS HEADING"
         style="background-image: url('./assets/images/section-bg.jpg'); margin: 20px; padding: 20px;">
@@ -150,7 +139,6 @@
       <section>
         <div class="container">
           <div class="card-grid">
-            
             <div class="card" id="card51">
               <img src="./assets/images/boa.png" alt="Card Image 1">
               <div class="card-info">
@@ -174,7 +162,7 @@
             </div>
 
             <div class="card" id="card53">
-              <img src="./assets/images/wells.png" alt="Card Image 2">
+              <img src="./assets/images/wells.png" alt="Card Image 3">
               <div class="card-info">
                 <div class="card-title">BAL - $29,680</div>
                 <div class="card-description">3209 **** **** 1135</div>
@@ -185,22 +173,16 @@
             </div>
 
             <!-- Add more cards in the same format -->
-            
           </div>
         </div>
       </section>
-
     </article>
   </main>
 
-  
- <!-- 
-    - #FOOTER
-  -->
+  <!-- Footer -->
   <footer class="footer has-bg-image" style="background-image: url('./assets/images/section-bg.jpg')">
     <div class="footer-top section">
       <div class="container grid-list">
-   
         <div class="footer-brand" style="margin-left: 20px;">
           <a href="index.html" class="logo">
             <img src="./assets/images/logo.svg" width="100" height="auto" alt="Capital Home">
@@ -209,20 +191,16 @@
             Your Opportunity To Make Today Count! 
           </p>
           <ul class="social-list">
-
             <li>
               <a href="https://t.me/thedimebag" class="social-link">
                 <i class="fab fa-telegram-plane"></i>
               </a>
             </li>
-
             <li>
               <a href="https://t.me/thedimebag" class="social-link" style="font-size: 18px;">CHANNEL</a>
             </li>
-            
           </ul>
         </div>
-        
         <ul class="footer-list">
           <li><p class="footer-list-title">LINKS</p></li>
           <li><a href="index.html" class="footer-link">Home</a></li>
@@ -230,59 +208,41 @@
           <li><a href="contact.html" class="footer-link">Support</a></li>
           <li><a href="cart.html" class="footer-link">Your Bag</a></li>
         </ul>
-        
       </div>
     </div>
 
-    
     <div class="footer-bottom">
       <div class="container">
         <p class="copyright">
           ©️ Copyright 2024 | By King.
         </p>
-  
         <p class="footer-list-title">PAYMENTS<br><br></p>  
-          <div style="display: flex; justify-content: center; align-items: center; gap: 10px; margin-top: 20px;">
-            <img src="./assets/images/btc.png" style="height: 30px; width: auto;" loading="lazy" alt="Payment method 1">
-            <img src="./assets/images/usdt.png" style="height: 30px; width: auto;" loading="lazy" alt="Payment method 2">
-            <img src="./assets/images/eth.png" style="height: 30px; width: auto;" loading="lazy" alt="Payment method 3">
-            <img src="./assets/images/lite.png" style="height: 30px; width: auto;" loading="lazy" alt="Payment method 4">
-          </div>
+        <div style="display: flex; justify-content: center; align-items: center; gap: 10px; margin-top: 20px;">
+          <img src="./assets/images/btc.png" style="height: 30px; width: auto;" loading="lazy" alt="Payment method 1">
+          <img src="./assets/images/usdt.png" style="height: 30px; width: auto;" loading="lazy" alt="Payment method 2">
+          <img src="./assets/images/eth.png" style="height: 30px; width: auto;" loading="lazy" alt="Payment method 3">
+          <img src="./assets/images/lite.png" style="height: 30px; width: auto;" loading="lazy" alt="Payment method 4">
+        </div>
         <p><br><br><br></p>
-
       </div>
     </div>
   </footer>
 
+  <!-- Floating Cart Button -->
+  <a href="cart.html" class="floating-cart-btn" aria-label="Cart" title="View Cart">
+    <span class="cart-icon">
+      <ion-icon name="cart" aria-hidden="true"></ion-icon>
+    </span>
+    <span class="cart-count">0</span>
+  </a>
 
-  
-  <!-- 
-  - Floating Cart Button 
-  -->
-  
-    <a href="cart.html" class="floating-cart-btn" aria-label="Cart" title="View Cart">
-      <span class="cart-icon">
-        <ion-icon name="cart" aria-hidden="true"></ion-icon>
-      </span>
-      <span class="cart-count">0</span>
-    </a>
-
-
-
-  
-  <!-- 
-    - custom js link
-  -->
+  <!-- Custom JS link -->
   <script src="./assets/js/script.js" defer></script>
   <script src="./assets/js/cart.js" defer></script>
 
-  
-  <!-- 
-    - ionicon link
-  -->
+  <!-- Ionicon link -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
 
 </body>
 </html>
