@@ -243,44 +243,43 @@
       
   <!-- COUNTDOWN SECTION -->
       <section class="section offer has-bg-image" aria-label=" CARDS HEADING">
-        <h2 class="h3 section-title">LIST TO BE UPDATED IN 48 HOURS</h3>
-        <div id="countdown" style="font-size: 36px; font-weight: bold; background: linear-gradient(to right, #0091e6, #ffffff); -webkit-background-clip: text; color: transparent;"></div>
+        <h2 class="h3 section-title">LIST TO BE UPDATED IN 48 HOURS</h2>
+        <div id="countdown1" style="font-size: 36px; font-weight: bold; background: linear-gradient(to right, #0091e6, #ffffff); -webkit-background-clip: text; color: transparent;"></div>
       
         <script>
-          // Check if a countdown already exists in local storage (this persists after reload)
-          var savedCountdown = localStorage.getItem('countdownEnd');
-      
-          // If a countdown exists, set the countdownDate to that time; otherwise, set a new 48-hour countdown
-          var countdownDate = savedCountdown ? new Date(savedCountdown) : new Date().getTime() + (48 * 60 * 60 * 1000);
-      
-          // If a new countdown is created, save the end time in local storage
-          if (!savedCountdown) {
-            localStorage.setItem('countdownEnd', countdownDate);
+          function formatTime(unit) {
+            return unit < 10 ? '0' + unit : unit;
           }
       
-          // Function to start the countdown
+          var savedCountdown = localStorage.getItem('countdownEndPage1');
+          var countdownDate;
+      
+          if (savedCountdown) {
+            countdownDate = new Date(savedCountdown).getTime();
+          } else {
+            countdownDate = new Date().getTime() + (48 * 60 * 60 * 1000);
+            localStorage.setItem('countdownEndPage1', new Date(countdownDate).toISOString());
+          }
+      
           var x = setInterval(function () {
             var now = new Date().getTime();
             var distance = countdownDate - now;
       
-            // Calculate hours, minutes, and seconds
             var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             var seconds = Math.floor((distance % (1000 * 60)) / 1000);
       
-            // Display the countdown
-            document.getElementById("countdown").innerHTML = hours + "h " + minutes + "m " + seconds + "s ";
+            document.getElementById("countdown1").innerHTML = formatTime(hours) + "h " + formatTime(minutes) + "m " + formatTime(seconds) + "s";
       
-            // When the countdown ends, display a message and reset the countdown for a new 48 hours
             if (distance < 0) {
               clearInterval(x);
-              document.getElementById("countdown").innerHTML = "LIST UPDATED - RELOAD PAGE";
-              localStorage.removeItem('countdownEnd'); // Clear saved countdown so a new one can start on reload
+              document.getElementById("countdown1").innerHTML = "LIST UPDATED - RELOAD PAGE";
+              localStorage.removeItem('countdownEndPage1');
             }
           }, 1000);
         </script>
       </section>
-      
+           
 
       
       <!-- 
