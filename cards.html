@@ -575,11 +575,11 @@
     - #COUNTDOW SECTION
   -->
       <section class="section offer has-bg-image" aria-label=" CARDS HEADING">
-      <h2 class="h3 section-title"> LIST UPDASTES EVERY 48 HOURS<br>______________</h3> <br>
+      <h2 class="h3 section-title">LIST TO BE UPDATED IN 48 HOURS</h3>
       <div id="countdown" style="font-size: 36px; font-weight: bold; background: linear-gradient(to right, #0091e6, #ffffff); -webkit-background-clip: text; color: transparent;"></div>
         <script>
           // Set the starting time for the countdown (23 hours from now)
-          var countdownDate = new Date().getTime() + (23 * 60 * 60 * 1000);
+          var countdownDate = new Date().getTime() + (23 * 48 * 60 * 1000);
         
           // Update the countdown every second
           var x = setInterval(function () {
@@ -597,7 +597,7 @@
             // If the countdown is finished, stop the timer
             if (distance < 0) {
               clearInterval(x);
-              document.getElementById("countdown").innerHTML = "EXPIRED";
+              document.getElementById("countdown").innerHTML = "LIST UPDATED - RELOAD PAGE";
             }
           }, 1000);
         </script>
