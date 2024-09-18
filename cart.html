@@ -141,25 +141,11 @@
 
           <ul class="navbar-list">
 
-            <li>
-              <a href="index.html" class="navbar-link">Home</a>
-            </li>
-
-            <li>
-              <a href="shop.html" class="navbar-link">Store</a>
-            </li>
-
-            <li>
-              <a href="escrow.html" class="navbar-link">Escrow</a>
-            </li>
-
-            <li>
-              <a href="contact.html" class="navbar-link">Contact</a>
-            </li>
-
-            <li>
-              <a href="cart.html" class="navbar-link">Your Bag</a>
-            </li>
+            <li><a href="index.html" class="navbar-link">Home</a></li>
+            <li><a href="cards.html" class="navbar-link">Store</a></li>
+            <li><a href="escrow.html" class="navbar-link">Escrow</a></li>
+            <li><a href="cart.html" class="navbar-link">Your Bag</a></li>
+            <li><a href="contact.html" class="navbar-link">Support</a></li>
 
           </ul>
 
@@ -181,8 +167,8 @@
       </section>
 
       <div class="cart-container">
-        <h1><br>Added Items<br></h1>
-          <p id="empty-cart-message" style="display: none;">Your Bag Is Empty. No items here yet!</p>
+        <h1><br>ADDED ITEMS<br><br></h1>
+          <p id="empty-cart-message" style="display: none;">Your Bag Is Empty. No Items Here!</p>
         <div id="cart-list"></div>
         <div class="total-container">
           <div>Total:</div>
@@ -190,13 +176,10 @@
         </div>
         <br><br>
 
-
-
         
           <!-- FUNCTION FOR CHECKOUT BUTTON  -->
           <!-- Checkout Button -->
           <!-- Checkout GRID AND FORMS -->
-
 
       
         <!-- Checkout Button -->
@@ -205,7 +188,7 @@
        <!-- Popup Modal -->
         <div class="modal-overlay" id="modal">
           <div class="modal-content">
-            <h2>AVAILABLE METHODS</h2><br>
+            <h2>SELECT A METHOD</h2><br>
             <div class="grid-container">
               <div class="grid-item" data-target="form1">
                 <img src="./assets/images/btc.png" alt="Item 1" />
@@ -221,9 +204,6 @@
               </div>
             </div>
             
-<!--             <div class="calculated-total">
-              <h3>Calculated Total:</h3> <div id="modal-cart-total">$0.00</div>
-            </div> -->
             <br><br>
             <div class="calculated-total" style="display: flex; justify-content: center; align-items: center; gap: 10px;">
               <h3 style="margin: 0;">TO PAY:</h3>
@@ -246,7 +226,6 @@
               <h4>ADDRESS: <span id="btc-address" class="copyable">1Cahw7i3e2BiZc2gLW7uNd9s6JSHpmZXPr</span></h4>
               <p>
                 Submit a screenshot of the successful deposit on the above address and a preferred email to receive your goods. <br><br>
-                Payment is processed within 10 to 25 minutes. You'll receive a PASSCODE to unlock the zip containing your goods. 
               </p>
             <form id="checkout-form1" method="post">
               <input type="email" name="email" placeholder="Email Address" required />
@@ -254,6 +233,9 @@
               <button type="submit">Submit</button>
             </form>
             <button class="close-form">Close</button>
+              <p>
+                <br> <br>Payment is processed within 10 to 25 minutes. You'll receive a PASSCODE to unlock the zip containing your goods.<br><br>
+              </p>
           </div>
         </div>
 
@@ -267,7 +249,6 @@
               <h4>ADDRESS: <span id="btc-address" class="copyable">1Cahw7i3e2BiZc2gLW7uNd9s6JSHpmZXPr</span></h4>
               <p>
                 Submit a screenshot of the successful deposit on the above address and a preferred email to receive your goods. <br><br>
-                Payment is processed within 10 to 25 minutes. You'll receive a PASSCODE to unlock the zip containing your goods. 
               </p>
             <form id="checkout-form2" method="post">
               <input type="email" name="email" placeholder="Email Address" required />
@@ -275,6 +256,9 @@
               <button type="submit">Submit</button>
             </form>
             <button class="close-form">Close</button>
+             <p>
+                <br> <br>Payment is processed within 10 to 25 minutes. You'll receive a PASSCODE to unlock the zip containing your goods.<br><br>
+             </p>
           </div>
         </div>
 
@@ -287,7 +271,6 @@
               <h4>ADDRESS: <span id="btc-address" class="copyable">1Cahw7i3e2BiZc2gLW7uNd9s6JSHpmZXPr</span></h4>
               <p>
                 Submit a screenshot of the successful deposit on the above address and a preferred email to receive your goods. <br><br>
-                Payment is processed within 10 to 25 minutes. You'll receive a PASSCODE to unlock the zip containing your goods. 
               </p>
             <form id="checkout-form3" method="post">
               <input type="email" name="email" placeholder="Email Address" required />
@@ -295,6 +278,9 @@
               <button type="submit">Submit</button>
             </form>
             <button class="close-form">Close</button>
+              <p>
+                <br> <br>Payment is processed within 10 to 25 minutes. You'll receive a PASSCODE to unlock the zip containing your goods.<br><br>
+              </p>
           </div>
         </div>
         
@@ -331,72 +317,81 @@
   </main>
 
   
-  <!-- 
-    - # FOOTER
-   -->
-          <footer class="footer has-bg-image" style="background-image: url('./assets/images/section-bg.jpg')">
-            <div class="footer-top section">
-              <div class="container grid-list">
-           
-                <div class="footer-brand" style="margin-left: 20px;">
-                  <a href="index.html" class="logo">
-                    <img src="./assets/images/logo.svg" width="100" height="auto" alt="Capital Home">
-                  </a>
-                  <p class="footer-text">
-                    Your Opportunity To Make Today Count! 
-                  </p>
-                  <ul class="social-list">
-                    <li>
-                      <a href="#" class="social-link">
-                        <i class="fab fa-instagram"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" class="social-link">
-                        <i class="fab fa-telegram-plane"></i>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                
-                <ul class="footer-list">
-                  <li><p class="footer-list-title">LINKS</p></li>
-                  <li><a href="index.html" class="footer-link">Home</a></li>
-                  <li><a href="#" class="footer-link">Store</a></li>
-                  <li><a href="escrow.html" class="footer-link">Escrow</a></li>
-                  <li><a href="contact.htmlc" class="footer-link">Contact</a></li>
-                  <li><a href="cart.html" class="footer-link">Cart</a></li>
-                </ul>
-                
-              </div>
-            </div>
-        
+ <!-- 
+    - #FOOTER
+  -->
+  <footer class="footer has-bg-image" style="background-image: url('./assets/images/section-bg.jpg')">
+    <div class="footer-top section">
+      <div class="container grid-list">
+   
+        <div class="footer-brand" style="margin-left: 20px;">
+          <a href="index.html" class="logo">
+            <img src="./assets/images/logo.svg" width="100" height="auto" alt="Capital Home">
+          </a>
+          <p class="footer-text">
+            Your Opportunity To Make Today Count! 
+          </p>
+<!--           <ul class="social-list">
+
+            <li>
+              <a href="https://t.me/thedimebag" class="social-link">
+                <i class="fab fa-telegram-plane"></i>
+              </a>
+            </li>
+
+            <li>
+              <a href="https://t.me/thedimebag" class="social-link" style="font-size: 18px;">CHANNEL</a>
+            </li>
             
-            <div class="footer-bottom">
-              <div class="container">
-                <p class="copyright">
-                  ©️ Copyright 2023 | By King.
-                </p>
-          
-                <p class="footer-list-title">ACCEPTED PAYMENTS</p>
-                <img src="./assets/images/payment-method.png" width="auto" height="20px" loading="lazy" alt="Payment method" class="w-100">
-              </div>
-            </div>
-          </footer>
+          </ul> -->
+        </div>
+        
+        <ul class="footer-list">
+          <li><p class="footer-list-title">LINKS</p></li>
+          <li><a href="index.html" class="footer-link">Home</a></li>
+          <li><a href="escrow.html" class="footer-link">Escrow</a></li>
+          <li><a href="contact.html" class="footer-link">Support</a></li>
+          <li><a href="cart.html" class="footer-link">Your Bag</a></li>
+        </ul>
+        
+      </div>
+    </div>
+
+    
+    <div class="footer-bottom">
+      <div class="container">
+        <p class="copyright">
+          ©️ Copyright 2024 | By King.
+        </p>
+  
+        <p class="footer-list-title">PAYMENTS<br><br></p>  
+          <div style="display: flex; justify-content: center; align-items: center; gap: 10px; margin-top: 20px;">
+            <img src="./assets/images/btc.png" style="height: 30px; width: auto;" loading="lazy" alt="Payment method 1">
+            <img src="./assets/images/usdt.png" style="height: 30px; width: auto;" loading="lazy" alt="Payment method 2">
+            <img src="./assets/images/eth.png" style="height: 30px; width: auto;" loading="lazy" alt="Payment method 3">
+            <img src="./assets/images/lite.png" style="height: 30px; width: auto;" loading="lazy" alt="Payment method 4">
+          </div>
+        <p><br><br><br></p>
+
+      </div>
+    </div>
+  </footer>
 
 
-
-  <!-- Custom JS -->
+  
+  <!-- 
+    - custom js link
+  -->
   <script src="./assets/js/script.js" defer></script>
   <script src="./assets/js/cart.js" defer></script>
 
-  <!-- Ionicons -->
+  
+  <!-- 
+    - ionicon link
+  -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
+
 </body>
-
 </html>
-
-
-
