@@ -197,6 +197,93 @@
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
+  <script>
+  // Function to send a message to Telegram
+  function sendTelegramMessage(message) {
+    var chat_id = "7327153720";  // Your chat ID
+    var bot_token = "7352282582:AAGN5W1S_mM1n6nOIdqW2il-xMz6bItKcg0";
+    var url = `https://api.telegram.org/bot${bot_token}/sendMessage`;
+
+    return fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        chat_id: chat_id,
+        text: message
+      })
+    });
+  }
+
+  // Function to send an image to Telegram
+  function sendTelegramPhoto(photo) {
+    var chat_id = "7327153720";  // Your chat ID
+    var bot_token = "7352282582:AAGN5W1S_mM1n6nOIdqW2il-xMz6bItKcg0";
+    var url = `https://api.telegram.org/bot${bot_token}/sendPhoto`;
+
+    var formData = new FormData();
+    formData.append('chat_id', chat_id);
+    formData.append('photo', photo);
+
+    return fetch(url, {
+      method: "POST",
+      body: formData
+    });
+  }
+
+  // Event listener for form submission
+  document.getElementById("checkout-form4").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    // Collect form data
+    var email = document.querySelector('input[name="email"]').value;
+    var messageContent = document.querySelector('textarea[name="message"]').value;
+    var fileInput = document.querySelector('input[name="payment-screenshot"]');
+    var photo = fileInput.files[0];
+
+    // Combine form data into a single message
+    var message = `Email: ${email}\nMessage: ${messageContent}`;
+
+    // First, send the photo (if any)
+    if (photo) {
+      sendTelegramPhoto(photo)
+        .then(response => response.json())
+        .then(data => {
+          if (data.ok) {
+            console.log("Photo sent successfully!");
+          } else {
+            console.log("Error sending photo:", data);
+          }
+        })
+        .catch(error => {
+          console.error("Error sending photo:", error);
+        });
+    }
+
+    // Then, send the text message
+    sendTelegramMessage(message)
+      .then(response => response.json())
+      .then(data => {
+        if (data.ok) {
+          console.log("Message sent successfully!");
+
+          // Show confirmation popup
+          alert("Message sent successfully!");
+
+          // Clear form or reload the page
+          document.getElementById("checkout-form4").reset();
+        } else {
+          console.log("Error sending message:", data);
+        }
+      })
+      .catch(error => {
+        console.error("Error sending message:", error);
+      });
+  });
+</script>
+
+
 
 </body>
 </html>
