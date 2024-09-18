@@ -1792,7 +1792,7 @@ body {
   }
 
   .payment-popup {
-    top: 60px; /* Adjust top margin for smaller screens */
+    top: 40px; /* Adjust top margin for smaller screens */
   }
 
   .back-home-button {
