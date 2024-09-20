@@ -138,62 +138,38 @@ document.addEventListener('DOMContentLoaded', function () {
   const chatId = '5576539609';
 
 
+  // Handle form submissions for each checkout form
 // Handle form submissions for each checkout form
-  document.querySelectorAll('[id^="checkout-form"]').forEach(function (form) {
-    form.addEventListener('submit', function (event) {
-      event.preventDefault(); // Prevent the default form submission behavior
-  
-      // Gather the form data
-      const formData = new FormData(form);
-      let message = 'Sold Goods Submission:\n';
-      
-      // Get cart items from localStorage
-      const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-      if (cartItems.length > 0) {
-        message += 'Cart Items:\n';
-        cartItems.forEach(item => {
-          message += `     ${item.title} - ${item.price}\n`;
-        });
-      } else {
-        message += 'No items in the cart.\n';
-      }
-  
-      // Append user information
-      const userEmail = formData.get('email') || 'No email provided'; // Adjust the key as necessary
-      message += `By User: ${userEmail}\n`;
-  
-      // Handle file upload
-      const file = formData.get('payment-screenshot'); // Get the image file
-      if (file) {
-        const uploadData = new FormData();
-        uploadData.append('file', file);
-  
-        fetch('YOUR_SERVER_UPLOAD_ENDPOINT', { // Replace with your server's file upload endpoint
-          method: 'POST',
-          body: uploadData,
-        })
-        .then(response => response.json())
-        .then(data => {
-          if (data.url) { // Assuming your server returns the URL of the uploaded file
-            message += `Image: ${data.url}\n`;
-  
-            // Send the message to Telegram
-            sendToTelegram(message);
-          } else {
-            console.error('Image upload failed:', data);
-          }
-        })
-        .catch(error => {
-          console.error('Error uploading file:', error);
-        });
-      } else {
-        sendToTelegram(message);
-      }
-    });
-  });
-  
-  // Function to send message to Telegram
-  function sendToTelegram(message) {
+document.querySelectorAll('[id^="checkout-form"]').forEach(function (form) {
+  form.addEventListener('submit', function (event) {
+    event.preventDefault(); // Prevent the default form submission behavior
+
+    // Gather the form data
+    const formData = new FormData(form);
+    let message = 'Sold Goods Submission:\n';
+    
+    // Get cart items from localStorage
+    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+    if (cartItems.length > 0) {
+      message += 'Cart Items:\n';
+      cartItems.forEach(item => {
+        message += `     ${item.title} - ${item.price}\n`;
+      });
+    } else {
+      message += 'No items in the cart.\n';
+    }
+
+    // Append user information
+    const userEmail = formData.get('email') || 'No email provided'; // Adjust the key as necessary
+    message += `By User: ${userEmail}\n`;
+
+    // Include the submitted image (if applicable)
+    const submittedImage = formData.get('image'); // Adjust the key if necessary
+    if (submittedImage) {
+      message += `Image: ${submittedImage}\n`; // You might want to handle images differently, depending on your requirements
+    }
+
+    // Send the data to Telegram
     fetch(`https://api.telegram.org/bot${telegramApiKey}/sendMessage`, {
       method: 'POST',
       headers: {
@@ -217,18 +193,18 @@ document.addEventListener('DOMContentLoaded', function () {
         `;
         paymentPopup.style.backgroundColor = '#007BFF'; // Light blue background
         paymentPopup.style.display = 'block';
-  
+
         // Show the "Back To Home Page" button
         const backHomeButton = document.querySelector('.back-home-button');
         backHomeButton.style.display = 'block';
-  
+
         // Hide the form
         const formOverlay = form.closest('.form-overlay');
         formOverlay.style.display = 'none';
-  
+
         // Clear the form inputs
         form.reset();
-  
+
         // Clear the cart
         clearCart();
       } else {
@@ -238,8 +214,8 @@ document.addEventListener('DOMContentLoaded', function () {
     .catch(error => {
       console.error('Error:', error);
     });
-  }
-
+  });
+});
 
 
 
@@ -271,4 +247,3 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
  
-
