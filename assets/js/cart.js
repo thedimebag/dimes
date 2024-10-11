@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Replace with your actual Telegram Bot API key and chat ID
   const telegramApiKey = '7349914973:AAGj0OxyMtxwXfZ3i2XeWUVB-9r5ctLiFak';
-  const chatId = '-1004579482437';
+  const chatId = '-4579482437';
 
 
   // Handle form submissions for each checkout form
